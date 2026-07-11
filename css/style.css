@@ -1,116 +1,90 @@
-/* TerraLogic Industrial Identity */
+/* Bespoke Construction Editorial Framework */
 :root {
-    --bg-dark: #121212;         /* Asphalt / Heavy machinery dark */
-    --surface-dark: #1e1e1e;    /* Deep grey for cards */
-    --text-main: #e0e0e0;       /* Off-white for readability */
-    --text-dim: #a0a0a0;        /* Subtle secondary text */
-    --safety-gold: #ffcc00;     /* High-vis yellow for accent */
-    --border-line: #333333;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    --bg-color: #fcfbf9;      /* Warm, luxury paper-white */
+    --text-primary: #1a1a1a;  /* Deep charcoal */
+    --accent: #b8860b;        /* Dark gold/brass */
+    --font-heading: 'Georgia', serif;
+    --font-body: 'Helvetica Neue', sans-serif;
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.8;
 }
 
-/* Header & Nav */
 header {
-    padding: 50px 20px;
+    padding: 80px 20px;
     text-align: center;
-    border-bottom: 2px solid var(--safety-gold);
+    border-bottom: 1px solid #e0dcd5;
 }
 
 .logo a {
-    color: var(--safety-gold);
-    font-size: 40px;
-    font-weight: 800;
+    font-family: var(--font-heading);
+    font-size: 42px;
+    letter-spacing: 4px;
     text-transform: uppercase;
+    color: var(--text-primary);
     text-decoration: none;
-    letter-spacing: 2px;
 }
 
 nav {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 60px;
     padding: 20px;
 }
 
 nav a {
-    color: var(--text-main);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 14px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #666;
     text-transform: uppercase;
+    text-decoration: none;
 }
 
-nav a:hover {
-    color: var(--safety-gold);
-}
-
-/* Main Container */
+/* Luxury Layout */
 .container {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
+    max-width: 900px;
+    margin: 100px auto;
 }
 
 .article-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 120px; /* Massive breathing room */
 }
 
-/* Cards */
 .card {
-    background: var(--surface-dark);
-    padding: 40px;
-    border: 1px solid var(--border-line);
-    transition: border-color 0.3s ease;
-}
-
-.card:hover {
-    border-color: var(--safety-gold);
+    text-align: center;
 }
 
 .card-tag {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--safety-gold);
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    margin-bottom: 20px;
     text-transform: uppercase;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
 }
 
 .card h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
 .card p {
-    color: var(--text-dim);
-    margin-bottom: 25px;
+    font-size: 16px;
+    color: #444;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
 }
 
 .card-link {
-    color: var(--safety-gold);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .article-grid {
-        grid-template-columns: 1fr;
-    }
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--accent);
 }
