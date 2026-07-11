@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TerraLogic | Earthwork Operations & Civil Engineering Metrics</title>
+    <title>TerraLogic | Field Engineering Reference Frameworks</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="hero-header">
+
+    <header>
         <div class="logo"><a href="index.html">TERRA<span>LOGIC</span></a></div>
-        <p>High-Fidelity Field Data & Earthwork Engineering Frameworks</p>
     </header>
     
-   <nav>
+    <nav>
         <button class="menu-toggle" aria-label="Toggle navigation">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </button>
-
         <ul class="nav-links">
             <li><a href="#geotechnical">Geotechnical</a></li>
             <li><a href="#grade-control">Grade Control</a></li>
@@ -29,41 +28,40 @@
     </nav>
 
     <div class="nav-accent-line"></div>
-    <div class="nav-accent-line"></div>
 
-    <div class="ad-leaderboard">AD_SLOT_HOMEPAGE_TOP_LEADERBOARD</div>
+    <div class="ad-homepage-top">AD_SLOT_HOMEPAGE_TOP_LEADERBOARD</div>
 
     <div class="container">
         <main>
-            <div class="articles-grid">
+            <div class="article-grid">
                 
-                <div class="article-card">
-                    <div class="article-meta">Geotechnical Engineering</div>
-                    <h2><a href="articles/soil-swell-factors.html">Soil Swell Factors & Weight-Volume Conversion Metrics</a></h2>
-                    <p>Master the critical transitions between Bank, Loose, and Compacted cubic yards. Learn how to calculate precise earthwork volumes and avoid haul-truck capacity errors on heavy civil jobsites.</p>
-                    <a href="articles/soil-swell-factors.html" class="read-more">Read Full Technical Guide &rarr;</a>
-                </div>
+                <article class="card">
+                    <div class="card-tag">Geotechnical Engineering</div>
+                    <h3>Soil Swell Factors & Weight-Volume Conversion Metrics</h3>
+                    <p>Master the critical transitions between Bank, Loose, and Compacted cubic yards. Learn how to calculate precise earthwork volumes.</p>
+                    <a href="articles/soil-swell-factors.html" class="card-link">Read Full Technical Guide →</a>
+                </article>
 
-                <div class="article-card">
-                    <div class="article-meta">Field Quality Control</div>
-                    <h2><a href="articles/nuclear-density-testing.html">Nuclear Density Testing & Soil Compaction Mechanics</a></h2>
-                    <p>A deep dive into standard vs. modified Proctor curves, moisture-density relationships, and how to troubleshoot real-world soil pumping under heavy compaction rollers.</p>
-                    <a href="articles/nuclear-density-testing.html" class="read-more">Read Full Technical Guide &rarr;</a>
-                </div>
+                <article class="card">
+                    <div class="card-tag">Field Quality Control</div>
+                    <h3>Nuclear Density Testing & Soil Compaction Mechanics</h3>
+                    <p>A deep dive into standard vs. modified Proctor curves, moisture-density relationships, and how to troubleshoot real-world soil pumping.</p>
+                    <a href="articles/nuclear-density-testing.html" class="card-link">Read Full Technical Guide →</a>
+                </article>
 
-                <div class="article-card">
-                    <div class="article-meta">Grade Control Systems</div>
-                    <h2><a href="articles/gps-machine-control.html">3D GPS Machine Control: Field Calibration & Tolerances</a></h2>
-                    <p>How to eliminate vertical drift and maintain subgrade tolerances. Learn proper base station placement, localization rules, and tracking parameters for automated heavy hydraulics.</p>
-                    <a href="articles/gps-machine-control.html" class="read-more">Read Full Technical Guide &rarr;</a>
-                </div>
+                <article class="card">
+                    <div class="card-tag">Grade Control Systems</div>
+                    <h3>3D GPS Machine Control: Field Calibration & Tolerances</h3>
+                    <p>How to eliminate vertical drift and maintain subgrade tolerances. Learn proper base station placement and localization rules.</p>
+                    <a href="articles/gps-machine-control.html" class="card-link">Read Full Technical Guide →</a>
+                </article>
 
-                <div class="article-card">
-                    <div class="article-meta">Soil Mechanics & Utilities</div>
-                    <h2><a href="articles/utility-trench-backfilling.html">Structural Utility Trench Backfilling: Soil Mechanics & Compaction Specs</a></h2>
-                    <p>Poor trench execution triggers catastrophic structural pavement failures. Learn the precise zoning mechanics, lift geometry specs, and gear matching rules to secure high-performance utility lines.</p>
-                    <a href="articles/utility-trench-backfilling.html" class="read-more">Read Full Technical Guide &rarr;</a>
-                </div>
+                <article class="card">
+                    <div class="card-tag">Soil Mechanics & Utilities</div>
+                    <h3>Structural Utility Trench Backfilling: Soil Mechanics & Compaction Specs</h3>
+                    <p>Poor trench execution triggers catastrophic structural pavement failures. Learn the precise zoning mechanics and gear-matching rules.</p>
+                    <a href="articles/utility-trench-backfilling.html" class="card-link">Read Full Technical Guide →</a>
+                </article>
 
             </div>
         </main>
@@ -71,7 +69,7 @@
         <aside>
             <div class="sidebar-box">
                 <h3>Field Operations</h3>
-                <p>TerraLogic provides field-tested engineering frameworks, calculation matrixes, and raw mechanical parameters for heavy construction and excavation teams.</p>
+                <p>TerraLogic provides field-tested engineering frameworks, calculation matrices, and raw mechanical parameters for heavy construction and excavation teams.</p>
             </div>
             <div class="ad-sidebar">AD_SLOT_HOMEPAGE_SIDEBAR</div>
         </aside>
@@ -96,7 +94,8 @@
             <div>Built for precision field engineering.</div>
         </div>
     </footer>
-<script>
+
+    <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
 
@@ -104,5 +103,6 @@
             navLinks.classList.toggle('mobile-active');
         });
     </script>
+
 </body>
 </html>
