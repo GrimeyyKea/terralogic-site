@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Swell Factors & Weight-Volume Conversions | TerraLogic</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="../index.html">TERRA<span>LOGIC</span></a></div>
+    </header>
+    
+    <nav>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="../index.html#geotechnical">Geotechnical</a></li>
+            <li><a href="../index.html#grade-control">Grade Control</a></li>
+            <li><a href="../index.html#utilities">Utility Systems</a></li>
+            <li><a href="../index.html#logistics">Field Operations</a></li>
+        </ul>
+    </nav>
+
+    <div class="nav-accent-line"></div>
+
+    <div class="ad-leaderboard">AD_SLOT_ARTICLE_TOP_LEADERBOARD</div>
+
+    <div class="container">
+        <main>
+            <div class="breadcrumbs">
+                <a href="../index.html">Home</a> &gt; <a href="../index.html#geotechnical">Geotechnical</a> &gt; Soil Volumes
+            </div>
+            
+            <article>
+                <div class="article-meta">Geotechnical Engineering</div>
+                <h1>Soil Swell Factors & Weight-Volume Conversion Metrics</h1>
+                <p class="lead-text">Excavating undisturbed earth alters its structural density. Managing material logistics requires a strict understanding of Bank, Loose, and Compacted states.</p>
+
+                <h2>The Three Material States</h2>
+                <p>Earthmoving math changes depending on where the material physically sits. Missing these calculations causes massive haul-truck scheduling failures and project budget deficits:</p>
+                <ul>
+                    <li><strong>Bank Cubic Yards (BCY):</strong> Material in its natural, undisturbed state before excavation.</li>
+                    <li><strong>Loose Cubic Yards (LCY):</strong> Material that has been dug up, creating voids and increasing total volume.</li>
+                    <li><strong>Compacted Cubic Yards (CCY):</strong> Material squeezed tight by field compaction gear after placement.</li>
+                </ul>
+
+                <h2>Volumetric Load Factors Table</h2>
+                <p>Use these baseline multipliers to track volume changes when moving common earth profiles from bank to loose conditions:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Material Type</th>
+                            <th>Load Factor (Multiplication Metric)</th>
+                            <th>Average Swell Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Clean Common Earth</strong></td>
+                            <td>0.80</td>
+                            <td>25% Swell</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hard Clay Formations</strong></td>
+                            <td>0.70</td>
+                            <td>43% Swell</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Broken Blast Rock</strong></td>
+                            <td>0.60</td>
+                            <td>67% Swell</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </main>
+
+        <aside>
+            <div class="sidebar-box">
+                <h3>Payload Warning</h3>
+                <p>Never size your haul fleets using Bank dimensions. Haul wagons carry Loose states, while pay items are strictly measured in Bank or Compacted states.</p>
+            </div>
+            <div class="ad-sidebar">AD_SLOT_ARTICLE_SIDEBAR</div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h4>TERRA<span>LOGIC</span></h4>
+                <p>High-fidelity field data, geotechnical reference frameworks, and structural earthwork metrics.</p>
+            </div>
+            <div class="footer-links">
+                <h5>Compliance & Documentation</h5>
+                <ul>
+                    <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="../legal/terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>&copy; 2026 TerraLogic. All operational rights reserved.</div>
+            <div>Built for precision field engineering.</div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-active');
+        });
+    </script>
+
+</body>
+</html>
