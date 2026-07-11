@@ -1,6 +1,13 @@
-/* ==========================================================================
-   1. GLOBAL ARCHITECTURE & CORE BRANDING
-   ========================================================================== */
+/* TerraLogic Industrial Identity */
+:root {
+    --bg-dark: #121212;         /* Asphalt / Heavy machinery dark */
+    --surface-dark: #1e1e1e;    /* Deep grey for cards */
+    --text-main: #e0e0e0;       /* Off-white for readability */
+    --text-dim: #a0a0a0;        /* Subtle secondary text */
+    --safety-gold: #ffcc00;     /* High-vis yellow for accent */
+    --border-line: #333333;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,506 +15,102 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f7f9fa;
-    color: #1a2530;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* ==========================================================================
-   2. HEADER & NAVIGATION SYSTEM
-   ========================================================================== */
+/* Header & Nav */
 header {
-    background-color: #111b24;
-    padding: 25px 20px;
+    padding: 50px 20px;
     text-align: center;
-    border-bottom: 4px solid #f2b705; /* Safety Gold Accent */
+    border-bottom: 2px solid var(--safety-gold);
 }
 
 .logo a {
-    font-size: 28px;
+    color: var(--safety-gold);
+    font-size: 40px;
     font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
     letter-spacing: 2px;
-    color: #ffffff;
-}
-
-.logo span {
-    color: #f2b705;
 }
 
 nav {
-    background-color: #172430;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.nav-links {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     justify-content: center;
-    list-style: none;
-}
-
-.nav-links li a {
-    display: block;
-    padding: 16px 24px;
-    color: #cbd5e1;
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.2s ease-in-out;
-}
-
-.nav-links li a:hover {
-    color: #ffffff;
-    background-color: #1e2e3d;
-}
-
-.nav-accent-line {
-    height: 3px;
-    background: linear-gradient(90deg, #111b24 0%, #f2b705 50%, #111b24 100%);
-}
-
-/* Hamburger Menu Toggle (Mobile Only hidden by default) */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
-
-.menu-toggle .bar {
-    height: 3px;
-    width: 100%;
-    background-color: #ffffff;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-/* ==========================================================================
-   3. STRUCTURAL GRID LAYOUT
-   ========================================================================== */
-.container {
-    max-width: 1200px;
-    margin: 30px auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: 2.5fr 1fr;
-    gap: 30px;
-}
-
-main {
-    min-width: 0; /* Prevents child items from bursting grid dimensions */
-}
-
-aside {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-/* ==========================================================================
-   4. ADVERTISEMENT FRAMEWORKS
-   ========================================================================== */
-.ad-homepage-top, .ad-leaderboard {
-    max-width: 1200px;
-    margin: 20px auto 0 auto;
-    background-color: #eaeff2;
-    border: 1px dashed #adc0cc;
-    color: #627d93;
-    text-align: center;
+    gap: 40px;
     padding: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    border-radius: 4px;
 }
 
-.ad-sidebar {
-    background-color: #eaeff2;
-    border: 1px dashed #adc0cc;
-    color: #627d93;
-    text-align: center;
-    padding: 60px 20px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    border-radius: 4px;
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
 }
 
-/* ==========================================================================
-   5. HOMEPAGE GRID & CARDS
-   ========================================================================== */
+nav a:hover {
+    color: var(--safety-gold);
+}
+
+/* Main Container */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
 .article-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 25px;
-    margin-top: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
 }
 
+/* Cards */
 .card {
-    background-color: #ffffff;
-    border-top: 4px solid #172430;
-    border-radius: 4px;
-    padding: 25px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: var(--surface-dark);
+    padding: 40px;
+    border: 1px solid var(--border-line);
+    transition: border-color 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    border-color: var(--safety-gold);
 }
 
 .card-tag {
     font-size: 11px;
     font-weight: 700;
+    color: var(--safety-gold);
     text-transform: uppercase;
-    color: #f2b705;
-    letter-spacing: 1px;
     margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 .card h3 {
-    font-size: 20px;
-    font-weight: 700;
-    color: #111b24;
-    margin-bottom: 12px;
-    line-height: 1.4;
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #ffffff;
 }
 
 .card p {
-    font-size: 14px;
-    color: #4a5568;
-    margin-bottom: 20px;
+    color: var(--text-dim);
+    margin-bottom: 25px;
 }
 
 .card-link {
-    font-size: 13px;
-    font-weight: 700;
-    color: #172430;
-    display: inline-block;
-    border-bottom: 2px solid #f2b705;
-    padding-bottom: 2px;
-}
-
-/* ==========================================================================
-   6. ARTICLE INTERIOR SYSTEM
-   ========================================================================== */
-.breadcrumbs {
-    font-size: 12px;
-    font-weight: 500;
-    color: #718096;
-    margin-bottom: 20px;
-}
-
-.breadcrumbs a {
-    color: #172430;
-}
-
-article {
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 4px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
-    border-left: 6px solid #f2b705;
-}
-
-.article-meta {
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #718096;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-}
-
-article h1 {
-    font-size: 34px;
-    font-weight: 800;
-    color: #111b24;
-    line-height: 1.25;
-    margin-bottom: 20px;
-}
-
-.lead-text {
-    font-size: 18px;
-    font-weight: 500;
-    color: #4a5568;
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-
-article h2 {
-    font-size: 22px;
-    font-weight: 700;
-    color: #172430;
-    margin: 35px 0 15px 0;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #e2e8f0;
-}
-
-article p {
-    font-size: 15px;
-    color: #2d3748;
-    margin-bottom: 20px;
-}
-
-article ul {
-    margin-bottom: 25px;
-    padding-left: 20px;
-}
-
-article li {
-    font-size: 15px;
-    color: #2d3748;
-    margin-bottom: 10px;
-}
-
-/* ==========================================================================
-   7. HIGH-FIDELITY DATA TABLES
-   ========================================================================== */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 30px 0;
-    background-color: #ffffff;
-    font-size: 14px;
-}
-
-th {
-    background-color: #111b24;
-    color: #ffffff;
-    text-align: left;
-    padding: 14px 16px;
+    color: var(--safety-gold);
+    text-decoration: none;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border: 1px solid #111b24;
-}
-
-td {
-    padding: 14px 16px;
-    border: 1px solid #e2e8f0;
-    color: #2d3748;
-}
-
-tr:nth-child(even) {
-    background-color: #f8fafc;
-}
-
-/* ==========================================================================
-   8. SIDEBAR COMPONENTS
-   ========================================================================== */
-.sidebar-box {
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 4px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
-    border-top: 4px solid #111b24;
-}
-
-.sidebar-box h3 {
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #111b24;
-    margin-bottom: 15px;
-}
-
-.sidebar-box p {
     font-size: 14px;
-    color: #4a5568;
-    line-height: 1.5;
 }
 
-/* ==========================================================================
-   9. ANCHORED PRODUCTION FOOTER
-   ========================================================================== */
-footer {
-    background-color: #111b24;
-    color: #ffffff;
-    margin-top: 60px;
-    padding: 50px 20px 20px 20px;
-    border-top: 4px solid #f2b705;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-    border-bottom: 1px solid #1e2e3d;
-    padding-bottom: 40px;
-}
-
-.footer-brand {
-    flex: 1;
-    min-width: 280px;
-}
-
-.footer-brand h4 {
-    font-size: 20px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-}
-
-.footer-brand h4 span {
-    color: #f2b705;
-}
-
-.footer-brand p {
-    color: #a0aec0;
-    font-size: 14px;
-    max-width: 360px;
-}
-
-.footer-links {
-    flex: 1;
-    min-width: 280px;
-}
-
-.footer-links h5 {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #f2b705;
-    margin-bottom: 15px;
-}
-
-.footer-links ul {
-    list-style: none;
-}
-
-.footer-links li {
-    margin-bottom: 10px;
-}
-
-.footer-links a {
-    color: #cbd5e1;
-    font-size: 14px;
-    transition: color 0.2s ease;
-}
-
-.footer-links a:hover {
-    color: #ffffff;
-}
-
-.footer-bottom {
-    max-width: 1200px;
-    margin: 20px auto 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    font-size: 12px;
-    color: #718096;
-}
-
-/* ==========================================================================
-   10. MOBILE-FIRST FLUID RESPONSIVE SYSTEM
-   ========================================================================== */
+/* Mobile */
 @media (max-width: 768px) {
-    /* Fluid Container Settings for iPhone Edge-to-Edge display */
-    .container {
-        grid-template-columns: 1fr; /* Stacks main and sidebar layouts vertically */
-        width: 100% !important;
-        max-width: 100% !important;
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-        box-sizing: border-box;
-        overflow-x: hidden;
-    }
-
-    main, article, .card {
-        width: 100% !important;
-        box-sizing: border-box;
-    }
-
-    /* Scales interior padding down smoothly on narrow viewports */
-    article {
-        padding: 25px 20px;
-    }
-
-    article h1 {
-        font-size: 26px;
-    }
-
-    /* Prevents Leaderboards from causing horizontal spill */
-    .ad-leaderboard, .ad-homepage-top {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 15px 0 0 0;
-        box-sizing: border-box;
-        overflow: hidden;
-        font-size: 11px;
-    }
-
-    /* Table Horizontal Overflow Scrolling Safeguard */
-    table {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        border: 0;
-    }
-
-    /* Mobile Responsive Hamburger System Setup */
-    nav {
-        padding: 15px 20px;
-    }
-
-    .menu-toggle {
-        display: flex;
-        margin-left: auto;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        background-color: #172430;
-        margin-top: 15px;
-        padding: 10px 0;
-        border-top: 1px solid #1e2e3d;
-    }
-
-    .nav-links li {
-        width: 100%;
-    }
-
-    .nav-links li a {
-        padding: 12px 0;
-    }
-
-    /* Activated State via JS Hamburger Click */
-    .nav-links.mobile-active {
-        display: flex;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
+    .article-grid {
+        grid-template-columns: 1fr;
     }
 }
