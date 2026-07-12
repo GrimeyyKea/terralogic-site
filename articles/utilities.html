@@ -7,6 +7,20 @@
     <title>Utility Systems & Bedding Mechanics | TerraLogic</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
+        .back-to-hub {
+            display: inline-block;
+            color: var(--steel);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+            transition: color 0.2s ease;
+        }
+        .back-to-hub:hover {
+            color: var(--text-main);
+        }
         .table-wrapper {
             width: 100%;
             overflow-x: auto;
@@ -65,23 +79,22 @@
         <div class="article-layout">
             <main>
                 <article class="card">
+                    <a href="../index.html" class="back-to-hub">← Return to Hub</a>
                     <div class="card-tag">Utility Systems</div>
                     <h1>Gravity Pipe &amp; Pressure Bedding Mechanics</h1>
                     
                     <p>Burying utility pipe runs is a battle against dead loads and live traffic impacts. If a trench is dug incorrectly or backfilled with poor material, the structural weight of the earth above will crush the line, causing catastrophic structural joint failure or massive ground settling.</p>
                     
-                    <p>Preventing system failure requires managing two critical vectors in the field: <strong>Minimum Cover Depth</strong> to buffer dynamic live loads (like a fully loaded haul truck passing overhead) and <strong>Bedding Class Selection</strong> to evenly distribute static soil pressure around the pipe envelope.</p>
+                    <p>Preventing system failure requires managing two critical vectors in the field: Minimum Cover Depth to buffer dynamic live loads and Bedding Class Selection to evenly distribute static soil pressure around the pipe envelope.</p>
 
-                    <h3 style="font-size: 20px; margin-top: 25px;">Rigid vs. Flexible Pipe Behavior</h3>
+                    <h3 style="font-size: 20px; margin-top: 25px; margin-bottom: 12px;">Rigid vs. Flexible Pipe Behavior</h3>
                     <p>The type of pipe material completely dictates how structural loads are distributed down in the trench:</p>
-                    <ul>
+                    <ul style="margin-bottom: 20px;">
                         <li style="margin-left: 20px; margin-bottom: 8px;"><strong>Rigid Pipe (Reinforced Concrete Pipe - RCP):</strong> The pipe inherently carries the vast majority of the load, relying on its brute cross-sectional strength. If the bottom support isn't uniform, the pipe bells will crack under pressure.</li>
                         <li style="margin-left: 20px; margin-bottom: 8px;"><strong>Flexible Pipe (HDPE / PVC):</strong> The pipe shifts and flexes under load, transferring the weight outwards into the surrounding trench walls. Because of this, the placement and density of the side-fill stone (haunching) is critical to prevent the pipe from flattening.</li>
                     </ul>
 
-                    <h3 style="font-size: 20px; margin-top: 25px;">Standard Trench Bedding Classifications</h3>
-                    <p>Engineering plans dictate standard classes of structural support depending on the depth and surrounding geological stability:</p>
-
+                    <h3 style="font-size: 20px; margin-top: 25px; margin-bottom: 12px;">Standard Trench Bedding Classifications</h3>
                     <div class="table-wrapper">
                         <table class="field-table">
                             <thead>
@@ -115,8 +128,7 @@
                         </table>
                     </div>
 
-                    <h3 style="font-size: 20px; margin-top: 25px;">Field Geometry Specifications</h3>
-                    <p>To safely evaluate cover depth and manage proper trench width calculations on the fly, keep these metric rules locked down:</p>
+                    <h3 style="font-size: 20px; margin-top: 25px; margin-bottom: 12px;">Field Geometry Specifications</h3>
                     <div class="math-block">
                         Minimum Cover = 12 inches (Non-Traffic) | 24 inches (Under Heavy Pavement Base)
                     </div>
@@ -154,7 +166,7 @@
 
     <footer>
         <p>&copy; 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
-        <p><a href="../legal/privacy.html">Privacy</a> | <a href="../legal/terms.html">Terms</a></p>
+        <p><a href="../legal/privacy.html">Privacy Policy</a> | <a href="../legal/terms.html">Terms of Service</a></p>
     </footer>
 
     <script>

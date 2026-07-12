@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Privacy policy and data protection parameters for the TerraLogic industrial framework.">
+    <meta name="description" content="Data protection policies and local storage parameter tracking protocols for TerraLogic.">
     <title>Privacy Policy | TerraLogic</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .back-to-hub {
+            display: inline-block;
+            color: var(--steel);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+            transition: color 0.2s ease;
+        }
+        .back-to-hub:hover {
+            color: var(--text-main);
+        }
+        .legal-text p {
+            margin-bottom: 16px;
+            line-height: 1.6;
+            color: var(--steel);
+        }
+        .legal-text h3 {
+            color: var(--text-main);
+            margin-top: 24px;
+            margin-bottom: 12px;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
     <script>
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.classList.add('dark-mode');
@@ -22,24 +51,29 @@
 
     <div class="container">
         <main>
-            <article class="card">
-                <div class="card-tag">Data Security</div>
+            <article class="card legal-text">
+                <a href="../index.html" class="back-to-hub">← Return to Hub</a>
+                <div class="card-tag">Legal Framework</div>
                 <h1>Privacy Policy</h1>
-                <p><strong>Effective Date:</strong> July 12, 2026</p>
-                <p>TerraLogic operates as an independent technical reference database. We prioritize structural data integrity and operational transparency.</p>
+                <p><em>Last Updated: July 2026</em></p>
                 
-                <h3 style="font-size: 18px; margin-top: 20px;">1. Information Logging</h3>
-                <p>We do not require user accounts, profiling registration, or personal identity logging to access our engineering calculators. Any local storage utilization (such as saving your Field Mode preference) occurs strictly within your local machine environment.</p>
-                
-                <h3 style="font-size: 18px; margin-top: 20px;">2. Analytical Tracking</h3>
-                <p>Basic, non-identifying server metrics may log processing access paths solely to optimize server capacity, calculation engine speeds, and hosting uptime parameters across civil grid sectors.</p>
+                <p>TerraLogic operates on a strict transparency protocol. We build utilities for crews running iron and moving dirt, not for tracking personal search trends or selling profiling metrics.</p>
+
+                <h3>1. Local Environment Storage</h3>
+                <p>Our "Field Mode" theme system uses your browser's native `localStorage` cache to remember if you prefer the high-visibility dark mode interface layout. This data never leaves your device and is never synchronized with outside telemetry platforms.</p>
+
+                <h3>2. Calculation Parameters</h3>
+                <p>Data inputted into our localized utility modules (e.g., compaction percentages, trench dimensions, bank yardage conversions) is processed instantly within client-side memory. No calculation metrics are stored on external database servers or retained after the browser session closes.</p>
+
+                <h3>3. External Infrastructure Links</h3>
+                <p>This resource index may feature deep links to public state civil engineering specs or municipal design guidelines. We hold no administrative oversight over the data privacy policies running on third-party government or commercial servers.</p>
             </article>
         </main>
     </div>
 
     <footer>
         <p>&copy; 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
-        <p><a href="../index.html">Return Hub</a></p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
     </footer>
 
     <script>
