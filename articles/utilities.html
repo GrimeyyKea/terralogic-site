@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate structural elevation drops and slopes for gravity-fed civil drainage and stormwater pipe networks.">
     <title>Utility Systems | TerraLogic</title>
     <link rel="stylesheet" href="../css/style.css">
     <script>
@@ -24,18 +25,19 @@
             <main>
                 <article class="card">
                     <div class="card-tag">Utility Systems</div>
-                    <h1 style="font-family: 'Georgia', serif; font-size: 36px; margin-bottom: 20px;">Gravity Pipe Slope Calculations</h1>
-                    <p style="margin-bottom: 20px;">Proper pipe slopes prevent debris accumulation in gravity-fed stormwater systems while tracking invert elevations ensures exact exit runs.</p>
+                    <h1>Gravity Pipe Slope Calculations</h1>
+                    <p>Proper pipe slopes prevent debris accumulation in gravity-fed stormwater systems while tracking invert elevations ensures exact exit runs.</p>
+                    <p>Calculating the exact fall across extended horizontal lengths keeps engineering runs uniform and within construction tolerances.</p>
                 </article>
             </main>
             <aside>
-                <div class="ad-slot" style="text-align: left;">
+                <div class="ad-slot">
                     <h5>Fall Calculator</h5>
-                    <p style="font-size: 12px;">Calculate structural line drop across a specific run distance.</p>
+                    <p style="font-size: 12px; font-family: sans-serif; font-style: normal; color: var(--steel);">Calculate structural line drop across a specific run distance.</p>
                     <input type="number" id="runLength" placeholder="Run Length (Feet)" class="calc-input">
                     <input type="number" id="slopePct" placeholder="Target Slope %" class="calc-input">
                     <button onclick="runSlope()" class="calc-btn">CALCULATE FALL</button>
-                    <p id="slopeResult" style="margin-top: 15px; font-weight: bold; font-size: 14px;"></p>
+                    <p id="slopeResult" style="margin-top: 15px; font-weight: bold; font-size: 14px; margin-bottom: 0;"></p>
                 </div>
             </aside>
         </div>
@@ -43,7 +45,7 @@
 
     <footer>
         <p>&copy; 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
-        <p><a href="../index.html">Home</a></p>
+        <p><a href="../index.html">Return Hub</a></p>
     </footer>
 
     <script>
@@ -55,6 +57,7 @@
             document.getElementById('slopeResult').innerText = "Total Fall: " + fall + " Feet";
         }
 
+        // Theme sync
         function toggleFieldMode() {
             const root = document.documentElement;
             root.classList.toggle('dark-mode');
