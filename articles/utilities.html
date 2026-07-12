@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuclear Density Mechanics | TerraLogic</title>
+    <title>Utility Systems | TerraLogic</title>
     <link rel="stylesheet" href="../css/style.css">
     <script>
         if (localStorage.getItem('theme') === 'dark') {
@@ -23,19 +23,19 @@
         <div class="article-layout">
             <main>
                 <article class="card">
-                    <div class="card-tag">Quality Control</div>
-                    <h1 style="font-family: 'Georgia', serif; font-size: 36px; margin-bottom: 20px;">Nuclear Density Mechanics</h1>
-                    <p style="margin-bottom: 20px;">Verifying optimal moisture content (OMC) and maximum dry density via standard or modified Proctor testing ensures long-term foundation performance.</p>
+                    <div class="card-tag">Utility Systems</div>
+                    <h1 style="font-family: 'Georgia', serif; font-size: 36px; margin-bottom: 20px;">Gravity Pipe Slope Calculations</h1>
+                    <p style="margin-bottom: 20px;">Proper pipe slopes prevent debris accumulation in gravity-fed stormwater systems while tracking invert elevations ensures exact exit runs.</p>
                 </article>
             </main>
             <aside>
                 <div class="ad-slot" style="text-align: left;">
-                    <h5>Moisture Deviation</h5>
-                    <p style="font-size: 12px;">Calculate variation from optimum moisture content.</p>
-                    <input type="number" id="fieldMoisture" placeholder="Field Moisture %" class="calc-input">
-                    <input type="number" id="optMoisture" placeholder="Optimum Moisture %" class="calc-input">
-                    <button onclick="runMoisture()" class="calc-btn">CHECK DEVIATION</button>
-                    <p id="moistureResult" style="margin-top: 15px; font-weight: bold; font-size: 14px;"></p>
+                    <h5>Fall Calculator</h5>
+                    <p style="font-size: 12px;">Calculate structural line drop across a specific run distance.</p>
+                    <input type="number" id="runLength" placeholder="Run Length (Feet)" class="calc-input">
+                    <input type="number" id="slopePct" placeholder="Target Slope %" class="calc-input">
+                    <button onclick="runSlope()" class="calc-btn">CALCULATE FALL</button>
+                    <p id="slopeResult" style="margin-top: 15px; font-weight: bold; font-size: 14px;"></p>
                 </div>
             </aside>
         </div>
@@ -47,12 +47,12 @@
     </footer>
 
     <script>
-        function runMoisture() {
-            const field = document.getElementById('fieldMoisture').value;
-            const opt = document.getElementById('optMoisture').value;
-            if(!field || !opt) return;
-            const dev = (field - opt).toFixed(1);
-            document.getElementById('moistureResult').innerText = "Deviation: " + (dev > 0 ? "+" : "") + dev + "%";
+        function runSlope() {
+            const len = document.getElementById('runLength').value;
+            const slope = document.getElementById('slopePct').value;
+            if(!len || !slope) return;
+            const fall = (len * (slope / 100)).toFixed(2);
+            document.getElementById('slopeResult').innerText = "Total Fall: " + fall + " Feet";
         }
 
         function toggleFieldMode() {
