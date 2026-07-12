@@ -3,65 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article Title | TerraLogic</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Technical Guide | TerraLogic</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Article-specific grid adjustment */
+        @media (min-width: 768px) {
+            .article-layout {
+                display: grid;
+                grid-template-columns: 1fr 300px;
+                gap: 60px;
+                max-width: 1000px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 
- <header>
-        <div class="logo"><a href="index.html">TERRA<span>LOGIC</span></a></div>
+    <header>
+        <div class="logo"><a href="../index.html">TERRALOGIC</a></div>
     </header>
-    
-   <nav>
-        <button class="menu-toggle" aria-label="Toggle navigation">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
 
-        <ul class="nav-links">
-            <li><a href="#geotechnical">Geotechnical</a></li>
-            <li><a href="#grade-control">Grade Control</a></li>
-            <li><a href="#utilities">Utility Systems</a></li>
-            <li><a href="#logistics">Field Operations</a></li>
-        </ul>
-    </nav>
-
-    <div class="nav-accent-line"></div>
-
-    <div class="ad-leaderboard">AD_SLOT_ARTICLE_TOP_LEADERBOARD</div>
-
-    <div class="container">
+    <div class="article-layout">
+        
         <main>
-            <div class="breadcrumbs"><a href="index.html">Home</a> &gt; Technical Field Guides</div>
-            
-            <!-- INSERT ARTICLE TEXT HERE -->
+            <article>
+                <div class="card-tag">Technical Category</div>
+                <h1 style="font-family: 'Georgia', serif; font-size: 40px; margin-bottom: 20px;">Article Title</h1>
+                <p>Insert your technical field data here. This template is designed for high-density, professional engineering content.</p>
+                
+                <div class="hero-block" style="margin: 40px 0;"></div>
 
+                <h2 style="font-family: 'Georgia', serif; margin: 30px 0 15px;">Core Principles</h2>
+                <p>Detailed engineering specifications and methodology go here.</p>
+            </article>
         </main>
 
         <aside>
-            <div class="ad-sidebar">AD_SLOT_ARTICLE_SIDEBAR</div>
+            <div class="ad-slot" style="margin-bottom: 20px; text-align: left;">
+                <h5>Quick Calculator</h5>
+                <p style="font-size: 12px; margin-bottom: 15px; font-family: 'Georgia', serif;">Convert Bank to Compacted (1.25 factor).</p>
+                
+                <input type="number" id="bankYards" placeholder="Bank Yards" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd;">
+                <button onclick="calculate()" style="width: 100%; padding: 10px; background: #8B0000; color: white; border: none; cursor: pointer; font-weight: 800;">CALCULATE</button>
+                
+                <p id="result" style="margin-top: 15px; font-weight: bold;"></p>
+            </div>
         </aside>
     </div>
-<footer>
-        <div class="footer-container">
-            <div class="footer-brand">
-                <h4>TERRA<span>LOGIC</span></h4>
-                <p>High-fidelity field data, geotechnical reference frameworks, and structural earthwork metrics.</p>
-            </div>
-            <div class="footer-links">
-                <h5>Compliance & Documentation</h5>
-                <ul>
-                    <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="legal/terms.html">Terms of Service</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div>&copy; 2026 TerraLogic. All operational rights reserved.</div>
-            <div>Built for precision field engineering.</div>
-        </div>
+
+    <footer style="margin-top: 100px;">
+        <p>&copy; 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
     </footer>
+
+    <script>
+        function calculate() {
+            const bank = document.getElementById('bankYards').value;
+            const swellFactor = 1.25;
+            const compacted = (bank / swellFactor).toFixed(2);
+            document.getElementById('result').innerText = "Compacted: " + compacted + " Cubic Yards";
+        }
+    </script>
+
 </body>
 </html>
