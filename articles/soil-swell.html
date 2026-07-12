@@ -3,9 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Calculate soil swell factors and volume conversions between bank, loose, and compacted cubic yards for civil earthwork.">
+    <meta name="description" content="Master the critical transitions between Bank, Loose, and Compacted soil states during mass earthwork operations.">
     <title>Soil Swell & Volume Conversion | TerraLogic</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 24px 0;
+            border: 1px solid var(--border);
+            background: var(--body-bg);
+        }
+        .field-table {
+            width: 100%;
+            min-width: 650px;
+            border-collapse: collapse;
+        }
+        .field-table th {
+            background: var(--panel-bg);
+            color: var(--text-main);
+            text-align: left;
+            padding: 12px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--border);
+        }
+        .field-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            color: var(--steel);
+            vertical-align: top;
+            line-height: 1.4;
+        }
+        .math-block {
+            background: var(--panel-bg);
+            padding: 15px;
+            border-left: 3px solid var(--hazard-red);
+            font-family: monospace;
+            font-size: 13px;
+            margin: 15px 0;
+            color: var(--text-main);
+        }
+    </style>
     <script>
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.classList.add('dark-mode');
@@ -25,18 +66,78 @@
             <main>
                 <article class="card">
                     <div class="card-tag">Geotechnical</div>
-                    <h1>Soil Swell & Volume Conversion</h1>
+                    <h1>Soil Swell &amp; Volume Conversion</h1>
+                    
                     <p>In heavy civil earthwork, managing transitions between Bank (in-situ), Loose, and Compacted conditions directly determines haul logistics efficiency and structural accuracy.</p>
+                    
                     <p>Excavation introduces air pockets, increasing material volume (Swell). Mechanical compaction forces air out, reducing it below its original state (Shrinkage).</p>
+
+                    <h3 style="font-size: 20px; margin-top: 25px;">Material Factor Classifications</h3>
+                    <p>Standard conversions for volume tracking across different material profiles:</p>
+
+                    <div class="table-wrapper">
+                        <table class="field-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 30%;">Material Type</th>
+                                    <th style="width: 20%;">Swell Factor (Bank to Loose)</th>
+                                    <th style="width: 20%;">Shrinkage Factor (Bank to Compacted)</th>
+                                    <th style="width: 30%;">Load Factor (Typical)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Common Earth / Topsoil</strong></td>
+                                    <td>1.25 (25%)</td>
+                                    <td>0.85 (-15%)</td>
+                                    <td>0.80</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Heavy Structural Clay</strong></td>
+                                    <td>1.35 (35%)</td>
+                                    <td>0.90 (-10%)</td>
+                                    <td>0.74</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sand &amp; Fine Gravel</strong></td>
+                                    <td>1.12 (12%)</td>
+                                    <td>0.88 (-12%)</td>
+                                    <td>0.89</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Blasted Rock / Fragmented</strong></td>
+                                    <td>1.50 (50%)</td>
+                                    <td>1.30 (+30% Growth)</td>
+                                    <td>0.67</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 style="font-size: 20px; margin-top: 25px;">Core Equations</h3>
+                    <div class="math-block">
+                        Loose Cubic Yards (LCY) = Bank Cubic Yards (BCY) &times; (1 + Swell %)
+                    </div>
+                    <div class="math-block">
+                        Compacted Cubic Yards (CCY) = Bank Cubic Yards (BCY) &times; (1 - Shrinkage %)
+                    </div>
                 </article>
             </main>
+            
             <aside>
                 <div class="ad-slot">
                     <h5>Volume Calculator</h5>
-                    <p style="font-size: 12px; font-family: sans-serif; font-style: normal; color: var(--steel);">Convert Bank Yards to Compacted Yards (Assumes standard 1.25 load factor).</p>
-                    <input type="number" id="bankYards" placeholder="Enter Bank Yards" class="calc-input">
-                    <button onclick="runSwell()" class="calc-btn">CALCULATE CCY</button>
-                    <p id="swellResult" style="margin-top: 15px; font-weight: bold; font-size: 14px; margin-bottom: 0;"></p>
+                    <p style="font-size: 12px; font-family: sans-serif; font-style: normal; color: var(--steel); margin-bottom: 12px;">Convert Bank Yards to Compacted Yards (Assumes standard 0.85 shrinkage structural factor).</p>
+                    
+                    <label style="font-size: 10px; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 4px;">Enter Bank Yards (BCY)</label>
+                    <input type="number" id="bankYards" placeholder="e.g., 1000" class="calc-input">
+                    
+                    <button onclick="calculateVolume()" class="calc-btn">Calculate CCY</button>
+                    
+                    <div id="volumeOutputContainer" style="display: none; margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
+                        <p style="margin-bottom: 6px; font-size: 13px; color: var(--steel);">Resulting Compacted Volume:</p>
+                        <p id="volumeResult" style="font-weight: bold; font-size: 16px; color: var(--text-main); margin-bottom: 0;"></p>
+                    </div>
                 </div>
             </aside>
         </div>
@@ -44,18 +145,19 @@
 
     <footer>
         <p>&copy; 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
-        <p><a href="../index.html">Return Hub</a></p>
+        <p><a href="../legal/privacy.html">Privacy</a> | <a href="../legal/terms.html">Terms</a></p>
     </footer>
 
     <script>
-        function runSwell() {
-            const bank = document.getElementById('bankYards').value;
-            if(!bank) return;
-            const compacted = (bank / 1.25).toFixed(2);
-            document.getElementById('swellResult').innerText = compacted + " Compacted Yards (CCY)";
+        function calculateVolume() {
+            const bcy = parseFloat(document.getElementById('bankYards').value);
+            if(isNaN(bcy) || bcy <= 0) return;
+            
+            const ccy = bcy * 0.85;
+            document.getElementById('volumeResult').innerText = ccy.toFixed(0) + " CCY";
+            document.getElementById('volumeOutputContainer').style.display = 'block';
         }
 
-        /* Standardized Global Theme Controller */
         function toggleFieldMode() {
             const root = document.documentElement;
             root.classList.toggle('dark-mode');
