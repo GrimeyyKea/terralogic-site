@@ -5,19 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TerraLogic | Industrial Engineering Framework</title>
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        // Inline script executes instantly before DOM renders to prevent a bright white flash
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode-init');
+        }
+    </script>
+    <style>
+        /* Temporary bridge class to handle early rendering */
+        .dark-mode-init body { background-color: #0a0a0a; color: #f5f5f5; }
+    </style>
 </head>
 <body>
+
+    <script>
+        // Apply the actual class to the body if preference exists
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
 
     <header>
         <div class="logo"><a href="index.html">TERRALOGIC</a></div>
         <p class="tagline">Field-Hardened Data for Heavy Civil Operations</p>
+        <button class="theme-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
     </header>
 
     <nav>
-        <a href="#geotechnical">Geotechnical</a>
-        <a href="#grade-control">Grade Control</a>
-        <a href="#utilities">Utility Systems</a>
-        <a href="#operations">Operations</a>
+        <a href="articles/soil-swell.html">Geotechnical</a>
+        <a href="articles/density.html">Grade Control</a>
+        <a href="articles/utilities.html">Utility Systems</a>
+        <a href="articles/operations.html">Operations</a>
     </nav>
 
     <section class="hero-block"></section>
@@ -44,14 +62,42 @@
                     <p>Troubleshooting standard vs. modified Proctor curves and moisture-density anomalies in the field.</p>
                     <a href="articles/density.html" class="card-link">Access Data</a>
                 </article>
+
+                <article class="card">
+                    <div class="card-tag">Utility Systems</div>
+                    <h3>Gravity Pipe & Pressure Systems</h3>
+                    <p>Ensuring minimum cover requirements and bedding support for HDPE and RCP installations.</p>
+                    <a href="articles/utilities.html" class="card-link">Access Data</a>
+                </article>
+
+                <article class="card">
+                    <div class="card-tag">Operations</div>
+                    <h3>Site Operations & Logistics</h3>
+                    <p>Managing equipment fleet uptime, cycle times, and haul logistics for high-output civil projects.</p>
+                    <a href="articles/operations.html" class="card-link">Access Data</a>
+                </article>
             </div>
         </main>
     </div>
 
     <footer>
         <p>&copy; 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
-        <p><a href="legal/privacy-policy.html">Privacy</a> | <a href="legal/terms.html">Terms</a></p>
+        <p><a href="#">Privacy</a> | <a href="#">Terms</a></p>
     </footer>
+
+    <script>
+        function toggleFieldMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+            
+            // Save state for persistence across visits
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        }
+    </script>
 
 </body>
 </html>
