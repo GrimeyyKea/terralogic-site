@@ -72,7 +72,7 @@
                     
                     <p>Balancing your haul fleet capacity against the load execution system limits downtime and structural fuel loss across high-volume grading tracks.</p>
 
-                    <h3 style="**font-size: 20px; margin-top: 25px;**">Bucket Fill Factor Reference</h3>
+                    <h3 style="font-size: 20px; margin-top: 25px;">Bucket Fill Factor Reference</h3>
                     <p>Varying geological conditions alter the efficiency of excavator and loader operations:</p>
 
                     <div class="table-wrapper">
@@ -148,7 +148,6 @@
             
             if(isNaN(capacity) || isNaN(cycle) || capacity <= 0 || cycle <= 0) return;
             
-            // Assume 50-minute operational hour efficiency index
             const tripsPerHour = 50 / cycle;
             const productionPerHour = tripsPerHour * capacity;
             

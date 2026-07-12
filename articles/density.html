@@ -7,26 +7,35 @@
     <title>Nuclear Density Mechanics & Proctor Curves | TerraLogic</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 24px 0;
+            border: 1px solid var(--border);
+            background: var(--body-bg);
+        }
         .field-table {
             width: 100%;
+            min-width: 650px;
             border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 13px;
         }
         .field-table th {
             background: var(--panel-bg);
             color: var(--text-main);
             text-align: left;
-            padding: 10px;
+            padding: 12px;
             font-weight: 800;
             letter-spacing: 0.5px;
             text-transform: uppercase;
             border-bottom: 2px solid var(--border);
         }
         .field-table td {
-            padding: 10px;
+            padding: 12px;
             border-bottom: 1px solid var(--border);
             color: var(--steel);
+            vertical-align: top;
+            line-height: 1.4;
         }
         .math-block {
             background: var(--panel-bg);
@@ -74,36 +83,38 @@
                     <p>Water acts as a structural lubricant during earthwork operations. Too little water, and internal friction prevents the soil particles from packing together tightly. Too much water, and the hydrostatic pressure pushes the particles apart, causing the fill pad to pump under heavy equipment tracks.</p>
                     <p>The peak of the Proctor curve represents the <strong>Optimum Moisture Content (OMC)</strong>—the precise moisture percentage where the soil achieves its absolute maximum dry density under a given compactive effort.</p>
 
-                    <table class="field-table">
-                        <thead>
-                            <tr>
-                                <th>Soil Classification</th>
-                                <th>Typical Max Dry Density</th>
-                                <th>Typical OMC Range</th>
-                                <th>Field Compaction Strategy</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Crushed Stone / Dense Base</td>
-                                <td>130 - 145 pcf</td>
-                                <td>6% - 10%</td>
-                                <td>Vibratory smooth-drum, tight moisture control</td>
-                            </tr>
-                            <tr>
-                                <td>Silty Sand / Fine Gravel</td>
-                                <td>110 - 130 pcf</td>
-                                <td>9% - 14%</td>
-                                <td>Pneumatic or vibratory rollers, swift passes</td>
-                            </tr>
-                            <tr>
-                                <td>Heavy Dynamic Clay</td>
-                                <td>90 - 115 pcf</td>
-                                <td>15% - 25%</td>
-                                <td>Padfoot / Sheepsfoot roller to knead soil lifts</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-wrapper">
+                        <table class="field-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 25%;">Soil Classification</th>
+                                    <th style="width: 20%;">Typical Max Dry Density</th>
+                                    <th style="width: 20%;">Typical OMC Range</th>
+                                    <th style="width: 35%;">Field Compaction Strategy</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Crushed Stone / Dense Base</strong></td>
+                                    <td>130 - 145 pcf</td>
+                                    <td>6% - 10%</td>
+                                    <td>Vibratory smooth-drum, tight moisture control</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Silty Sand / Fine Gravel</strong></td>
+                                    <td>110 - 130 pcf</td>
+                                    <td>9% - 14%</td>
+                                    <td>Pneumatic or vibratory rollers, swift passes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Heavy Dynamic Clay</strong></td>
+                                    <td>90 - 115 pcf</td>
+                                    <td>15% - 25%</td>
+                                    <td>Padfoot / Sheepsfoot roller to knead soil lifts</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <h3 style="font-size: 20px; margin-top: 25px;">The Field Compaction Math</h3>
                     <p>Nuclear density gauges measure total wet density and moisture content directly from the gamma ray backscatter path. To find the dry density and confirm compliance, the system processes these parameters:</p>
@@ -156,9 +167,7 @@
             
             if(isNaN(wet) || isNaN(moisture) || isNaN(maxDry) || maxDry <= 0) return;
             
-            // Calculate Dry Density
             const dryDensity = wet / (1 + (moisture / 100));
-            // Calculate Percent Compaction
             const percentCompaction = (dryDensity / maxDry) * 100;
             
             document.getElementById('dryDensityResult').innerText = dryDensity.toFixed(1) + " PCF";
@@ -166,11 +175,10 @@
             const resultElement = document.getElementById('compactionResult');
             resultElement.innerText = percentCompaction.toFixed(1) + "% Compaction";
             
-            // Highlight hazard red if under-compacted (typical threshold 95%)
             if (percentCompaction < 95.0) {
                 resultElement.style.color = "var(--hazard-red)";
             } else {
-                resultElement.style.color = "#4caf50"; // Clean operational green
+                resultElement.style.color = "#4caf50";
             }
             
             document.getElementById('densityOutputContainer').style.display = 'block';
