@@ -3,210 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Understand Proctor curves, optimum moisture content, and nuclear density testing parameters for civil subgrade compaction.">
-    <title>Nuclear Density Mechanics & Proctor Curves | TerraLogic</title>
+    <title>Nuclear Density Mechanics - Terralogic</title>
     <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .back-to-hub {
-            display: inline-block;
-            color: var(--steel);
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 20px;
-            transition: color 0.2s ease;
-        }
-        .back-to-hub:hover {
-            color: var(--text-main);
-        }
-        .table-wrapper {
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            margin: 24px 0;
-            border: 1px solid var(--border);
-            background: var(--body-bg);
-        }
-        .field-table {
-            width: 100%;
-            min-width: 650px;
-            border-collapse: collapse;
-        }
-        .field-table th {
-            background: var(--panel-bg);
-            color: var(--text-main);
-            text-align: left;
-            padding: 12px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            border-bottom: 2px solid var(--border);
-        }
-        .field-table td {
-            padding: 12px;
-            border-bottom: 1px solid var(--border);
-            color: var(--steel);
-            vertical-align: top;
-            line-height: 1.4;
-        }
-        .math-block {
-            background: var(--panel-bg);
-            padding: 15px;
-            border-left: 3px solid var(--hazard-red);
-            font-family: monospace;
-            font-size: 13px;
-            margin: 15px 0;
-            color: var(--text-main);
-        }
-    </style>
-    <script>
-        if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.classList.add('dark-mode');
-        }
-    </script>
 </head>
 <body>
 
     <header>
-        <div class="logo"><a href="../index.html">TERRALOGIC</a></div>
-        <p class="tagline">Field-Hardened Data for Heavy Civil Operations</p>
-        <button class="theme-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+        <div class="container" style="padding: 0;">
+            <h1><a href="../index.html">Terralogic</a></h1>
+            <p>Field-Hardened Data for Heavy Civil Operations</p>
+            <button class="btn-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+        </div>
     </header>
 
     <div class="container">
+        <div class="ad-space">[Advertisement Space - Top Article Unit]</div>
+
         <div class="article-layout">
-            <main>
-                <article class="card">
-                    <a href="../index.html" class="back-to-hub">← Return to Hub</a>
-                    <div class="card-tag">Quality Control</div>
-                    <h1>Nuclear Density Mechanics &amp; Proctor Curves</h1>
-                    
-                    <p>Achieving structural subgrade stability depends entirely on a simple balancing act: matching your compaction energy to the material's exact moisture profile. Whether you are rolling out a heavy structural fill pad or proof-rolling a utility trench backfill, hitting the target density keeps the project from sinking later.</p>
-                    
-                    <p>When engineering specs demand 95% or 98% compaction, they are referencing a baseline established in a laboratory environment: the Proctor Test. Understanding how to read these curves in the field determines whether you pass the nuclear density gauge test or spend the afternoon discing and drying out pumping dirt.</p>
+            <div class="article-body">
+                <div class="badge">Quality Control</div>
+                <h2>Field Moisture and Proctor Balances</h2>
+                <p>To build stable foundations, structural fills must reach engineered targets. Quality control inspectors utilize nuclear density gauges to measure structural soil parameters directly inside active work zones.</p>
+                
+                <h3>Why Moisture Matters:</h3>
+                <p>Water acts as a mechanical lubricant during compaction. Too little moisture leaves high friction between dirt particles; too much moisture fills empty void pockets completely, preventing proper compaction because water cannot compress.</p>
+                <p>The **Proctor Curve** establishes the sweet spot, identifying the **Optimum Moisture Content** required to achieve maximum dry structural configurations.</p>
+            </div>
 
-                    <h3 style="font-size: 20px; margin-top: 25px; margin-bottom: 12px;">Standard vs. Modified Proctor Curves</h3>
-                    <p>Depending on the load requirements of the final structure, engineering standards will specify one of two baseline tests:</p>
-                    <ul style="margin-bottom: 20px;">
-                        <li style="margin-left: 20px; margin-bottom: 8px;"><strong>Standard Proctor (ASTM D698):</strong> Simulates historical compaction equipment footprint impacts. Ideal for light commercial grading, embankments, and non-structural greenways.</li>
-                        <li style="margin-left: 20px; margin-bottom: 8px;"><strong>Modified Proctor (ASTM D1557):</strong> Applies roughly four times the compaction energy. This is the absolute benchmark for heavy highway subgrades, airport runways, and deep structural building pads.</li>
-                    </ul>
-
-                    <h3 style="font-size: 20px; margin-top: 25px; margin-bottom: 12px;">Optimum Moisture Content (OMC)</h3>
-                    <p>Water acts as a structural lubricant during earthwork operations. Too little water, and internal friction prevents the soil particles from packing together tightly. Too much water, and the hydrostatic pressure pushes the particles apart, causing the fill pad to pump under heavy equipment tracks.</p>
-                    <p>The peak of the Proctor curve represents the Optimum Moisture Content (OMC)—the precise moisture percentage where the soil achieves its absolute maximum dry density under a given compactive effort.</p>
-
-                    <div class="table-wrapper">
-                        <table class="field-table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 25%;">Soil Classification</th>
-                                    <th style="width: 20%;">Typical Max Dry Density</th>
-                                    <th style="width: 20%;">Typical OMC Range</th>
-                                    <th style="width: 35%;">Field Compaction Strategy</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Crushed Stone / Dense Base</strong></td>
-                                    <td>130 - 145 pcf</td>
-                                    <td>6% - 10%</td>
-                                    <td>Vibratory smooth-drum, tight moisture control</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Silty Sand / Fine Gravel</strong></td>
-                                    <td>110 - 130 pcf</td>
-                                    <td>9% - 14%</td>
-                                    <td>Pneumatic or vibratory rollers, swift passes</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Heavy Dynamic Clay</strong></td>
-                                    <td>90 - 115 pcf</td>
-                                    <td>15% - 25%</td>
-                                    <td>Padfoot / Sheepsfoot roller to knead soil lifts</td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <div>
+                <div class="calc-box">
+                    <h3>Compaction Verification</h3>
+                    <div class="calc-group">
+                        <label>Lab Max Dry Density (pcf)</label>
+                        <input type="number" id="max-dry" value="115.0" step="0.1">
                     </div>
-
-                    <h3 style="font-size: 20px; margin-top: 25px; margin-bottom: 12px;">The Field Compaction Math</h3>
-                    <p>Nuclear density gauges measure total wet density and moisture content directly from the gamma ray backscatter path. To find the dry density and confirm compliance, the system processes these parameters:</p>
-                    <div class="math-block">
-                        Dry Density = Wet Density / (1 + (Moisture % / 100))
+                    <div class="calc-group">
+                        <label>Field Wet Density Gauge Reading (pcf)</label>
+                        <input type="number" id="wet-den" value="121.5" step="0.1">
                     </div>
-                    <div class="math-block">
-                        % Compaction = (Field Dry Density / Proctor Max Dry Density) * 100
+                    <div class="calc-group">
+                        <label>Field Moisture Content (%)</label>
+                        <input type="number" id="moist-pct" value="10.5" step="0.1">
                     </div>
-                </article>
-            </main>
-            
-            <aside>
-                <div class="ad-slot">
-                    <h5>Compaction Checker</h5>
-                    <p style="font-size: 12px; font-family: sans-serif; font-style: normal; color: var(--steel); margin-bottom: 12px;">Input your nuclear gauge field readouts alongside the lab Proctor target to instantly calculate structural compliance.</p>
+                    <button class="calc-btn" onclick="calcDensity()">Run Density Check</button>
                     
-                    <label style="font-size: 10px; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 4px;">Gauge Wet Density (PCF)</label>
-                    <input type="number" id="wetDensity" placeholder="e.g., 128.5" class="calc-input" step="0.1">
-                    
-                    <label style="font-size: 10px; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 4px; margin-top: 10px;">Gauge Moisture Content (%)</label>
-                    <input type="number" id="moistureContent" placeholder="e.g., 12.2" class="calc-input" step="0.1">
-                    
-                    <label style="font-size: 10px; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 4px; margin-top: 10px;">Lab Max Dry Density (PCF)</label>
-                    <input type="number" id="maxDryDensity" placeholder="e.g., 118.0" class="calc-input" step="0.1">
-                    
-                    <button onclick="runCompaction()" class="calc-btn">Verify Subgrade Compliance</button>
-                    
-                    <div id="densityOutputContainer" style="display: none; margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
-                        <p style="margin-bottom: 6px; font-size: 13px; color: var(--steel);">Calculated Field Dry Density:</p>
-                        <p id="dryDensityResult" style="font-weight: bold; font-size: 15px; color: var(--text-main); margin-bottom: 12px;"></p>
-                        <p style="margin-bottom: 6px; font-size: 13px; color: var(--steel);">Compaction Rating:</p>
-                        <p id="compactionResult" style="font-weight: bold; font-size: 16px; margin-bottom: 0;"></p>
-                    </div>
+                    <div id="output" class="calc-result" style="display:none;"></div>
                 </div>
-            </aside>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
+        <p>© 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
         <p><a href="../legal/privacy.html">Privacy Policy</a> | <a href="../legal/terms.html">Terms of Service</a></p>
     </footer>
 
+    <script src="../js/main.js"></script>
     <script>
-        function runCompaction() {
-            const wet = parseFloat(document.getElementById('wetDensity').value);
-            const moisture = parseFloat(document.getElementById('moistureContent').value);
-            const maxDry = parseFloat(document.getElementById('maxDryDensity').value);
-            
-            if(isNaN(wet) || isNaN(moisture) || isNaN(maxDry) || maxDry <= 0) return;
-            
-            const dryDensity = wet / (1 + (moisture / 100));
-            const percentCompaction = (dryDensity / maxDry) * 100;
-            
-            document.getElementById('dryDensityResult').innerText = dryDensity.toFixed(1) + " PCF";
-            
-            const resultElement = document.getElementById('compactionResult');
-            resultElement.innerText = percentCompaction.toFixed(1) + "% Compaction";
-            
-            if (percentCompaction < 95.0) {
-                resultElement.style.color = "var(--hazard-red)";
-            } else {
-                resultElement.style.color = "#4caf50";
-            }
-            
-            document.getElementById('densityOutputContainer').style.display = 'block';
-        }
+        function calcDensity() {
+            const maxDry = parseFloat(document.getElementById('max-dry').value);
+            const wet = parseFloat(document.getElementById('wet-den').value);
+            const moisture = parseFloat(document.getElementById('moist-pct').value);
 
-        function toggleFieldMode() {
-            const root = document.documentElement;
-            root.classList.toggle('dark-mode');
-            if (root.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
+            if(isNaN(maxDry) || isNaN(wet) || isNaN(moisture)) return;
+
+            const fieldDry = wet / (1 + (moisture / 100));
+            const compaction = (fieldDry / maxDry) * 100;
+            const passes = compaction >= 95.0;
+
+            const out = document.getElementById('output');
+            out.style.display = "block";
+            out.innerHTML = `
+                <strong>Field Dry Density:</strong> ${fieldDry.toFixed(1)} pcf<br>
+                <strong>Compaction Value:</strong> ${compaction.toFixed(1)}%<br>
+                <strong>Status:</strong> <span style="color:${passes ? '#10b981' : '#ef4444'}; font-weight:bold;">${passes ? 'PASSED' : 'FAILED'}</span><br>
+                <div class="step-explanation">
+                    <strong>Simple Explanation:</strong> The gauge registers the total weight including water. To find the true dry structural value, we remove the water content mathematically. Your result shows whether your layer clears the typical 95% threshold required to build on safely.
+                </div>
+            `;
         }
     </script>
 </body>

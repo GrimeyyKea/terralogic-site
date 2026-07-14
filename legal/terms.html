@@ -3,89 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Terms of Service and industrial asset protection clauses for TerraLogic data tools.">
-    <title>Terms of Service | TerraLogic</title>
+    <title>Terms of Service - Terralogic</title>
     <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .back-to-hub {
-            display: inline-block;
-            color: var(--steel);
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 20px;
-            transition: color 0.2s ease;
-        }
-        .back-to-hub:hover {
-            color: var(--text-main);
-        }
-        .legal-text p {
-            margin-bottom: 16px;
-            line-height: 1.6;
-            color: var(--steel);
-        }
-        .legal-text h3 {
-            color: var(--text-main);
-            margin-top: 24px;
-            margin-bottom: 12px;
-            font-size: 18px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-    </style>
-    <script>
-        if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.classList.add('dark-mode');
-        }
-    </script>
 </head>
 <body>
-
     <header>
-        <div class="logo"><a href="../index.html">TERRALOGIC</a></div>
-        <p class="tagline">Field-Hardened Data for Heavy Civil Operations</p>
-        <button class="theme-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+        <div class="container" style="padding: 0;">
+            <h1><a href="../index.html">Terralogic</a></h1>
+            <p>Field-Hardened Data for Heavy Civil Operations</p>
+        </div>
     </header>
-
     <div class="container">
-        <main>
-            <article class="card legal-text">
-                <a href="../index.html" class="back-to-hub">← Return to Hub</a>
-                <div class="card-tag">Legal Framework</div>
-                <h1>Terms of Service</h1>
-                <p><em>Last Updated: July 2026</em></p>
-                
-                <p>Welcome to TerraLogic. By accessing our field calculation utilities, volume conversion metrics, and geotechnical baseline datasets, you agree to comply with and be bound by the following operational terms.</p>
-
-                <h3>1. Proprietary Material &amp; Data Rights</h3>
-                <p>All formulas, math models, custom UI elements, and data tables deployed across this platform are the property of TERRALOGIC. Industrial assets are fully protected. Unauthorized framing, scraping, or mirroring of these tools for commercial enterprise software platforms without written clearance is prohibited.</p>
-
-                <h3>2. Field Operations &amp; Liability Disclaimer</h3>
-                <p>TerraLogic field tools are designed as reference frameworks for heavy civil operations (dirt work, mass excavations, utility tracking). Variations in real-world soil composition, moisture anomalies, and machine hydraulic power mean all readouts should be verified against structural engineering specifications before final execution.</p>
-
-                <h3>3. System Modifications</h3>
-                <p>We reserve the right to modify site modules, update conversion coefficients, or patch data vulnerabilities at a moment's notice to ensure field safety and platform uptime.</p>
-            </article>
-        </main>
+        <h2 class="section-title">Terms of Service</h2>
+        <p>All calculations generated using this platform serve informational and educational purposes only. Field teams must verify output data parameters against official engineer-of-record documentation and local project specifications before making formal construction installations.</p>
     </div>
-
     <footer>
-        <p>&copy; 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
-        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        <p>© 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
     </footer>
-
-    <script>
-        function toggleFieldMode() {
-            const root = document.documentElement;
-            root.classList.toggle('dark-mode');
-            if (root.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
-        }
-    </script>
 </body>
 </html>

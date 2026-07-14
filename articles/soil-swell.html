@@ -3,182 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Master the critical transitions between Bank, Loose, and Compacted soil states during mass earthwork operations.">
-    <title>Soil Swell & Volume Conversion | TerraLogic</title>
+    <title>Soil Swell & Volume Conversion - Terralogic</title>
     <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .back-to-hub {
-            display: inline-block;
-            color: var(--steel);
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 20px;
-            transition: color 0.2s ease;
-        }
-        .back-to-hub:hover {
-            color: var(--text-main);
-        }
-        .table-wrapper {
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            margin: 24px 0;
-            border: 1px solid var(--border);
-            background: var(--body-bg);
-        }
-        .field-table {
-            width: 100%;
-            min-width: 650px;
-            border-collapse: collapse;
-        }
-        .field-table th {
-            background: var(--panel-bg);
-            color: var(--text-main);
-            text-align: left;
-            padding: 12px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            border-bottom: 2px solid var(--border);
-        }
-        .field-table td {
-            padding: 12px;
-            border-bottom: 1px solid var(--border);
-            color: var(--steel);
-            vertical-align: top;
-            line-height: 1.4;
-        }
-        .math-block {
-            background: var(--panel-bg);
-            padding: 15px;
-            border-left: 3px solid var(--hazard-red);
-            font-family: monospace;
-            font-size: 13px;
-            margin: 15px 0;
-            color: var(--text-main);
-        }
-    </style>
-    <script>
-        if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.classList.add('dark-mode');
-        }
-    </script>
 </head>
 <body>
 
     <header>
-        <div class="logo"><a href="../index.html">TERRALOGIC</a></div>
-        <p class="tagline">Field-Hardened Data for Heavy Civil Operations</p>
-        <button class="theme-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+        <div class="container" style="padding: 0;">
+            <h1><a href="../index.html">Terralogic</a></h1>
+            <p>Field-Hardened Data for Heavy Civil Operations</p>
+            <button class="btn-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+        </div>
     </header>
 
     <div class="container">
+        <div class="ad-space">[Advertisement Space - Top Article Unit]</div>
+
         <div class="article-layout">
-            <main>
-                <article class="card">
-                    <a href="../index.html" class="back-to-hub">← Return to Hub</a>
-                    <div class="card-tag">Geotechnical</div>
-                    <h1>Soil Swell &amp; Volume Conversion</h1>
-                    
-                    <p>In heavy civil earthwork, managing transitions between Bank (in-situ), Loose, and Compacted conditions directly determines haul logistics efficiency and structural accuracy.</p>
-                    
-                    <p>Excavation introduces air pockets, increasing material volume (Swell). Mechanical compaction forces air out, reducing it below its original state (Shrinkage).</p>
+            <div class="article-body">
+                <div class="badge">Geotechnical</div>
+                <h2>Understanding Earthwork Volume States</h2>
+                <p>In heavy civil operations, dirt is never just dirt. Soil changes its total volume significantly depending on whether it is sitting untouched in the ground, piled up in a haul truck, or rolled over and compressed by a heavy compactor.</p>
+                
+                <h3>The Three Main States:</h3>
+                <p><strong>1. Bank Cubic Yards (BCY):</strong> Earth in its natural state before any excavation occurs.</p>
+                <p><strong>2. Loose Cubic Yards (LCY):</strong> Earth that has been dug up. Air voids enter the material causing it to "swell" in size.</p>
+                <p><strong>3. Compacted Cubic Yards (CCY):</strong> Earth that has been placed and compressed by machinery, forcing air out and making it denser than its original state.</p>
+                
+                <div class="ad-space">[In-Article Dynamic Content Ad]</div>
+            </div>
 
-                    <h3 style="font-size: 20px; margin-top: 25px; margin-bottom: 12px;">Material Factor Classifications</h3>
-                    <div class="table-wrapper">
-                        <table class="field-table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 30%;">Material Type</th>
-                                    <th style="width: 20%;">Swell Factor (Bank to Loose)</th>
-                                    <th style="width: 20%;">Shrinkage Factor (Bank to Compacted)</th>
-                                    <th style="width: 30%;">Load Factor (Typical)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Common Earth / Topsoil</strong></td>
-                                    <td>1.25 (25%)</td>
-                                    <td>0.85 (-15%)</td>
-                                    <td>0.80</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Heavy Structural Clay</strong></td>
-                                    <td>1.35 (35%)</td>
-                                    <td>0.90 (-10%)</td>
-                                    <td>0.74</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Sand &amp; Fine Gravel</strong></td>
-                                    <td>1.12 (12%)</td>
-                                    <td>0.88 (-12%)</td>
-                                    <td>0.89</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Blasted Rock / Fragmented</strong></td>
-                                    <td>1.50 (50%)</td>
-                                    <td>1.30 (+30% Growth)</td>
-                                    <td>0.67</td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <div>
+                <div class="calc-box">
+                    <h3>Swell & Conversion Tool</h3>
+                    <div class="calc-group">
+                        <label>Bank Volume (BCY)</label>
+                        <input type="number" id="bank-vol" value="100">
                     </div>
-
-                    <h3 style="font-size: 20px; margin-top: 25px; margin-bottom: 12px;">Core Equations</h3>
-                    <div class="math-block">
-                        Loose Cubic Yards (LCY) = Bank Cubic Yards (BCY) &times; (1 + Swell %)
+                    <div class="calc-group">
+                        <label>Swell Percentage (%)</label>
+                        <input type="number" id="swell-pct" value="25">
                     </div>
-                    <div class="math-block">
-                        Compacted Cubic Yards (CCY) = Bank Cubic Yards (BCY) &times; (1 - Shrinkage %)
+                    <div class="calc-group">
+                        <label>Shrinkage Percentage (%)</label>
+                        <input type="number" id="shrink-pct" value="10">
                     </div>
-                </article>
-            </main>
-            
-            <aside>
-                <div class="ad-slot">
-                    <h5>Volume Calculator</h5>
-                    <p style="font-size: 12px; font-family: sans-serif; font-style: normal; color: var(--steel); margin-bottom: 12px;">Convert Bank Yards to Compacted Yards (Assumes standard 0.85 structural shrinkage factor).</p>
+                    <button class="calc-btn" onclick="calcSwell()">Run Calculations</button>
                     
-                    <label style="font-size: 10px; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 4px;">Enter Bank Yards (BCY)</label>
-                    <input type="number" id="bankYards" placeholder="e.g., 1000" class="calc-input">
-                    
-                    <button onclick="calculateVolume()" class="calc-btn">Calculate CCY</button>
-                    
-                    <div id="volumeOutputContainer" style="display: none; margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
-                        <p style="margin-bottom: 6px; font-size: 13px; color: var(--steel);">Resulting Compacted Volume:</p>
-                        <p id="volumeResult" style="font-weight: bold; font-size: 16px; color: var(--text-main); margin-bottom: 0;"></p>
-                    </div>
+                    <div id="output" class="calc-result" style="display:none;"></div>
                 </div>
-            </aside>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
+        <p>© 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
         <p><a href="../legal/privacy.html">Privacy Policy</a> | <a href="../legal/terms.html">Terms of Service</a></p>
     </footer>
 
+    <script src="../js/main.js"></script>
     <script>
-        function calculateVolume() {
-            const bcy = parseFloat(document.getElementById('bankYards').value);
-            if(isNaN(bcy) || bcy <= 0) return;
+        function calcSwell() {
+            const bcy = parseFloat(document.getElementById('bank-vol').value);
+            const swell = parseFloat(document.getElementById('swell-pct').value);
+            const shrink = parseFloat(document.getElementById('shrink-pct').value);
             
-            const ccy = bcy * 0.85;
-            document.getElementById('volumeResult').innerText = ccy.toFixed(0) + " CCY";
-            document.getElementById('volumeOutputContainer').style.display = 'block';
-        }
+            if(isNaN(bcy) || isNaN(swell) || isNaN(shrink)) return;
 
-        function toggleFieldMode() {
-            const root = document.documentElement;
-            root.classList.toggle('dark-mode');
-            if (root.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
+            const lcy = bcy * (1 + (swell / 100));
+            const ccy = bcy * (1 - (shrink / 100));
+            const lf = 1 / (1 + (swell / 100));
+
+            const out = document.getElementById('output');
+            out.style.display = "block";
+            out.innerHTML = `
+                <strong>Loose Volume (LCY):</strong> ${lcy.toFixed(2)} Yds<br>
+                <strong>Compacted Volume (CCY):</strong> ${ccy.toFixed(2)} Yds<br>
+                <strong>Load Factor:</strong> ${lf.toFixed(3)}<br>
+                <div class="step-explanation">
+                    <strong>Simple Explanation:</strong> If you dig up ${bcy} yards of undisturbed ground, it swells up to ${lcy} loose yards in your truck because of trapped air. When you roll it back into place on the fill site, it shrinks down to ${ccy} yards.
+                </div>
+            `;
         }
     </script>
 </body>

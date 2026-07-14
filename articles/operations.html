@@ -3,179 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Optimize cycle times, equipment utilization models, and payload logistical targets for civil earthwork fleets.">
-    <title>Site Operations & Fleet Logistics | TerraLogic</title>
+    <title>Fleet Production Logistics - Terralogic</title>
     <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .back-to-hub {
-            display: inline-block;
-            color: var(--steel);
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 20px;
-            transition: color 0.2s ease;
-        }
-        .back-to-hub:hover {
-            color: var(--text-main);
-        }
-        .table-wrapper {
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            margin: 24px 0;
-            border: 1px solid var(--border);
-            background: var(--body-bg);
-        }
-        .field-table {
-            width: 100%;
-            min-width: 650px;
-            border-collapse: collapse;
-        }
-        .field-table th {
-            background: var(--panel-bg);
-            color: var(--text-main);
-            text-align: left;
-            padding: 12px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            border-bottom: 2px solid var(--border);
-        }
-        .field-table td {
-            padding: 12px;
-            border-bottom: 1px solid var(--border);
-            color: var(--steel);
-            vertical-align: top;
-            line-height: 1.4;
-        }
-        .math-block {
-            background: var(--panel-bg);
-            padding: 15px;
-            border-left: 3px solid var(--hazard-red);
-            font-family: monospace;
-            font-size: 13px;
-            margin: 15px 0;
-            color: var(--text-main);
-        }
-    </style>
-    <script>
-        if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.classList.add('dark-mode');
-        }
-    </script>
 </head>
 <body>
 
     <header>
-        <div class="logo"><a href="../index.html">TERRALOGIC</a></div>
-        <p class="tagline">Field-Hardened Data for Heavy Civil Operations</p>
-        <button class="theme-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+        <div class="container" style="padding: 0;">
+            <h1><a href="../index.html">Terralogic</a></h1>
+            <p>Field-Hardened Data for Heavy Civil Operations</p>
+            <button class="btn-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+        </div>
     </header>
 
     <div class="container">
+        <div class="ad-space">[Advertisement Space - Top Article Unit]</div>
+
         <div class="article-layout">
-            <main>
-                <article class="card">
-                    <a href="../index.html" class="back-to-hub">← Return to Hub</a>
-                    <div class="card-tag">Operations</div>
-                    <h1>Site Operations &amp; Logistics Optimization</h1>
-                    
-                    <p>High-output civil earthwork operations are governed directly by equipment cycle times and target payload matching. Maximizing efficiency requires keeping mechanical assets moving continuously without hitting bottlenecks at the excavation cut or the fill pad.</p>
-                    
-                    <p>Balancing your haul fleet capacity against the load execution system limits downtime and structural fuel loss across high-volume grading tracks.</p>
+            <div class="article-body">
+                <div class="badge">Operations</div>
+                <h2>Maximizing Machine Cycle Production</h2>
+                <p>Keeping expensive machinery productive requires constant monitoring. If haul trucks line up waiting at an excavator, you are burning fuel and profits. Conversely, if your excavator sits idle waiting for haulers to return, your project schedule slips.</p>
+                
+                <h3>Key Logistics Factors:</h3>
+                <p><strong>Bucket Fill Efficiencies:</strong> Loose soils load easily, while hard rock clumps create gaps that reduce effective volume per pass.</p>
+                <p><strong>Cycle Optimization:</strong> Fleet balancing relies on aligning machine cycle profiles to maintain a smooth, continuous flow of material across the site.</p>
+            </div>
 
-                    <h3 style="font-size: 20px; margin-top: 25px; margin-bottom: 12px;">Bucket Fill Factor Reference</h3>
-                    <div class="table-wrapper">
-                        <table class="field-table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 35%;">Material Condition</th>
-                                    <th style="width: 30%;">Hydraulic Bucket Fill Factor</th>
-                                    <th style="width: 35%;">Operational Cycle Target</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Loose Granular Sand / Gravel</strong></td>
-                                    <td>95% - 100%</td>
-                                    <td>Fast penetration, optimal bucket retention</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Natural In-Situ Bank Earth</strong></td>
-                                    <td>80% - 90%</td>
-                                    <td>Standard cutting force required, clean break</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Hard Blasted Rock</strong></td>
-                                    <td>50% - 70%</td>
-                                    <td>High structural void count, massive cycle resistance</td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <div>
+                <div class="calc-box">
+                    <h3>Production Optimization</h3>
+                    <div class="calc-group">
+                        <label>Bucket Nominal Size (Cubic Yards)</label>
+                        <input type="number" id="b-size" value="4.0" step="0.1">
                     </div>
-
-                    <h3 style="font-size: 20px; margin-top: 25px; margin-bottom: 12px;">Haul Performance Math</h3>
-                    <div class="math-block">
-                        Total Haul Cycle = Load Time + Haul Time + Dump Time + Return Time
+                    <div class="calc-group">
+                        <label>Fill Factor Efficiency (%)</label>
+                        <input type="number" id="f-factor" value="85">
                     </div>
-                    <div class="math-block">
-                        Hourly Production = (Minutes Worked per Hour / Total Cycle) &times; Payload Volume
+                    <div class="calc-group">
+                        <label>Total Cycle Time (Minutes)</label>
+                        <input type="number" id="c-time" value="15" step="0.5">
                     </div>
-                </article>
-            </main>
-            
-            <aside>
-                <div class="ad-slot">
-                    <h5>Fleet Cycle Checker</h5>
-                    <p style="font-size: 12px; font-family: sans-serif; font-style: normal; color: var(--steel); margin-bottom: 12px;">Track target fleet volume output based on active heavy truck cycle durations.</p>
+                    <button class="calc-btn" onclick="calcFleet()">Measure Output</button>
                     
-                    <label style="font-size: 10px; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 4px;">Truck Capacity (Loose Yards)</label>
-                    <input type="number" id="truckCapacity" placeholder="e.g., 18" class="calc-input">
-                    
-                    <label style="font-size: 10px; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 4px; margin-top: 10px;">Total Round Trip Cycle (Minutes)</label>
-                    <input type="number" id="cycleMinutes" placeholder="e.g., 12" class="calc-input" step="0.1">
-                    
-                    <button onclick="runFleetCalc()" class="calc-btn">Verify Fleet Production</button>
-                    
-                    <div id="fleetOutputContainer" style="display: none; margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
-                        <p style="margin-bottom: 6px; font-size: 13px; color: var(--steel);">Hourly Output Per Hauler:</p>
-                        <p id="fleetResult" style="font-weight: bold; font-size: 16px; color: var(--text-main); margin-bottom: 0;"></p>
-                    </div>
+                    <div id="output" class="calc-result" style="display:none;"></div>
                 </div>
-            </aside>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
+        <p>© 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
         <p><a href="../legal/privacy.html">Privacy Policy</a> | <a href="../legal/terms.html">Terms of Service</a></p>
     </footer>
 
+    <script src="../js/main.js"></script>
     <script>
-        function runFleetCalc() {
-            const capacity = parseFloat(document.getElementById('truckCapacity').value);
-            const cycle = parseFloat(document.getElementById('cycleMinutes').value);
-            
-            if(isNaN(capacity) || isNaN(cycle) || capacity <= 0 || cycle <= 0) return;
-            
-            const tripsPerHour = 50 / cycle;
-            const productionPerHour = tripsPerHour * capacity;
-            
-            document.getElementById('fleetResult').innerText = productionPerHour.toFixed(0) + " LCY / Hour";
-            document.getElementById('fleetOutputContainer').style.display = 'block';
-        }
+        function calcFleet() {
+            const size = parseFloat(document.getElementById('b-size').value);
+            const factor = parseFloat(document.getElementById('f-factor').value);
+            const cycle = parseFloat(document.getElementById('c-time').value);
 
-        function toggleFieldMode() {
-            const root = document.documentElement;
-            root.classList.toggle('dark-mode');
-            if (root.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
+            if(isNaN(size) || isNaN(factor) || isNaN(cycle)) return;
+
+            const effectiveCap = size * (factor / 100);
+            const tripsPerHour = 60 / cycle;
+            const productionPerHour = effectiveCap * tripsPerHour;
+
+            const out = document.getElementById('output');
+            out.style.display = "block";
+            out.innerHTML = `
+                <strong>Real Payload Size:</strong> ${effectiveCap.toFixed(2)} Yds/Pass<br>
+                <strong>Estimated Volume:</strong> ${productionPerHour.toFixed(1)} Cubic Yards/Hour<br>
+                <div class="step-explanation">
+                    <strong>Simple Explanation:</strong> The bucket doesn't always fill perfectly, so we use a fill factor to find the true payload size. Divide 60 minutes by your total trip time to see how many cycles run per hour, then multiply by payload size to find total hourly output.
+                </div>
+            `;
         }
     </script>
 </body>

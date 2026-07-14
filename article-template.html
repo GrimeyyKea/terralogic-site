@@ -3,68 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical Guide | TerraLogic</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        /* Article-specific grid adjustment */
-        @media (min-width: 768px) {
-            .article-layout {
-                display: grid;
-                grid-template-columns: 1fr 300px;
-                gap: 60px;
-                max-width: 1000px;
-                margin: 0 auto;
-                padding: 0 20px;
-            }
-        }
-    </style>
+    <title>Template Title - Terralogic</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <header>
-        <div class="logo"><a href="../index.html">TERRALOGIC</a></div>
+        <div class="container" style="padding: 0;">
+            <h1><a href="index.html">Terralogic</a></h1>
+            <p>Field-Hardened Data for Heavy Civil Operations</p>
+            <button class="btn-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+        </div>
     </header>
 
-    <div class="article-layout">
-        
-        <main>
-            <article>
-                <div class="card-tag">Technical Category</div>
-                <h1 style="font-family: 'Georgia', serif; font-size: 40px; margin-bottom: 20px;">Article Title</h1>
-                <p>Insert your technical field data here. This template is designed for high-density, professional engineering content.</p>
-                
-                <div class="hero-block" style="margin: 40px 0;"></div>
+    <div class="container">
+        <div class="ad-space">[Advertisement Space]</div>
 
-                <h2 style="font-family: 'Georgia', serif; margin: 30px 0 15px;">Core Principles</h2>
-                <p>Detailed engineering specifications and methodology go here.</p>
-            </article>
-        </main>
-
-        <aside>
-            <div class="ad-slot" style="margin-bottom: 20px; text-align: left;">
-                <h5>Quick Calculator</h5>
-                <p style="font-size: 12px; margin-bottom: 15px; font-family: 'Georgia', serif;">Convert Bank to Compacted (1.25 factor).</p>
-                
-                <input type="number" id="bankYards" placeholder="Bank Yards" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd;">
-                <button onclick="calculate()" style="width: 100%; padding: 10px; background: #8B0000; color: white; border: none; cursor: pointer; font-weight: 800;">CALCULATE</button>
-                
-                <p id="result" style="margin-top: 15px; font-weight: bold;"></p>
+        <div class="article-layout">
+            <div class="article-body">
+                <div class="badge">Category</div>
+                <h2>Article Headline Title Goes Here</h2>
+                <p>Core instructional text paragraph one goes here...</p>
+                <p>Core instructional text paragraph two goes here...</p>
             </div>
-        </aside>
+
+            <div>
+                <div class="calc-box">
+                    <h3>Calculator Title</h3>
+                    <div class="calc-group">
+                        <label>Input Label Description</label>
+                        <input type="number" id="sample-input" value="0">
+                    </div>
+                    <button class="calc-btn" onclick="runTemplateCalc()">Calculate</button>
+                    <div id="output" class="calc-result" style="display:none;"></div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <footer style="margin-top: 100px;">
-        <p>&copy; 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
+    <footer>
+        <p>© 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
     </footer>
 
+    <script src="js/main.js"></script>
     <script>
-        function calculate() {
-            const bank = document.getElementById('bankYards').value;
-            const swellFactor = 1.25;
-            const compacted = (bank / swellFactor).toFixed(2);
-            document.getElementById('result').innerText = "Compacted: " + compacted + " Cubic Yards";
+        function runTemplateCalc() {
+            // Future module logic blocks go here
         }
     </script>
-
 </body>
 </html>

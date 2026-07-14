@@ -3,73 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Civil earthwork parameters, field calculation tools, and logistics reference models.">
-    <title>TerraLogic Hub | Heavy Civil Operations</title>
+    <title>TERRALOGIC - Heavy Civil Dashboard</title>
     <link rel="stylesheet" href="css/style.css">
-    <script>
-        if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.classList.add('dark-mode');
-        }
-    </script>
 </head>
 <body>
 
     <header>
-        <div class="logo"><a href="index.html">TERRALOGIC</a></div>
-        <p class="tagline">Field-Hardened Data for Heavy Civil Operations</p>
-        <button class="theme-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+        <div class="container" style="padding: 0;">
+            <h1><a href="index.html">Terralogic</a></h1>
+            <p>Field-Hardened Data for Heavy Civil Operations</p>
+            <button class="btn-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+        </div>
     </header>
 
     <div class="container">
-        <h2 style="margin-bottom: 24px; font-size: 22px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-main);">Operational Field Modules</h2>
-        <div class="grid">
-            
+        <div class="ad-space">[Advertisement Space - Header Dashboard Banner]</div>
+
+        <h2 class="section-title">Operational Field Modules</h2>
+
+        <div class="module-grid">
             <div class="card">
-                <div class="card-tag">Geotechnical</div>
-                <h3>Soil Swell &amp; Volume Conversion</h3>
-                <p>Track load factors and volume growth transitions between bank, loose, and compacted material profiles seamlessly.</p>
-                <a href="articles/soil-swell.html" class="card-link">Launch Module →</a>
+                <div>
+                    <div class="badge">Geotechnical</div>
+                    <h3>Soil Swell & Volume Conversion</h3>
+                    <p>Track load factors and volume growth transitions between bank, loose, and compacted material profiles seamlessly.</p>
+                </div>
+                <a href="articles/soil-swell.html" class="btn-launch">Launch Module ➔</a>
             </div>
 
             <div class="card">
-                <div class="card-tag">Quality Control</div>
-                <h3>Nuclear Density Mechanics</h3>
-                <p>Analyze Standard and Modified Proctor curves alongside optimal moisture controls to confirm field subgrade compaction parameters.</p>
-                <a href="articles/density.html" class="card-link">Launch Module →</a>
+                <div>
+                    <div class="badge">Quality Control</div>
+                    <h3>Nuclear Density Mechanics</h3>
+                    <p>Analyze Standard and Modified Proctor curves alongside optimal moisture controls directly in the field to hit compaction specifications.</p>
+                </div>
+                <a href="articles/density.html" class="btn-launch">Launch Module ➔</a>
             </div>
 
             <div class="card">
-                <div class="card-tag">Utility Systems</div>
-                <h3>Trench &amp; Bedding Layouts</h3>
-                <p>Verify structural bedding categories, outer diameters, and minimum depth cover clearances for rigid and flexible utility networks.</p>
-                <a href="articles/utilities.html" class="card-link">Launch Module →</a>
+                <div>
+                    <div class="badge">Utility Systems</div>
+                    <h3>Trench & Bedding Layouts</h3>
+                    <p>Verify structural bedding categories, outer diameters, and minimum depth cover clearances for rigid and flexible utility networks.</p>
+                </div>
+                <a href="articles/utilities.html" class="btn-launch">Launch Module ➔</a>
             </div>
 
             <div class="card">
-                <div class="card-tag">Operations</div>
-                <h3>Fleet Production Logistics</h3>
-                <p>Calculate bucket fill efficiency and heavy haul asset round-trip cycles to protect site grading performance margins.</p>
-                <a href="articles/operations.html" class="card-link">Launch Module →</a>
+                <div>
+                    <div class="badge">Operations</div>
+                    <h3>Fleet Production Logistics</h3>
+                    <p>Calculate bucket fill efficiency and heavy haul asset round-trip cycles to protect site grading performance margins.</p>
+                </div>
+                <a href="articles/operations.html" class="btn-launch">Launch Module ➔</a>
             </div>
-
         </div>
+
+        <div class="ad-space">[Advertisement Space - Footer Dashboard Banner]</div>
     </div>
 
     <footer>
-        <p>&copy; 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
-        <p><a href="legal/privacy.html">Privacy Policy</a> | <a href="legal/terms.html">Terms of Service</a></p>
+        <p>© 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
+        <p>
+            <a href="legal/privacy.html">Privacy Policy</a> | <a href="legal/terms.html">Terms of Service</a>
+        </p>
     </footer>
 
-    <script>
-        function toggleFieldMode() {
-            const root = document.documentElement;
-            root.classList.toggle('dark-mode');
-            if (root.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
-        }
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

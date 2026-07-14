@@ -3,210 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Calculate minimum cover requirements, trench layout parameters, and structural bedding classes for RCP and HDPE pipe installations.">
-    <title>Utility Systems & Bedding Mechanics | TerraLogic</title>
+    <title>Trench & Bedding Layouts - Terralogic</title>
     <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .back-to-hub {
-            display: inline-block;
-            color: var(--steel);
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 20px;
-            transition: color 0.2s ease;
-        }
-        .back-to-hub:hover {
-            color: var(--text-main);
-        }
-        .table-wrapper {
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            margin: 24px 0;
-            border: 1px solid var(--border);
-            background: var(--body-bg);
-        }
-        .field-table {
-            width: 100%;
-            min-width: 650px;
-            border-collapse: collapse;
-        }
-        .field-table th {
-            background: var(--panel-bg);
-            color: var(--text-main);
-            text-align: left;
-            padding: 12px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            border-bottom: 2px solid var(--border);
-        }
-        .field-table td {
-            padding: 12px;
-            border-bottom: 1px solid var(--border);
-            color: var(--steel);
-            vertical-align: top;
-            line-height: 1.4;
-        }
-        .math-block {
-            background: var(--panel-bg);
-            padding: 15px;
-            border-left: 3px solid var(--hazard-red);
-            font-family: monospace;
-            font-size: 13px;
-            margin: 15px 0;
-            color: var(--text-main);
-        }
-    </style>
-    <script>
-        if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.classList.add('dark-mode');
-        }
-    </script>
 </head>
 <body>
 
     <header>
-        <div class="logo"><a href="../index.html">TERRALOGIC</a></div>
-        <p class="tagline">Field-Hardened Data for Heavy Civil Operations</p>
-        <button class="theme-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+        <div class="container" style="padding: 0;">
+            <h1><a href="../index.html">Terralogic</a></h1>
+            <p>Field-Hardened Data for Heavy Civil Operations</p>
+            <button class="btn-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+        </div>
     </header>
 
     <div class="container">
+        <div class="ad-space">[Advertisement Space - Top Article Unit]</div>
+
         <div class="article-layout">
-            <main>
-                <article class="card">
-                    <a href="../index.html" class="back-to-hub">← Return to Hub</a>
-                    <div class="card-tag">Utility Systems</div>
-                    <h1>Gravity Pipe &amp; Pressure Bedding Mechanics</h1>
-                    
-                    <p>Burying utility pipe runs is a battle against dead loads and live traffic impacts. If a trench is dug incorrectly or backfilled with poor material, the structural weight of the earth above will crush the line, causing catastrophic structural joint failure or massive ground settling.</p>
-                    
-                    <p>Preventing system failure requires managing two critical vectors in the field: Minimum Cover Depth to buffer dynamic live loads and Bedding Class Selection to evenly distribute static soil pressure around the pipe envelope.</p>
+            <div class="article-body">
+                <div class="badge">Utility Systems</div>
+                <h2>Excavation Spatials and Backfill Geometry</h2>
+                <p>Installing underground utilities safely requires strict balancing of trench geometry to avoid collapse while minimizing unnecessary excavation overheads.</p>
+                
+                <h3>Key Operational Factors:</h3>
+                <p><strong>Trench Width:</strong> Must remain wide enough to safely receive piping links and compact the surrounding structural bedding gravel, while staying narrow enough to reduce handling costs.</p>
+                <p><strong>Bedding Foundation:</strong> Well-graded crushed stone structural rings stabilize cross-sections, preventing utility settling under structural loads over time.</p>
+            </div>
 
-                    <h3 style="font-size: 20px; margin-top: 25px; margin-bottom: 12px;">Rigid vs. Flexible Pipe Behavior</h3>
-                    <p>The type of pipe material completely dictates how structural loads are distributed down in the trench:</p>
-                    <ul style="margin-bottom: 20px;">
-                        <li style="margin-left: 20px; margin-bottom: 8px;"><strong>Rigid Pipe (Reinforced Concrete Pipe - RCP):</strong> The pipe inherently carries the vast majority of the load, relying on its brute cross-sectional strength. If the bottom support isn't uniform, the pipe bells will crack under pressure.</li>
-                        <li style="margin-left: 20px; margin-bottom: 8px;"><strong>Flexible Pipe (HDPE / PVC):</strong> The pipe shifts and flexes under load, transferring the weight outwards into the surrounding trench walls. Because of this, the placement and density of the side-fill stone (haunching) is critical to prevent the pipe from flattening.</li>
-                    </ul>
-
-                    <h3 style="font-size: 20px; margin-top: 25px; margin-bottom: 12px;">Standard Trench Bedding Classifications</h3>
-                    <div class="table-wrapper">
-                        <table class="field-table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 25%;">Bedding Class</th>
-                                    <th style="width: 30%;">Material Profile</th>
-                                    <th style="width: 15%;">Bedding Factor</th>
-                                    <th style="width: 30%;">Field Application Focus</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Class A (Concrete Cradle)</strong></td>
-                                    <td>Poured plain or reinforced concrete arch</td>
-                                    <td>2.8 - 4.8</td>
-                                    <td>Extreme depth runs or high-impact pavement crossings</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Class B (First Class)</strong></td>
-                                    <td>Clean crushed stone base with packed haunches</td>
-                                    <td>1.9</td>
-                                    <td>Standard mainline sanitary sewer and deep storm lines</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Class C (Ordinary)</strong></td>
-                                    <td>Granular foundation layer with loose backfill</td>
-                                    <td>1.5</td>
-                                    <td>Shallow drainage leads, non-traffic zones</td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <div>
+                <div class="calc-box">
+                    <h3>Trench Yield Volumetrics</h3>
+                    <div class="calc-group">
+                        <label>Trench Width (Inches)</label>
+                        <input type="number" id="t-width" value="36">
                     </div>
-
-                    <h3 style="font-size: 20px; margin-top: 25px; margin-bottom: 12px;">Field Geometry Specifications</h3>
-                    <div class="math-block">
-                        Minimum Cover = 12 inches (Non-Traffic) | 24 inches (Under Heavy Pavement Base)
+                    <div class="calc-group">
+                        <label>Average Depth (Feet)</label>
+                        <input type="number" id="t-depth" value="6">
                     </div>
-                    <div class="math-block">
-                        Standard Trench Width = Outer Pipe Diameter + 16 inches (Minimum clearance for proper haunch compaction)
+                    <div class="calc-group">
+                        <label>Run Length (Feet)</label>
+                        <input type="number" id="t-length" value="100">
                     </div>
-                </article>
-            </main>
-            
-            <aside>
-                <div class="ad-slot">
-                    <h5>Trench Safety &amp; Cover Tool</h5>
-                    <p style="font-size: 12px; font-family: sans-serif; font-style: normal; color: var(--steel); margin-bottom: 12px;">Calculate total excavation depth, check minimum cover safety parameters, and establish required trench box clearances.</p>
+                    <button class="calc-btn" onclick="calcTrench()">Calculate Excavation</button>
                     
-                    <label style="font-size: 10px; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 4px;">Pipe Internal Diameter (Inches)</label>
-                    <input type="number" id="pipeID" placeholder="e.g., 24" class="calc-input">
-                    
-                    <label style="font-size: 10px; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 4px; margin-top: 10px;">Depth to Pipe Invert / Flowline (Feet)</label>
-                    <input type="number" id="invertDepth" placeholder="e.g., 6.5" class="calc-input" step="0.1">
-                    
-                    <button onclick="runUtilityCalc()" class="calc-btn">Analyze Trench Parameters</button>
-                    
-                    <div id="utilityOutputContainer" style="display: none; margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
-                        <p style="margin-bottom: 6px; font-size: 13px; color: var(--steel);">Calculated Effective Cover Depth:</p>
-                        <p id="coverResult" style="font-weight: bold; font-size: 15px; color: var(--text-main); margin-bottom: 12px;"></p>
-                        <p style="margin-bottom: 6px; font-size: 13px; color: var(--steel);">Minimum Safe Trench Width:</p>
-                        <p id="widthResult" style="font-weight: bold; font-size: 15px; color: var(--text-main); margin-bottom: 12px;"></p>
-                        <p style="margin-bottom: 6px; font-size: 13px; color: var(--steel);">Traffic Status Assessment:</p>
-                        <p id="safetyStatus" style="font-weight: bold; font-size: 16px; margin-bottom: 0;"></p>
-                    </div>
+                    <div id="output" class="calc-result" style="display:none;"></div>
                 </div>
-            </aside>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
+        <p>© 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
         <p><a href="../legal/privacy.html">Privacy Policy</a> | <a href="../legal/terms.html">Terms of Service</a></p>
     </footer>
 
+    <script src="../js/main.js"></script>
     <script>
-        function runUtilityCalc() {
-            const pipeIdInches = parseFloat(document.getElementById('pipeID').value);
-            const invertDepthFeet = parseFloat(document.getElementById('invertDepth').value);
-            
-            if(isNaN(pipeIdInches) || isNaN(invertDepthFeet) || pipeIdInches <= 0 || invertDepthFeet <= 0) return;
-            
-            const pipeODInches = pipeIdInches + 5;
-            const pipeODFeet = pipeODInches / 12;
-            
-            const coverFeet = invertDepthFeet - pipeODFeet;
-            const coverInches = coverFeet * 12;
-            const minWidthInches = pipeODInches + 16;
-            
-            document.getElementById('coverResult').innerText = coverFeet.toFixed(2) + " Feet (" + coverInches.toFixed(0) + " Inches)";
-            document.getElementById('widthResult').innerText = minWidthInches + " Inches (" + (minWidthInches / 12).toFixed(1) + " FT)";
-            
-            const statusElement = document.getElementById('safetyStatus');
-            
-            if (coverInches < 24.0) {
-                statusElement.innerText = "CRITICAL: Insufficient for Traffic Loads";
-                statusElement.style.color = "var(--hazard-red)";
-            } else {
-                statusElement.innerText = "SAFE: Compliant Structural Deep Cover";
-                statusElement.style.color = "#4caf50";
-            }
-            
-            document.getElementById('utilityOutputContainer').style.display = 'block';
-        }
+        function calcTrench() {
+            const widthInches = parseFloat(document.getElementById('t-width').value);
+            const depth = parseFloat(document.getElementById('t-depth').value);
+            const length = parseFloat(document.getElementById('t-length').value);
 
-        function toggleFieldMode() {
-            const root = document.documentElement;
-            root.classList.toggle('dark-mode');
-            if (root.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
+            if(isNaN(widthInches) || isNaN(depth) || isNaN(length)) return;
+
+            const widthFeet = widthInches / 12;
+            const totalCubicYards = (widthFeet * depth * length) / 27;
+
+            const out = document.getElementById('output');
+            out.style.display = "block";
+            out.innerHTML = `
+                <strong>Trench Width:</strong> ${widthFeet.toFixed(2)} Feet<br>
+                <strong>Total Material Excavated:</strong> ${totalCubicYards.toFixed(1)} CY<br>
+                <div class="step-explanation">
+                    <strong>Simple Explanation:</strong> Convert inches to feet by dividing by 12. Next, multiply width by depth and length to find total volume in cubic feet. Finally, divide by 27 to find how many cubic yards of soil you need to haul out or store.
+                </div>
+            `;
         }
     </script>
 </body>
