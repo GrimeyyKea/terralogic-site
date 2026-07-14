@@ -26,9 +26,11 @@
                 <p>In heavy civil operations, dirt is never just dirt. Soil changes its total volume significantly depending on whether it is sitting untouched in the ground, piled up in a haul truck, or rolled over and compressed by a heavy compactor.</p>
                 
                 <h3>The Three Main States:</h3>
-                <p><strong>1. Bank Cubic Yards (BCY):</strong> Earth in its natural state before any excavation occurs.</p>
-                <p><strong>2. Loose Cubic Yards (LCY):</strong> Earth that has been dug up. Air voids enter the material causing it to "swell" in size.</p>
-                <p><strong>3. Compacted Cubic Yards (CCY):</strong> Earth that has been placed and compressed by machinery, forcing air out and making it denser than its original state.</p>
+                <ul>
+                    <li><strong>Bank Cubic Yards (BCY):</strong> Earth in its natural state before any excavation occurs. Engineering plans utilize BCY values for primary mass-haul balances.</li>
+                    <li><strong>Loose Cubic Yards (LCY):</strong> Earth that has been dug up. Air voids enter the material causing it to "swell" in size during truck loading.</li>
+                    <li><strong>Compacted Cubic Yards (CCY):</strong> Earth that has been placed and compressed by machinery, forcing air out and making it denser than its original state.</li>
+                </ul>
                 
                 <div class="ad-space">[In-Article Dynamic Content Ad]</div>
             </div>
@@ -38,15 +40,15 @@
                     <h3>Swell & Conversion Tool</h3>
                     <div class="calc-group">
                         <label>Bank Volume (BCY)</label>
-                        <input type="number" id="bank-vol" value="100">
+                        <input type="number" id="bank-vol" value="100" inputmode="numeric">
                     </div>
                     <div class="calc-group">
                         <label>Swell Percentage (%)</label>
-                        <input type="number" id="swell-pct" value="25">
+                        <input type="number" id="swell-pct" value="25" inputmode="numeric">
                     </div>
                     <div class="calc-group">
                         <label>Shrinkage Percentage (%)</label>
-                        <input type="number" id="shrink-pct" value="10">
+                        <input type="number" id="shrink-pct" value="10" inputmode="numeric">
                     </div>
                     <button class="calc-btn" onclick="calcSwell()">Run Calculations</button>
                     

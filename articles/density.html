@@ -28,6 +28,8 @@
                 <h3>Why Moisture Matters:</h3>
                 <p>Water acts as a mechanical lubricant during compaction. Too little moisture leaves high friction between dirt particles; too much moisture fills empty void pockets completely, preventing proper compaction because water cannot compress.</p>
                 <p>The **Proctor Curve** establishes the sweet spot, identifying the **Optimum Moisture Content** required to achieve maximum dry structural configurations.</p>
+                
+                <div class="ad-space">[In-Article Dynamic Content Ad]</div>
             </div>
 
             <div>
@@ -35,15 +37,15 @@
                     <h3>Compaction Verification</h3>
                     <div class="calc-group">
                         <label>Lab Max Dry Density (pcf)</label>
-                        <input type="number" id="max-dry" value="115.0" step="0.1">
+                        <input type="number" id="max-dry" value="115.0" step="0.1" inputmode="decimal">
                     </div>
                     <div class="calc-group">
-                        <label>Field Wet Density Gauge Reading (pcf)</label>
-                        <input type="number" id="wet-den" value="121.5" step="0.1">
+                        <label>Field Wet Density Reading (pcf)</label>
+                        <input type="number" id="wet-den" value="121.5" step="0.1" inputmode="decimal">
                     </div>
                     <div class="calc-group">
                         <label>Field Moisture Content (%)</label>
-                        <input type="number" id="moist-pct" value="10.5" step="0.1">
+                        <input type="number" id="moist-pct" value="10.5" step="0.1" inputmode="decimal">
                     </div>
                     <button class="calc-btn" onclick="calcDensity()">Run Density Check</button>
                     

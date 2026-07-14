@@ -1,11 +1,11 @@
-// Check and apply Field Mode setting when page loads
+// Sync and enforce Field Mode layout across page transitions
 document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('fieldMode') === 'enabled') {
         document.body.classList.add('field-mode');
     }
 });
 
-// Global toggle option
+// Primary trigger function for dashboard and article views
 function toggleFieldMode() {
     document.body.classList.toggle('field-mode');
     if (document.body.classList.contains('field-mode')) {

@@ -1,4 +1,4 @@
-/* Design Variables */
+/* Design System Variables */
 :root {
     --bg-primary: #f8f9fa;
     --bg-card: #ffffff;
@@ -10,7 +10,6 @@
     --btn-dark-hover: #0f172a;
     --border-color: #e5e7eb;
     --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
-    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
 }
 
 /* High-Contrast Field Mode Override */
@@ -48,7 +47,7 @@ body {
     padding: 20px;
 }
 
-/* UI - Header Layout */
+/* Header Layout */
 header {
     background-color: var(--bg-card);
     padding: 30px 20px;
@@ -188,14 +187,35 @@ body.field-mode .btn-toggle {
     color: var(--text-muted);
 }
 
+.article-body h3 {
+    margin: 20px 0 10px 0;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+.article-body ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    color: var(--text-muted);
+}
+
+.article-body li {
+    margin-bottom: 8px;
+}
+
 /* Interactive Calculator Elements */
 .calc-box {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     padding: 25px;
     border-radius: 4px;
-    position: sticky;
-    top: 20px;
+}
+
+@media (min-width: 900px) {
+    .calc-box {
+        position: sticky;
+        top: 20px;
+    }
 }
 
 .calc-box h3 {
@@ -220,22 +240,29 @@ body.field-mode .btn-toggle {
 
 .calc-group input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid var(--border-color);
     background-color: var(--bg-primary);
     color: var(--text-main);
     font-weight: 600;
+    font-size: 1rem;
 }
 
 .calc-btn {
     background-color: var(--accent-orange);
     color: #ffffff;
     border: none;
-    padding: 12px;
+    padding: 14px;
     width: 100%;
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+.calc-btn:hover {
+    background-color: var(--accent-orange-hover);
 }
 
 .calc-result {
@@ -244,10 +271,11 @@ body.field-mode .btn-toggle {
     background-color: var(--bg-primary);
     border-left: 4px solid var(--accent-orange);
     font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 .step-explanation {
-    margin-top: 10px;
+    margin-top: 12px;
     font-size: 0.8rem;
     color: var(--text-muted);
     border-top: 1px solid var(--border-color);
@@ -269,4 +297,9 @@ footer a {
     color: var(--text-muted);
     text-decoration: none;
     margin: 0 8px;
+    font-weight: 600;
+}
+
+footer a:hover {
+    color: var(--accent-orange);
 }
