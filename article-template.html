@@ -3,52 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template Title - Terralogic</title>
-    <link rel="stylesheet" href="css/style.css?v=1.0.1">
+    <title>New Tool Name | Terralogic Infrastructure Solutions</title>
+    <link rel="stylesheet" href="../css/style.css?v=1.0.1">
+    <style>
+        /* Specific page overrides can go here */
+        .badge { background-color: var(--corp-blue); padding: 5px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+    </style>
 </head>
 <body>
 
-    <header>
-        <div class="container" style="padding: 0;">
-            <h1><a href="index.html">Terralogic</a></h1>
-            <p>Field-Hardened Data for Heavy Civil Operations</p>
-            <button class="btn-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+    <nav class="corp-navbar">
+        <div class="corp-nav-container">
+            <a href="../index.html" class="corp-brand">Terralogic<span>.</span> Infrastructure</a>
         </div>
-    </header>
+    </nav>
 
     <div class="container">
-        <div class="ad-space">Loading Advertising Banner...</div>
-
         <div class="article-layout">
             <div class="article-body">
-                <div class="badge">Category</div>
-                <h2>Article Headline Title Goes Here</h2>
-                <p>Core instructional text paragraph one goes here...</p>
-                <p>Core instructional text paragraph two goes here...</p>
+                <div class="badge">Tool Category</div>
+                <h2>Article Title</h2>
+                <p>Insert technical documentation and engineering context here.</p>
             </div>
 
             <div>
                 <div class="calc-box">
                     <h3>Calculator Title</h3>
-                    <div class="calc-group">
-                        <label>Input Label Description</label>
-                        <input type="number" id="sample-input" value="0" inputmode="numeric">
-                    </div>
-                    <button class="calc-btn" onclick="runTemplateCalc()">Calculate</button>
+                    <button class="calc-btn" onclick="performCalc()">Execute Calculation</button>
                     <div id="output" class="calc-result" style="display:none;"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer>
-        <p>© 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
-    </footer>
-
-    <script src="js/main.js?v=1.0.1"></script>
+    <script src="../js/main.js?v=1.0.1"></script>
     <script>
-        function runTemplateCalc() {
-            // Future module logic blocks go here
+        function performCalc() {
+            // Calculator logic
         }
     </script>
 </body>

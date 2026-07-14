@@ -3,98 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>TERRALOGIC - Heavy Civil Engineering & Earthwork Calculators</title>
-    <meta name="description" content="Field-hardened civil engineering calculators for quick on-site structural estimations. Calculate soil swell balances, nuclear density passes, trench yields, and fleet logistics.">
-    <meta name="keywords" content="civil engineering, soil swell, proctor density, trench excavation, fleet production, earthwork calculators">
-    <meta name="robots" content="index, follow">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://grimeyykea.github.io/">
-    <meta property="og:title" content="TERRALOGIC - Heavy Civil Field Dashboard">
-    <meta property="og:description" content="Instant, client-side calculator suites designed specifically for active heavy civil construction project sites.">
-    <meta property="og:image" content="https://grimeyykea.github.io/assets/og-dashboard-preview.jpg">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://grimeyykea.github.io/">
-    <meta property="twitter:title" content="TERRALOGIC - Heavy Civil Field Dashboard">
-    <meta property="twitter:description" content="Instant, client-side calculator suites designed specifically for active heavy civil construction project sites.">
-    <meta property="twitter:image" content="https://grimeyykea.github.io/assets/og-dashboard-preview.jpg">
-
+    <title>Terralogic Infrastructure Solutions | Global Field Dashboard</title>
+    <meta name="description" content="Central execution control deck for heavy civil field operations, earthwork volumetrics, and linear site utility structural calculations.">
     <link rel="stylesheet" href="css/style.css?v=1.0.1">
+    <style>
+        :root {
+            --corp-blue: #1e3a8a;
+            --corp-gold: #b45309;
+            --panel-dark: #1e293b;
+            --border-light: #334155;
+        }
+        body { background-color: #0f172a; color: #f8fafc; font-family: sans-serif; margin: 0; }
+        .corp-navbar { background-color: #0f172a; border-bottom: 2px solid var(--corp-gold); padding: 15px 0; }
+        .corp-nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .corp-brand { font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #f8fafc; text-decoration: none; font-size: 1.4rem; }
+        .corp-brand span { color: var(--corp-gold); }
+        .dashboard-header { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-left: 4px solid var(--corp-gold); padding: 30px; border-radius: 6px; margin: 30px 0; }
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 40px; }
+        .tool-card { background-color: #0f172a; border: 1px solid var(--border-light); border-radius: 6px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; }
+        .tool-card h3 { margin-top: 0; color: #f8fafc; }
+        .tool-card p { color: #94a3b8; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px; }
+        .btn-launch { background-color: var(--corp-blue); color: #ffffff; padding: 10px 18px; border-radius: 4px; text-decoration: none; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; text-align: center; }
+        footer { background-color: #0f172a; color: #94a3b8; padding: 20px 0; font-size: 0.85rem; border-top: 1px solid var(--border-light); margin-top: 60px; }
+        .footer-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .footer-links a { color: #94a3b8; text-decoration: none; margin-left: 20px; }
+        .footer-links a:hover { text-decoration: underline; color: #ffffff; }
+    </style>
 </head>
 <body>
 
-    <header>
-        <div class="container" style="padding: 0;">
-            <h1><a href="index.html">Terralogic</a></h1>
-            <p>Field-Hardened Data for Heavy Civil Operations</p>
-            <button class="btn-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+    <nav class="corp-navbar">
+        <div class="corp-nav-container">
+            <a href="index.html" class="corp-brand">Terralogic<span>.</span> Infrastructure</a>
         </div>
-    </header>
+    </nav>
 
-    <div class="container">
-        <div class="ad-space">Loading Advertising Banner...</div>
-
-        <h2 class="section-title">Operational Field Modules</h2>
-
-        <div class="module-grid">
-            <div class="card">
-                <div>
-                    <div class="badge">Geotechnical</div>
-                    <h3>Soil Swell & Volume Conversion</h3>
-                    <p>Track load factors and volume growth transitions between bank, loose, and compacted material profiles seamlessly.</p>
-                </div>
-                <a href="articles/soil-swell.html" class="btn-launch">Launch Module ➔</a>
-            </div>
-
-            <div class="card">
-                <div>
-                    <div class="badge">Quality Control</div>
-                    <h3>Nuclear Density Mechanics</h3>
-                    <p>Analyze Standard and Modified Proctor curves alongside optimal moisture controls directly in the field to hit compaction specifications.</p>
-                </div>
-                <a href="articles/density.html" class="btn-launch">Launch Module ➔</a>
-            </div>
-
-            <div class="card">
-                <div>
-                    <div class="badge">Utility Systems</div>
-                    <h3>Trench & Bedding Layouts</h3>
-                    <p>Verify structural bedding categories, outer diameters, and minimum depth cover clearances for rigid and flexible utility networks.</p>
-                </div>
-                <a href="articles/utilities.html" class="btn-launch">Launch Module ➔</a>
-            </div>
-
-            <div class="card">
-                <div>
-                    <div class="badge">Operations</div>
-                    <h3>Fleet Production Logistics</h3>
-                    <p>Calculate bucket fill efficiency and heavy haul asset round-trip cycles to protect site grading performance margins.</p>
-                </div>
-                <a href="articles/operations.html" class="btn-launch">Launch Module ➔</a>
-            </div>
-
-            <div class="card">
-                <div>
-                    <div class="badge">Global Utilities</div>
-                    <h3>Civil Unit Converter Engine</h3>
-                    <p>Instantly transform dimensional sizing, volumetrics, and density scales between standardized metric and imperial field systems.</p>
-                </div>
-                <a href="articles/converter.html" class="btn-launch">Launch Module ➔</a>
-            </div>
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <div class="dashboard-header">
+            <h1 style="margin: 0 0 10px 0; font-size: 1.75rem;">Civil Infrastructure Analytical Systems</h1>
+            <p style="margin: 0; color: #94a3b8; font-size: 1rem; line-height: 1.6;">Select an active deployment matrix module below to run dynamic physical geometric profiles, site excavation balances, fleet payload optimization rules, or laboratory material density checks.</p>
         </div>
 
-        <div class="ad-space">Loading Advertising Banner...</div>
+        <div class="dashboard-grid">
+            <div class="tool-card">
+                <div>
+                    <h3>Utility Trench Gradient Matrix</h3>
+                    <p>Execute excavation volume layouts across shifting elevation lines. Track downstream grade adjustments for gravity-fed mains.</p>
+                </div>
+                <a href="articles/utilities.html" class="btn-launch">Launch Engine</a>
+            </div>
+            <div class="tool-card">
+                <div>
+                    <h3>Volumetric Soil Phase Balancer</h3>
+                    <p>Convert soil capacity requirements immediately between Bank (BCY), Loose (LCY), and Compacted (CCY) material matrices.</p>
+                </div>
+                <a href="articles/soil-swell.html" class="btn-launch">Launch Engine</a>
+            </div>
+            <div class="tool-card">
+                <div>
+                    <h3>Nuclear Density Compaction Check</h3>
+                    <p>Compare real-time field dry density measurements directly against engineering Proctor curve minimums.</p>
+                </div>
+                <a href="articles/density.html" class="btn-launch">Launch Engine</a>
+            </div>
+            <div class="tool-card">
+                <div>
+                    <h3>Heavy Production Payload Optimizer</h3>
+                    <p>Balance machinery configurations. Factor in bucket fill indices, cycle durations, and material tonnage parameters.</p>
+                </div>
+                <a href="articles/operations.html" class="btn-launch">Launch Engine</a>
+            </div>
+            <div class="tool-card">
+                <div>
+                    <h3>Civil Structural Unit Transformer</h3>
+                    <p>Seamlessly process engineering dimensions between Imperial and Metric standards for all site data.</p>
+                </div>
+                <a href="articles/converter.html" class="btn-launch">Launch Engine</a>
+            </div>
+        </div>
     </div>
 
     <footer>
-        <p>© 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
-        <p>
-            <a href="legal/privacy.html">Privacy Policy</a> | <a href="legal/terms.html">Terms of Service</a>
-        </p>
+        <div class="footer-container">
+            <p>&copy; 2026 Terralogic Infrastructure Solutions Inc. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="legal/privacy.html">Privacy Policy</a>
+                <a href="legal/terms.html">Terms of Service</a>
+            </div>
+        </div>
     </footer>
-
-    <script src="js/main.js?v=1.0.1"></script>
 </body>
 </html>
