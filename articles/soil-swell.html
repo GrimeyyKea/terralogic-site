@@ -3,25 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Soil Swell & Volumetric Earthwork Conversion Engine | Terralogic Infrastructure Solutions</title>
     <meta name="description" content="Calculate earthwork mass-haul balances across material transitions. Accurate conversion logic for Bank Cubic Yards, Loose Cubic Yards, and Compacted Cubic Yards.">
-    <meta name="keywords" content="soil swell calculator, shrinkage factor, bank cubic yards, loose cubic yards, heavy civil earthwork, mass haul balance">
-    <meta name="robots" content="index, follow">
-
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://grimeyykea.github.io/articles/soil-swell.html">
-    <meta property="og:title" content="Soil Swell & Volumetric Conversion Engine | Terralogic">
-    <meta property="og:description" content="Professional geotechnical volume transitions scaling cut, haul, and fill operations dynamically.">
-    <meta property="og:image" content="https://grimeyykea.github.io/assets/og-soil-preview.jpg">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Soil Swell & Volumetric Conversion Engine | Terralogic">
-    <meta property="twitter:description" content="Professional geotechnical volume transitions scaling cut, haul, and fill operations dynamically.">
-    <meta property="twitter:image" content="https://grimeyykea.github.io/assets/og-soil-preview.jpg">
-
     <link rel="stylesheet" href="../css/style.css?v=1.0.1">
-    
     <style>
         :root {
             --corp-blue: #1e3a8a;
@@ -95,49 +79,42 @@
             height: auto;
             max-width: 100%;
         }
-        .corp-footer {
+        footer {
             background-color: #0f172a;
-            border-top: 4px solid var(--corp-blue);
             color: #94a3b8;
-            padding: 40px 0 20px 0;
-            margin-top: 60px;
+            padding: 20px 0;
             font-size: 0.85rem;
-        }
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            padding: 0 20px;
-            margin-bottom: 30px;
-        }
-        .footer-col h4 {
-            color: #f8fafc;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--border-light);
-            padding-bottom: 5px;
-        }
-        .footer-col p, .footer-col a {
-            color: #94a3b8;
-            line-height: 1.6;
-            text-decoration: none;
-        }
-        .footer-col a:hover {
-            color: var(--corp-gold);
-        }
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
             border-top: 1px solid var(--border-light);
-            padding: 20px 20px 0 20px;
+            margin-top: 60px;
+            font-family: sans-serif;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
+        }
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+            color: #ffffff;
+        }
+        @media (max-width: 600px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-links a {
+                margin: 0 10px;
+            }
         }
     </style>
 </head>
@@ -193,7 +170,6 @@
                         <input type="number" id="shrink-pct" value="12" inputmode="numeric" oninput="calcSwell()">
                     </div>
                     <button class="calc-btn" onclick="calcSwell()">Force Recalculation</button>
-                    
                     <div id="output" class="calc-result" style="display:none;"></div>
                 </div>
 
@@ -206,32 +182,12 @@
         </div>
     </div>
 
-    <footer class="corp-footer">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Terralogic Infrastructure</h4>
-                <p>Heavy civil engineering calculation suites engineered for heavy machine operators, field supervisors, and project management personnel worldwide.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Operational Operations</h4>
-                <p>
-                    • <a href="soil-swell.html">Geotechnical Volumetrics</a><br>
-                    • <a href="density.html">Nuclear Density Quality Control</a><br>
-                    • <a href="utilities.html">Utility Gradient Yields</a><br>
-                    • <a href="operations.html">Heavy Haul Fleet Optimization</a>
-                </p>
-            </div>
-            <div class="footer-col">
-                <h4>Regulatory Compliance</h4>
-                <p style="font-size: 0.8rem; color: #64748b;">
-                    All analytical field systems match standardized municipal earthwork structural guidelines. Material yield ratios depend extensively on local geological variations.
-                </p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div>© 2026 TERRALOGIC INFRASTRUCTURE SOLUTIONS INC. ALL ASSETS PROTECTED.</div>
-            <div>
-                <a href="../legal/privacy.html">Privacy Matrix</a> | <a href="../legal/terms.html">Contractual Terms</a>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Terralogic Infrastructure Solutions Inc. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="../legal/privacy.html">Privacy Policy</a>
+                <a href="../legal/terms.html">Terms of Service</a>
             </div>
         </div>
     </footer>
@@ -260,7 +216,6 @@
                     <strong>Analytical Breakdown:</strong> Excavating ${bcy.toFixed(0)} yards breaks down natural soil compression, generating a ${swell}% expansion to yield ${lcy.toFixed(0)} yards of loose material to truck out. Subsequent structural compaction expels air pockets, generating a net shrinkage of ${shrink}% down to ${ccy.toFixed(0)} final structural cubic yards.
                 </div>
             `;
-
             drawSoilChart(bcy, lcy, ccy);
         }
 
@@ -268,7 +223,6 @@
             const canvas = document.getElementById('soilCanvas');
             if(!canvas) return;
             const ctx = canvas.getContext('2d');
-            
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
             const maxVal = Math.max(bcy, lcy, ccy) * 1.15;
@@ -287,28 +241,23 @@
                 const x = padLeft + i * (barWidth + gap);
                 const y = canvas.height - padBottom - h;
 
-                // Render structural rectangular columns
                 ctx.fillStyle = colors[i];
                 ctx.fillRect(x, y, barWidth, h);
                 
-                // Add column outlines
                 ctx.strokeStyle = '#334155';
                 ctx.lineWidth = 1;
                 ctx.strokeRect(x, y, barWidth, h);
 
-                // Render volume numbers above columns
                 ctx.fillStyle = '#f8fafc';
                 ctx.font = 'bold 10px sans-serif';
                 ctx.textAlign = 'center';
                 ctx.fillText(values[i].toFixed(0), x + (barWidth / 2), y - 6);
 
-                // Render structural base labels
                 ctx.fillStyle = '#94a3b8';
                 ctx.font = '10px sans-serif';
                 ctx.fillText(labels[i], x + (barWidth / 2), canvas.height - padBottom + 15);
             }
 
-            // Draw baseline scale marks
             ctx.beginPath();
             ctx.moveTo(padLeft - 15, canvas.height - padBottom);
             ctx.lineTo(canvas.width - 20, canvas.height - padBottom);

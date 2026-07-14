@@ -3,25 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Nuclear Density & Proctor Compaction Pass Engine | Terralogic Infrastructure Solutions</title>
     <meta name="description" content="Verify field dry soil densities against laboratory Proctor curve limitations. Real-time structural compaction pass/fail analysis.">
-    <meta name="keywords" content="nuclear density gauge, proctor curve test, optimum moisture content, dry density calculation, structural fill testing">
-    <meta name="robots" content="index, follow">
-
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://grimeyykea.github.io/articles/density.html">
-    <meta property="og:title" content="Nuclear Density Compaction Analysis Engine | Terralogic">
-    <meta property="og:description" content="Field-hardened analytical checking of structural soil layer compaction and moisture deviations instantly.">
-    <meta property="og:image" content="https://grimeyykea.github.io/assets/og-density-preview.jpg">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Nuclear Density Compaction Analysis Engine | Terralogic">
-    <meta property="twitter:description" content="Field-hardened analytical checking of structural soil layer compaction and moisture deviations instantly.">
-    <meta property="twitter:image" content="https://grimeyykea.github.io/assets/og-density-preview.jpg">
-
     <link rel="stylesheet" href="../css/style.css?v=1.0.1">
-    
     <style>
         :root {
             --corp-blue: #1e3a8a;
@@ -95,49 +79,42 @@
             height: auto;
             max-width: 100%;
         }
-        .corp-footer {
+        footer {
             background-color: #0f172a;
-            border-top: 4px solid var(--corp-blue);
             color: #94a3b8;
-            padding: 40px 0 20px 0;
-            margin-top: 60px;
+            padding: 20px 0;
             font-size: 0.85rem;
-        }
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            padding: 0 20px;
-            margin-bottom: 30px;
-        }
-        .footer-col h4 {
-            color: #f8fafc;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--border-light);
-            padding-bottom: 5px;
-        }
-        .footer-col p, .footer-col a {
-            color: #94a3b8;
-            line-height: 1.6;
-            text-decoration: none;
-        }
-        .footer-col a:hover {
-            color: var(--corp-gold);
-        }
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
             border-top: 1px solid var(--border-light);
-            padding: 20px 20px 0 20px;
+            margin-top: 60px;
+            font-family: sans-serif;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
+        }
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+            color: #ffffff;
+        }
+        @media (max-width: 600px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-links a {
+                margin: 0 10px;
+            }
         }
     </style>
 </head>
@@ -195,7 +172,6 @@
                         <input type="number" id="target-spec" value="95.0" step="0.5" inputmode="decimal" oninput="calcDensity()">
                     </div>
                     <button class="calc-btn" onclick="calcDensity()">Force Verification</button>
-                    
                     <div id="output" class="calc-result" style="display:none;"></div>
                 </div>
 
@@ -208,32 +184,12 @@
         </div>
     </div>
 
-    <footer class="corp-footer">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Terralogic Infrastructure</h4>
-                <p>Heavy civil engineering calculation suites engineered for heavy machine operators, field supervisors, and project management personnel worldwide.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Operational Operations</h4>
-                <p>
-                    • <a href="soil-swell.html">Geotechnical Volumetrics</a><br>
-                    • <a href="density.html">Nuclear Density Quality Control</a><br>
-                    • <a href="utilities.html">Utility Gradient Yields</a><br>
-                    • <a href="operations.html">Heavy Haul Fleet Optimization</a>
-                </p>
-            </div>
-            <div class="footer-col">
-                <h4>Regulatory Compliance</h4>
-                <p style="font-size: 0.8rem; color: #64748b;">
-                    All analytical field systems match standardized municipal earthwork structural guidelines. Structural compaction targets are tied to independent laboratory Proctor verification profiles.
-                </p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div>© 2026 TERRALOGIC INFRASTRUCTURE SOLUTIONS INC. ALL ASSETS PROTECTED.</div>
-            <div>
-                <a href="../legal/privacy.html">Privacy Matrix</a> | <a href="../legal/terms.html">Contractual Terms</a>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Terralogic Infrastructure Solutions Inc. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="../legal/privacy.html">Privacy Policy</a>
+                <a href="../legal/terms.html">Terms of Service</a>
             </div>
         </div>
     </footer>
@@ -248,7 +204,6 @@
 
             if(isNaN(maxDry) || isNaN(wet) || isNaN(moisture) || isNaN(targetSpec)) return;
 
-            // Formulate true field dry density
             const fieldDry = wet / (1 + (moisture / 100));
             const compaction = (fieldDry / maxDry) * 100;
             const passes = compaction >= targetSpec;
@@ -266,7 +221,6 @@
                     <strong>Analytical Breakdown:</strong> By parsing out the ${moisture}% moisture volume, the calculator converts the wet weight into a dry density baseline of ${fieldDry.toFixed(1)} pcf. This value reaches ${compaction.toFixed(1)}% of the laboratory max limit, indicating whether this structural layer can accept building loads based on your ${targetSpec}% threshold.
                 </div>
             `;
-
             drawProctorCurve(maxDry, moisture, fieldDry, passes);
         }
 
@@ -274,7 +228,6 @@
             const canvas = document.getElementById('proctorCanvas');
             if(!canvas) return;
             const ctx = canvas.getContext('2d');
-            
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
             const padLeft = 40;
@@ -282,32 +235,22 @@
             const w = canvas.width - padLeft - 20;
             const h = canvas.height - padBottom - 20;
 
-            // Draw theoretical curve
-            ctx.beginPath();
-            ctx.moveTo(padLeft, canvas.height - padBottom);
-            
-            // Generate parabolic curve representing Proctor limits
             ctx.strokeStyle = '#38bdf8';
             ctx.lineWidth = 3;
             ctx.beginPath();
             for (let xPixel = 0; xPixel <= w; xPixel++) {
                 const pct = xPixel / w;
-                // Parabolic function equation: y = -4 * (x - 0.5)^2 + 1
                 const factor = -4 * Math.pow((pct - 0.5), 2) + 1;
                 const currentY = (canvas.height - padBottom) - (factor * h * 0.8) - 10;
-                
                 if (xPixel === 0) ctx.moveTo(padLeft + xPixel, currentY);
                 else ctx.lineTo(padLeft + xPixel, currentY);
             }
             ctx.stroke();
 
-            // Map current real field position coordinates
-            // Constrain moisture visualization inside graph axes bounds
             const mappedX = padLeft + (Math.min(currentMoisture, 24.0) / 24.0) * w;
             const maxGraphDensity = maxDry * 1.2;
             const mappedY = (canvas.height - padBottom) - (fieldDry / maxGraphDensity) * h;
 
-            // Draw current test location pin point
             ctx.fillStyle = passes ? '#10b981' : '#ef4444';
             ctx.beginPath();
             ctx.arc(mappedX, mappedY, 6, 0, 2 * Math.PI);
@@ -316,7 +259,6 @@
             ctx.lineWidth = 1.5;
             ctx.stroke();
 
-            // Render chart border lines
             ctx.beginPath();
             ctx.moveTo(padLeft, 10);
             ctx.lineTo(padLeft, canvas.height - padBottom);
@@ -325,7 +267,6 @@
             ctx.lineWidth = 1.5;
             ctx.stroke();
             
-            // Labels
             ctx.fillStyle = '#64748b';
             ctx.font = '9px sans-serif';
             ctx.fillText("Density ➔", padLeft + 5, 20);

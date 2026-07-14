@@ -3,25 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Heavy Fleet Production Logistics & Payload Optimizer | Terralogic Infrastructure Solutions</title>
     <meta name="description" content="Optimize heavy equipment haul cycle production matrices. Calculate bucket fill factors, round trip times, and payload weight balances to guard mass earthwork profits.">
-    <meta name="keywords" content="heavy equipment tracking, excavator cycle time, fleet balancing logistics, bucket fill efficiency, civil earthmoving production">
-    <meta name="robots" content="index, follow">
-
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://grimeyykea.github.io/articles/operations.html">
-    <meta property="og:title" content="Fleet Production Logistics Optimization Suite | Terralogic">
-    <meta property="og:description" content="Enterprise production logistics management to protect material transportation limits and payload efficiency.">
-    <meta property="og:image" content="https://grimeyykea.github.io/assets/og-operations-preview.jpg">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Fleet Production Logistics Optimization Suite | Terralogic">
-    <meta property="twitter:description" content="Enterprise production logistics management to protect material transportation limits and payload efficiency.">
-    <meta property="twitter:image" content="https://grimeyykea.github.io/assets/og-operations-preview.jpg">
-
     <link rel="stylesheet" href="../css/style.css?v=1.0.1">
-    
     <style>
         :root {
             --corp-blue: #1e3a8a;
@@ -95,49 +79,42 @@
             height: auto;
             max-width: 100%;
         }
-        .corp-footer {
+        footer {
             background-color: #0f172a;
-            border-top: 4px solid var(--corp-blue);
             color: #94a3b8;
-            padding: 40px 0 20px 0;
-            margin-top: 60px;
+            padding: 20px 0;
             font-size: 0.85rem;
-        }
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            padding: 0 20px;
-            margin-bottom: 30px;
-        }
-        .footer-col h4 {
-            color: #f8fafc;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--border-light);
-            padding-bottom: 5px;
-        }
-        .footer-col p, .footer-col a {
-            color: #94a3b8;
-            line-height: 1.6;
-            text-decoration: none;
-        }
-        .footer-col a:hover {
-            color: var(--corp-gold);
-        }
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
             border-top: 1px solid var(--border-light);
-            padding: 20px 20px 0 20px;
+            margin-top: 60px;
+            font-family: sans-serif;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
+        }
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+            color: #ffffff;
+        }
+        @media (max-width: 600px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-links a {
+                margin: 0 10px;
+            }
         }
     </style>
 </head>
@@ -197,7 +174,6 @@
                         <input type="number" id="m-weight" value="2800" step="50" inputmode="numeric" oninput="calcFleet()">
                     </div>
                     <button class="calc-btn" onclick="calcFleet()">Force Resource Check</button>
-                    
                     <div id="output" class="calc-result" style="display:none;"></div>
                 </div>
 
@@ -210,32 +186,12 @@
         </div>
     </div>
 
-    <footer class="corp-footer">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Terralogic Infrastructure</h4>
-                <p>Heavy civil engineering calculation suites engineered for heavy machine operators, field supervisors, and project management personnel worldwide.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Operational Operations</h4>
-                <p>
-                    • <a href="soil-swell.html">Geotechnical Volumetrics</a><br>
-                    • <a href="density.html">Nuclear Density Quality Control</a><br>
-                    • <a href="utilities.html">Utility Gradient Yields</a><br>
-                    • <a href="operations.html">Heavy Haul Fleet Optimization</a>
-                </p>
-            </div>
-            <div class="footer-col">
-                <h4>Regulatory Compliance</h4>
-                <p style="font-size: 0.8rem; color: #64748b;">
-                    All analytical field systems match standardized municipal earthwork structural guidelines. Production velocities represent theoretical peak efficiency capabilities.
-                </p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div>© 2026 TERRALOGIC INFRASTRUCTURE SOLUTIONS INC. ALL ASSETS PROTECTED.</div>
-            <div>
-                <a href="../legal/privacy.html">Privacy Matrix</a> | <a href="../legal/terms.html">Contractual Terms</a>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Terralogic Infrastructure Solutions Inc. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="../legal/privacy.html">Privacy Policy</a>
+                <a href="../legal/terms.html">Terms of Service</a>
             </div>
         </div>
     </footer>
@@ -253,7 +209,6 @@
             const effectiveCap = size * (factor / 100);
             const tripsPerHour = 60 / cycle;
             const productionPerHour = effectiveCap * tripsPerHour;
-            
             const tonsPerPass = (effectiveCap * unitWeight) / 2000;
             const tonsPerHour = productionPerHour * unitWeight / 2000;
 
@@ -268,7 +223,6 @@
                     <strong>Analytical Breakdown:</strong> Given your bucket fill index of ${factor}%, the assembly handles ${effectiveCap.toFixed(2)} loose yards per cycle. Factoring in a soil unit weight of ${unitWeight} lbs/LCY, the platform scales the production limits across a 60-minute profile, yielding an output velocity of ${productionPerHour.toFixed(1)} loose cubic yards alongside ${tonsPerHour.toFixed(1)} total tons per operational hour.
                 </div>
             `;
-
             drawFleetTrend(effectiveCap, cycle);
         }
 
@@ -276,7 +230,6 @@
             const canvas = document.getElementById('fleetCanvas');
             if(!canvas) return;
             const ctx = canvas.getContext('2d');
-            
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
             const padLeft = 50;
@@ -284,34 +237,26 @@
             const w = canvas.width - padLeft - 20;
             const h = canvas.height - padBottom - 20;
 
-            // Plot hourly volume outputs as cycle time varies from 4 to 25 minutes
             ctx.strokeStyle = '#b45309';
             ctx.lineWidth = 3;
             ctx.beginPath();
-
             for (let xPixel = 0; xPixel <= w; xPixel++) {
                 const pct = xPixel / w;
-                const cycleLoop = 4 + (pct * 21); // range 4 to 25 mins
+                const cycleLoop = 4 + (pct * 21);
                 const volPerHour = payload * (60 / cycleLoop);
-                
-                // Scale against maximum theoretical output
                 const maxTheoreticalVol = payload * (60 / 4);
                 const mappedY = (canvas.height - padBottom) - (volPerHour / maxTheoreticalVol) * h;
-                
                 if (xPixel === 0) ctx.moveTo(padLeft + xPixel, mappedY);
                 else ctx.lineTo(padLeft + xPixel, mappedY);
             }
             ctx.stroke();
 
-            // Highlight current performance location coordinates
             const currentPct = (currentCycle - 4) / 21;
             const currentVol = payload * (60 / currentCycle);
             const maxTheoreticalVol = payload * (60 / 4);
-            
             const pinX = padLeft + (currentPct * w);
             const pinY = (canvas.height - padBottom) - (currentVol / maxTheoreticalVol) * h;
 
-            // Render position dot indicator
             if(pinX >= padLeft && pinX <= canvas.width - 20) {
                 ctx.fillStyle = '#1e3a8a';
                 ctx.beginPath();
@@ -321,7 +266,6 @@
                 ctx.stroke();
             }
 
-            // Draw structural chart frame axes
             ctx.beginPath();
             ctx.moveTo(padLeft, 10);
             ctx.lineTo(padLeft, canvas.height - padBottom);

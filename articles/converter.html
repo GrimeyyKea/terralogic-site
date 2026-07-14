@@ -3,25 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Civil Engineering Unit Converter Engine | Terralogic Infrastructure Solutions</title>
     <meta name="description" content="Convert heavy civil architectural values instantly. Transform lengths, volumes, and material density matrices between Imperial and Metric engineering metrics.">
-    <meta name="keywords" content="civil conversion calculator, cubic yards to cubic meters, pcf to kg/m3, engineering unit conversion, structural data transformation">
-    <meta name="robots" content="index, follow">
-
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://grimeyykea.github.io/articles/converter.html">
-    <meta property="og:title" content="Civil Engineering Unit Conversion Engine | Terralogic">
-    <meta property="og:description" content="High precision conversion architecture tracking metric-to-imperial transformation metrics instantly.">
-    <meta property="og:image" content="https://grimeyykea.github.io/assets/og-converter-preview.jpg">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Civil Engineering Unit Conversion Engine | Terralogic">
-    <meta property="twitter:description" content="High precision conversion architecture tracking metric-to-imperial transformation metrics instantly.">
-    <meta property="twitter:image" content="https://grimeyykea.github.io/assets/og-converter-preview.jpg">
-
     <link rel="stylesheet" href="../css/style.css?v=1.0.1">
-    
     <style>
         :root {
             --corp-blue: #1e3a8a;
@@ -95,49 +79,42 @@
             height: auto;
             max-width: 100%;
         }
-        .corp-footer {
+        footer {
             background-color: #0f172a;
-            border-top: 4px solid var(--corp-blue);
             color: #94a3b8;
-            padding: 40px 0 20px 0;
-            margin-top: 60px;
+            padding: 20px 0;
             font-size: 0.85rem;
-        }
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            padding: 0 20px;
-            margin-bottom: 30px;
-        }
-        .footer-col h4 {
-            color: #f8fafc;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--border-light);
-            padding-bottom: 5px;
-        }
-        .footer-col p, .footer-col a {
-            color: #94a3b8;
-            line-height: 1.6;
-            text-decoration: none;
-        }
-        .footer-col a:hover {
-            color: var(--corp-gold);
-        }
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
             border-top: 1px solid var(--border-light);
-            padding: 20px 20px 0 20px;
+            margin-top: 60px;
+            font-family: sans-serif;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
+        }
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+            color: #ffffff;
+        }
+        @media (max-width: 600px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-links a {
+                margin: 0 10px;
+            }
         }
     </style>
 </head>
@@ -171,7 +148,7 @@
                 <ul>
                     <li><strong>Linear Dimensional Matching:</strong> Transforming coordinates between feet and meters requires continuous decimal tracking to prevent linear positioning errors across structural gridlines.</li>
                     <li><strong>Mass Volumetrics:</strong> The volumetric delta between Cubic Yards and Cubic Meters is substantial; misallocating these scales can lead to critical aggregate supply shortages.</li>
-                    <li><strong>Geotechnical Densities:</strong> Swapping soil compaction profiles between pounds per cubic foot (pcf) and kilograms per cubic meter ($kg/m^3$) demands systematic calculations to maintain correct gauge calibration adjustments.</li>
+                    <li><strong>Geotechnical Densities:</strong> Swapping soil compaction profiles between pounds per cubic foot (pcf) and kilograms per cubic meter ($kg/m^3$) demands systematic calculations.</li>
                 </ul>
 
                 <div class="ad-space">Loading Enterprise Infrastructure Banner...</div>
@@ -180,7 +157,6 @@
             <div>
                 <div class="calc-box">
                     <h3>Multi-Type Transformation Hub</h3>
-                    
                     <div class="calc-group">
                         <label>Conversion Target Category</label>
                         <select id="conv-type" onchange="updateLabels()">
@@ -189,17 +165,14 @@
                             <option value="density">Geotechnical Density (lbs/ft³ ⇄ kg/m³)</option>
                         </select>
                     </div>
-
                     <div class="calc-group">
                         <label id="input-label">Imperial Input Base (Feet)</label>
                         <input type="number" id="input-val" value="10.00" step="0.01" inputmode="decimal" oninput="runConversion()">
                     </div>
-
                     <div class="calc-group">
                         <label id="output-label">Metric Evaluated Output (Meters)</label>
                         <input type="number" id="output-val" readonly style="background-color: var(--surface-bg); color: var(--text-muted);">
                     </div>
-
                     <div class="step-explanation" id="conv-exp" style="margin-top:15px; font-size:0.85rem;">
                         <strong>Mathematical Scaling Rule:</strong> Multiply feet by 0.3048 to find meters.
                     </div>
@@ -214,32 +187,12 @@
         </div>
     </div>
 
-    <footer class="corp-footer">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Terralogic Infrastructure</h4>
-                <p>Heavy civil engineering calculation suites engineered for heavy machine operators, field supervisors, and project management personnel worldwide.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Operational Operations</h4>
-                <p>
-                    • <a href="soil-swell.html">Geotechnical Volumetrics</a><br>
-                    • <a href="density.html">Nuclear Density Quality Control</a><br>
-                    • <a href="utilities.html">Utility Gradient Yields</a><br>
-                    • <a href="operations.html">Heavy Haul Fleet Optimization</a>
-                </p>
-            </div>
-            <div class="footer-col">
-                <h4>Regulatory Compliance</h4>
-                <p style="font-size: 0.8rem; color: #64748b;">
-                    All analytical field systems match standardized municipal earthwork structural guidelines. Structural transformations utilize standardized international physical scale ratios.
-                </p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div>© 2026 TERRALOGIC INFRASTRUCTURE SOLUTIONS INC. ALL ASSETS PROTECTED.</div>
-            <div>
-                <a href="../legal/privacy.html">Privacy Matrix</a> | <a href="../legal/terms.html">Contractual Terms</a>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Terralogic Infrastructure Solutions Inc. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="../legal/privacy.html">Privacy Policy</a>
+                <a href="../legal/terms.html">Terms of Service</a>
             </div>
         </div>
     </footer>
@@ -292,7 +245,6 @@
             }
 
             outField.value = result.toFixed(3);
-            
             drawConversionGauge(input, result, type);
         }
 
@@ -300,14 +252,12 @@
             const canvas = document.getElementById('convCanvas');
             if(!canvas) return;
             const ctx = canvas.getContext('2d');
-            
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
             const padLeft = 30;
             const padRight = 30;
             const w = canvas.width - (padLeft + padRight);
 
-            // Establish arbitrary max limits to keep visual scales stable within the canvas area
             let maxLimit = 100;
             if (type === 'volume') maxLimit = 250;
             if (type === 'density') maxLimit = 200;
@@ -315,15 +265,12 @@
             const impWidth = Math.min((imp / maxLimit) * w, w);
             const metWidth = Math.min((met / (maxLimit * (type === 'density' ? 16.01 : 0.76))) * w, w);
 
-            // Draw Imperial Bar Indicator Graph Line
             ctx.fillStyle = '#b45309';
             ctx.fillRect(padLeft, 30, impWidth, 20);
             
-            // Draw Metric Bar Indicator Graph Line
             ctx.fillStyle = '#1e3a8a';
             ctx.fillRect(padLeft, 70, metWidth, 20);
 
-            // Annotate tracking typography values
             ctx.fillStyle = '#f8fafc';
             ctx.font = 'bold 10px sans-serif';
             ctx.textAlign = 'left';
