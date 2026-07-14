@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Civil Engineering Unit Converter Engine - Terralogic</title>
+    <meta name="description" content="Convert heavy civil construction values instantly. Swap lengths, earthwork volumes, and material densities seamlessly between metric and imperial standards.">
+    <meta name="keywords" content="unit converter, civil engineering conversions, cubic yards to cubic meters, pcf to kg/m3, construction unit calculator">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://grimeyykea.github.io/articles/converter.html">
+    <meta property="og:title" content="Civil Unit Converter Engine - Terralogic">
+    <meta property="og:description" content="Dynamic metric-to-imperial transformation tools engineered for field production and geotechnical engineering data.">
+    <meta property="og:image" content="https://grimeyykea.github.io/assets/og-converter-preview.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Civil Unit Converter Engine - Terralogic">
+    <meta property="twitter:description" content="Dynamic metric-to-imperial transformation tools engineered for field production and geotechnical engineering data.">
+    <meta property="twitter:image" content="https://grimeyykea.github.io/assets/og-converter-preview.jpg">
+
+    <link rel="stylesheet" href="../css/style.css?v=1.0.1">
+</head>
+<body>
+
+    <header>
+        <div class="container" style="padding: 0;">
+            <h1><a href="../index.html">Terralogic</a></h1>
+            <p>Field-Hardened Data for Heavy Civil Operations</p>
+            <button class="btn-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="ad-space">Loading Advertising Banner...</div>
+
+        <div class="article-layout">
+            <div class="article-body">
+                <div class="badge">Global Utilities</div>
+                <h2>Standardizing Conversions Across Field Specs</h2>
+                <p>Civil blueprints often incorporate disparate geographic standards. Whether parsing international equipment specs, structural utility casting layouts, or municipal geotechnical soil metrics, conversions must be exact to prevent structural layout failures.</p>
+                
+                <h3>Critical Precision Thresholds:</h3>
+                <ul>
+                    <li><strong>Linear Assets:</strong> Small fractional alignment errors over lengthy utility runs scale into major positioning failures.</li>
+                    <li><strong>Mass Volumetrics:</strong> Miscalculating the delta between Cubic Yards and Cubic Meters can leave you short hundreds of tons of aggregate fill material.</li>
+                    <li><strong>Soil Densities:</strong> Swapping Proctor targets between pounds per cubic foot (pcf) and kilograms per cubic meter ($kg/m^3$) requires meticulous decimal control.</li>
+                </ul>
+
+                <div class="ad-space">Loading Advertising Banner...</div>
+            </div>
+
+            <div>
+                <div class="calc-box">
+                    <h3>Multi-Type Converter</h3>
+                    
+                    <div class="calc-group">
+                        <label>Conversion Category</label>
+                        <select id="conv-type" onchange="updateLabels()">
+                            <option value="length">Length (Feet ⇄ Meters)</option>
+                            <option value="volume">Volume (Cubic Yards ⇄ Cubic Meters)</option>
+                            <option value="density">Density (lbs/ft³ ⇄ kg/m³)</option>
+                        </select>
+                    </div>
+
+                    <div class="calc-group">
+                        <label id="input-label">Imperial Value (Feet)</label>
+                        <input type="number" id="input-val" value="1.0" step="0.01" inputmode="decimal" oninput="runConversion()">
+                    </div>
+
+                    <div class="calc-group">
+                        <label id="output-label">Metric Output (Meters)</label>
+                        <input type="number" id="output-val" readonly style="background-color: var(--surface-bg); color: var(--text-muted);">
+                    </div>
+
+                    <div class="step-explanation" id="conv-exp" style="margin-top:15px; font-size:0.85rem;">
+                        <strong>Conversion Basis:</strong> 1 Foot = 0.3048 Meters exactly.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
+        <p><a href="../legal/privacy.html">Privacy Policy</a> | <a href="../legal/terms.html">Terms of Service</a></p>
+    </footer>
+
+    <script src="../js/main.js?v=1.0.1"></script>
+    <script>
+        function updateLabels() {
+            const type = document.getElementById('conv-type').value;
+            const inputLabel = document.getElementById('input-label');
+            const outputLabel = document.getElementById('output-label');
+            const exp = document.getElementById('conv-exp');
+            const inputVal = document.getElementById('input-val');
+
+            if (type === 'length') {
+                inputLabel.innerText = "Imperial Value (Feet)";
+                outputLabel.innerText = "Metric Output (Meters)";
+                exp.innerHTML = "<strong>Conversion Basis:</strong> Multiply feet by 0.3048 to find meters.";
+                inputVal.value = "10";
+            } else if (type === 'volume') {
+                inputLabel.innerText = "Imperial Value (Cubic Yards)";
+                outputLabel.innerText = "Metric Output (Cubic Meters)";
+                exp.innerHTML = "<strong>Conversion Basis:</strong> Multiply cubic yards by 0.764555 to find cubic meters.";
+                inputVal.value = "100";
+            } else if (type === 'density') {
+                inputLabel.innerText = "Imperial Value (lbs/ft³ - pcf)";
+                outputLabel.innerText = "Metric Output (kg/m³)";
+                exp.innerHTML = "<strong>Conversion Basis:</strong> Multiply pounds per cubic foot by 16.0185 to find kilograms per cubic meter.";
+                inputVal.value = "115";
+            }
+            runConversion();
+        }
+
+        function runConversion() {
+            const type = document.getElementById('conv-type').value;
+            const input = parseFloat(document.getElementById('input-val').value);
+            const outField = document.getElementById('output-val');
+
+            if (isNaN(input)) {
+                outField.value = "";
+                return;
+            }
+
+            let result = 0;
+            if (type === 'length') {
+                result = input * 0.3048;
+            } else if (type === 'volume') {
+                result = input * 0.764555;
+            } else if (type === 'density') {
+                result = input * 16.018463;
+            }
+
+            outField.value = result.toFixed(3);
+        }
+
+        // Run initial execution on load
+        window.onload = function() {
+            runConversion();
+        };
+    </script>
+</body>
+</html>
