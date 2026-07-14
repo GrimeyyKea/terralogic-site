@@ -62,6 +62,10 @@
                         <label>Total Cycle Time (Minutes)</label>
                         <input type="number" id="c-time" value="15" step="0.5" inputmode="decimal">
                     </div>
+                    <div class="calc-group">
+                        <label>Material Unit Weight (lbs/LCY)</label>
+                        <input type="number" id="m-weight" value="2300" step="50" inputmode="numeric">
+                    </div>
                     <button class="calc-btn" onclick="calcFleet()">Measure Output</button>
                     
                     <div id="output" class="calc-result" style="display:none;"></div>
@@ -81,20 +85,27 @@
             const size = parseFloat(document.getElementById('b-size').value);
             const factor = parseFloat(document.getElementById('f-factor').value);
             const cycle = parseFloat(document.getElementById('c-time').value);
+            const unitWeight = parseFloat(document.getElementById('m-weight').value);
 
-            if(isNaN(size) || isNaN(factor) || isNaN(cycle)) return;
+            if(isNaN(size) || isNaN(factor) || isNaN(cycle) || isNaN(unitWeight)) return;
 
             const effectiveCap = size * (factor / 100);
             const tripsPerHour = 60 / cycle;
             const productionPerHour = effectiveCap * tripsPerHour;
+            
+            // Tonnage calculations: (Volume * weight per yard) / 2000 lbs per ton
+            const tonsPerPass = (effectiveCap * unitWeight) / 2000;
+            const tonsPerHour = productionPerHour * unitWeight / 2000;
 
             const out = document.getElementById('output');
             out.style.display = "block";
             out.innerHTML = `
-                <strong>Real Payload Size:</strong> ${effectiveCap.toFixed(2)} Yds/Pass<br>
-                <strong>Estimated Volume:</strong> ${productionPerHour.toFixed(1)} Cubic Yards/Hour<br>
+                <strong>Real Payload Size:</strong> ${effectiveCap.toFixed(2)} LCY/Pass<br>
+                <strong>Weight per Pass:</strong> ${tonsPerPass.toFixed(2)} Tons<br>
+                <strong>Hourly Volume Output:</strong> ${productionPerHour.toFixed(1)} LCY/Hour<br>
+                <strong>Hourly Mass Mass-Move:</strong> ${tonsPerHour.toFixed(1)} Tons/Hour<br>
                 <div class="step-explanation">
-                    <strong>Simple Explanation:</strong> The bucket doesn't always fill perfectly, so we use a fill factor to find the true payload size. Divide 60 minutes by your total trip time to see how many cycles run per hour, then multiply by payload size to find total hourly output.
+                    <strong>Simple Explanation:</strong> A nominal ${size} CY bucket running at ${factor}% efficiency moves ${effectiveCap.toFixed(2)} loose yards per cycle. At ${unitWeight} lbs per yard, each pass drops ${tonsPerPass.toFixed(2)} tons into the haul truck. Running ${tripsPerHour.toFixed(1)} cycles an hour yields a total mass movement of ${tonsPerHour.toFixed(1)} tons.
                 </div>
             `;
         }
