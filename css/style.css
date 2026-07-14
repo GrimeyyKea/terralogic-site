@@ -116,10 +116,9 @@ body.field-mode .btn-toggle {
     overflow: hidden;
     transition: background-color 0.15s, border-color 0.15s;
     width: 100%;
-    min-height: 90px; /* Standard Mobile Leaderboard (320x50 up to 728x90) */
+    min-height: 90px;
 }
 
-/* Specific inner frame alignment for third-party scripts */
 .ad-space-loaded {
     border-style: solid;
     background-color: var(--bg-card);

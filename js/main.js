@@ -54,10 +54,9 @@ function initializeMonetizationSlots() {
 
     adSpaces.forEach((slot, index) => {
         // Clear out raw fallback text templates safely
-        const structuralLabel = slot.innerText || "Advertisement";
         slot.innerHTML = '';
 
-        // Inject standard compliance tag required by ad network policies (Google/IAB rules)
+        // Inject standard compliance tag required by ad network policies
         const labelContainer = document.createElement('div');
         labelContainer.className = 'ad-label';
         labelContainer.innerText = 'Advertisement';
