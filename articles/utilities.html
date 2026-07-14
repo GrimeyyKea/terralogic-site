@@ -4,101 +4,373 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Utility Trench Excavation & Bedding Yield Calculator - Terralogic</title>
-    <meta name="description" content="Calculate utility trench excavation volumes instantly. Determine cubic yards of spoil to remove based on trench run width, average depth, and line length.">
-    <meta name="keywords" content="trench excavation calculator, utility bedding, trench volume calculator, cubic yards excavation, pipe bedding yield">
+    <!-- Primary Search Engine Optimization -->
+    <title>Utility Trench Excavation & Slope Grade Calculator | Terralogic Infrastructure Solutions</title>
+    <meta name="description" content="Calculate utility trench excavation volumes across shifting elevation gradients. Advanced volumetric profiling for gravity storm mains, sanitary runs, and structural bedding yield tracking.">
+    <meta name="keywords" content="trench excavation calculator, slope percentage calculation, gravity sewer main excavation, earthwork volumetrics, structural bedding profile">
+    <meta name="robots" content="index, follow">
 
+    <!-- Open Graph / Facebook / Communication Previews -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://grimeyykea.github.io/articles/utilities.html">
-    <meta property="og:title" content="Trench Yield Volumetrics Tool - Terralogic">
-    <meta property="og:description" content="Accurately compute total cubic yards of material excavated across long utility pipe installations.">
+    <meta property="og:title" content="Trench Gradient Yield Volumetrics Engine | Terralogic">
+    <meta property="og:description" content="Enterprise-tier engineering utility calculations for tracking continuous material excavation changes across sloping terrain lines.">
     <meta property="og:image" content="https://grimeyykea.github.io/assets/og-utilities-preview.jpg">
 
+    <!-- Twitter / X Communication Previews -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Trench Yield Volumetrics Tool - Terralogic">
-    <meta property="twitter:description" content="Accurately compute total cubic yards of material excavated across long utility pipe installations.">
+    <meta property="twitter:title" content="Trench Gradient Yield Volumetrics Engine | Terralogic">
+    <meta property="twitter:description" content="Enterprise-tier engineering utility calculations for tracking continuous material excavation changes across sloping terrain lines.">
     <meta property="twitter:image" content="https://grimeyykea.github.io/assets/og-utilities-preview.jpg">
 
     <link rel="stylesheet" href="../css/style.css?v=1.0.1">
+    
+    <!-- Embedded Corporate Design Enhancements & Canvas Layout Matrix -->
+    <style>
+        :root {
+            --corp-blue: #1e3a8a;
+            --corp-gold: #b45309;
+            --panel-dark: #1e293b;
+            --border-light: #334155;
+        }
+        .corp-navbar {
+            background-color: #0f172a;
+            border-bottom: 2px solid var(--corp-gold);
+            padding: 15px 0;
+        }
+        .corp-nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .corp-brand {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #f8fafc;
+            text-decoration: none;
+            font-size: 1.4rem;
+        }
+        .corp-brand span {
+            color: var(--corp-gold);
+        }
+        .btn-back-home {
+            background: transparent;
+            border: 1px solid #475569;
+            color: #94a3b8;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-back-home:hover {
+            border-color: var(--corp-gold);
+            color: #ffffff;
+            background-color: rgba(180, 83, 9, 0.1);
+        }
+        .case-study-box {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-left: 4px solid var(--corp-gold);
+            padding: 20px;
+            border-radius: 4px;
+            margin: 25px 0;
+        }
+        .chart-panel {
+            background-color: #0f172a;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        #trenchCanvas {
+            background-color: #111827;
+            border-radius: 4px;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+        }
+        .corp-footer {
+            background-color: #0f172a;
+            border-top: 4px solid var(--corp-blue);
+            color: #94a3b8;
+            padding: 40px 0 20px 0;
+            margin-top: 60px;
+            font-size: 0.85rem;
+        }
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+            margin-bottom: 30px;
+        }
+        .footer-col h4 {
+            color: #f8fafc;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 5px;
+        }
+        .footer-col p, .footer-col a {
+            color: #94a3b8;
+            line-height: 1.6;
+            text-decoration: none;
+        }
+        .footer-col a:hover {
+            color: var(--corp-gold);
+        }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid var(--border-light);
+            padding: 20px 20px 0 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <div class="container" style="padding: 0;">
-            <h1><a href="../index.html">Terralogic</a></h1>
-            <p>Field-Hardened Data for Heavy Civil Operations</p>
-            <button class="btn-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+    <!-- Corporate Structured Header -->
+    <nav class="corp-navbar">
+        <div class="corp-nav-container">
+            <a href="../index.html" class="corp-brand">Terralogic<span>.</span> Infrastructure</a>
+            <a href="../index.html" class="btn-back-home">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Global Field Dashboard
+            </a>
         </div>
-    </header>
+    </nav>
 
-    <div class="container">
-        <div class="ad-space">Loading Advertising Banner...</div>
+    <div class="container" style="margin-top: 30px;">
+        <div class="ad-space">Loading Enterprise Infrastructure Banner...</div>
 
         <div class="article-layout">
+            <!-- Left Information Column -->
             <div class="article-body">
-                <div class="badge">Utility Systems</div>
-                <h2>Excavation Spatials and Backfill Geometry</h2>
-                <p>Installing underground utilities safely requires strict balancing of trench geometry to avoid collapse while minimizing unnecessary excavation overheads.</p>
+                <div class="badge" style="background-color: var(--corp-blue);">Civil Systems Operations</div>
+                <h2>Excavation Spatials and Linear Slope Geometry</h2>
+                <p>In municipal civil operations, executing trench cuts for gravity-fed utilities presents dynamic calculation challenges. Unlike uniform electrical conduits, pipes meant for storm water or sanitary waste rely completely on consistent down-slope grade percentages to maintain velocity and eliminate line fouling. Calculating excavation volume using a single static depth over long distances leads to dramatic material underestimations.</p>
                 
-                <h3>Key Operational Factors:</h3>
+                <!-- Real-Life Scenario Module -->
+                <div class="case-study-box">
+                    <h4 style="color: var(--corp-gold); margin-top: 0; text-transform: uppercase; letter-spacing: 0.5px;">Real-World Perspective Context</h4>
+                    <p style="margin-bottom: 0; font-style: italic;"><strong>Scenario:</strong> A field crew is tasked with opening a 150-foot trench run for a 24-inch gravity-fed concrete storm sewer main. The design plans specify a starting entry depth of 5.0 feet to clear existing shallow water lines. However, the system must drop on a strict 2.5% downward grade profile to feed into a regional retention pond basin. Because the trench depth continually drops over the 150-foot run, the trench termination depth hits 8.75 feet. Using only the 5-foot starting value for your load balance calculation would leave you short over 40 cubic yards of soil hauling capacity, completely backing up truck turnarounds at your active excavator face.</p>
+                </div>
+
+                <h3>Critical Engineering Parameters:</h3>
                 <ul>
-                    <li><strong>Trench Width:</strong> Must remain wide enough to safely receive piping links and compact the surrounding structural bedding gravel, while staying narrow enough to reduce structural handling overheads.</li>
-                    <li><strong>Bedding Foundation:</strong> Well-graded crushed stone structural rings stabilize cross-sections, preventing utility settling under surface structural loads over time.</li>
+                    <li><strong>Continuous Slope Inverts:</strong> Shifting terrain or targeted grade percentages alter the trench floor line continuously relative to the surface plane.</li>
+                    <li><strong>OSHA Shoring Thresholds:</strong> Any trench depth crossing past 5.0 feet requires structural aluminum shoring shields, sloped banking, or stepped trench benches to safeguard personnel. Real-time end-point depth warning profiles are mandatory for site safety layouts.</li>
+                    <li><strong>Soil Expansion Delta:</strong> Material dug out of compacted utility paths transforms immediately into loose cubic yards. Swell calculations must scale alongside average geometry values to properly plan site hauling.</li>
                 </ul>
 
-                <div class="ad-space">Loading Advertising Banner...</div>
+                <div class="ad-space">Loading Enterprise Infrastructure Banner...</div>
             </div>
 
+            <!-- Right Interactive Module and Dynamic Canvas Graphing Column -->
             <div>
                 <div class="calc-box">
-                    <h3>Trench Yield Volumetrics</h3>
+                    <h3>Trench Gradient Matrix</h3>
+                    
                     <div class="calc-group">
                         <label>Trench Width (Inches)</label>
-                        <input type="number" id="t-width" value="36" inputmode="numeric">
+                        <input type="number" id="t-width" value="36" inputmode="numeric" oninput="calcTrench()">
                     </div>
                     <div class="calc-group">
-                        <label>Average Depth (Feet)</label>
-                        <input type="number" id="t-depth" value="6" inputmode="numeric">
+                        <label>Starting Entry Depth (Feet)</label>
+                        <input type="number" id="t-depth" value="5.0" step="0.1" inputmode="decimal" oninput="calcTrench()">
                     </div>
                     <div class="calc-group">
-                        <label>Run Length (Feet)</label>
-                        <input type="number" id="t-length" value="100" inputmode="numeric">
+                        <label>Total Run Length (Feet)</label>
+                        <input type="number" id="t-length" value="150" inputmode="numeric" oninput="calcTrench()">
                     </div>
-                    <button class="calc-btn" onclick="calcTrench()">Calculate Excavation</button>
+                    <div class="calc-group">
+                        <label>Downward Pipe Grade Drop (%)</label>
+                        <input type="number" id="t-grade" value="2.5" step="0.1" inputmode="decimal" oninput="calcTrench()">
+                    </div>
+                    <div class="calc-group">
+                        <label>Material Soil Swell Factor (%)</label>
+                        <input type="number" id="t-swell" value="20" inputmode="numeric" oninput="calcTrench()">
+                    </div>
+                    
+                    <button class="calc-btn" onclick="calcTrench()">Force Recalculation</button>
                     
                     <div id="output" class="calc-result" style="display:none;"></div>
+                </div>
+
+                <!-- Dynamic Graphics Panel -->
+                <div class="chart-panel">
+                    <h4 style="color: #f8fafc; margin-top: 0; font-size: 0.9rem; text-transform: uppercase;">Dynamic Trench Profile Matrix</h4>
+                    <canvas id="trenchCanvas" width="400" height="200"></canvas>
+                    <p style="font-size: 0.75rem; color: #64748b; margin-top: 8px; margin-bottom: 0;">Calculated vertical profile slice. Ground line shown in gray; excavation bedrock slope tracked in gold.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer>
-        <p>© 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
-        <p><a href="../legal/privacy.html">Privacy Policy</a> | <a href="../legal/terms.html">Terms of Service</a></p>
+    <!-- Corporate Enterprise Footer Structure -->
+    <footer class="corp-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Terralogic Infrastructure</h4>
+                <p>Heavy civil engineering calculation suites engineered for heavy machine operators, field supervisors, and project management personnel worldwide.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Operational Operations</h4>
+                <p>
+                    • <a href="soil-swell.html">Geotechnical Volumetrics</a><br>
+                    • <a href="density.html">Nuclear Density Quality Control</a><br>
+                    • <a href="utilities.html">Utility Gradient Yields</a><br>
+                    • <a href="operations.html">Heavy Haul Fleet Optimization</a>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Regulatory Compliance</h4>
+                <p style="font-size: 0.8rem; color: #64748b;">
+                    All analytical field systems match standardized municipal earthwork structural guidelines. Structural shoring checks must be verified against actual OSHA excavation regulations.
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 TERRALOGIC INFRASTRUCTURE SOLUTIONS INC. ALL ASSETS PROTECTED.</div>
+            <div>
+                <a href="../legal/privacy.html">Privacy Matrix</a> | <a href="../legal/terms.html">Contractual Terms</a>
+            </div>
+        </div>
     </footer>
 
     <script src="../js/main.js?v=1.0.1"></script>
     <script>
         function calcTrench() {
             const widthInches = parseFloat(document.getElementById('t-width').value);
-            const depth = parseFloat(document.getElementById('t-depth').value);
+            const startDepth = parseFloat(document.getElementById('t-depth').value);
             const length = parseFloat(document.getElementById('t-length').value);
+            const grade = parseFloat(document.getElementById('t-grade').value);
+            const swell = parseFloat(document.getElementById('t-swell').value);
 
-            if(isNaN(widthInches) || isNaN(depth) || isNaN(length)) return;
+            if(isNaN(widthInches) || isNaN(startDepth) || isNaN(length) || isNaN(grade) || isNaN(swell)) return;
+
+            // Compute structural geometric drop boundaries
+            const totalDrop = length * (grade / 100);
+            const endDepth = startDepth + totalDrop;
+            const averageDepth = (startDepth + endDepth) / 2;
 
             const widthFeet = widthInches / 12;
-            const totalCubicYards = (widthFeet * depth * length) / 27;
+            const bankCubicYards = (widthFeet * averageDepth * length) / 27;
+            const looseCubicYards = bankCubicYards * (1 + (swell / 100));
+
+            // Generate field status evaluation flags
+            const oshaShoringRequired = endDepth > 5.0;
 
             const out = document.getElementById('output');
             out.style.display = "block";
             out.innerHTML = `
-                <strong>Trench Width:</strong> ${widthFeet.toFixed(2)} Feet<br>
-                <strong>Total Material Excavated:</strong> ${totalCubicYards.toFixed(1)} CY<br>
+                <strong>Trench Geometric Parameters:</strong> ${widthFeet.toFixed(2)} Ft Width<br>
+                <strong>Calculated Termination Depth:</strong> ${endDepth.toFixed(2)} Ft<br>
+                <strong>Calculated System Average Depth:</strong> ${averageDepth.toFixed(2)} Ft<br>
+                <strong>In-Place Volumetrics (BCY):</strong> ${bankCubicYards.toFixed(1)} CY<br>
+                <strong>Truck Haul Load Target (LCY):</strong> ${looseCubicYards.toFixed(1)} CY (${swell}% Swell)<br>
+                <strong>Safety Verification status:</strong> 
+                <span style="color:${oshaShoringRequired ? '#f59e0b' : '#10b981'}; font-weight:bold;">
+                    ${oshaShoringRequired ? 'SHORING/BANKING MANDATORY (Exceeds 5ft)' : 'COMPLIANT CUT PROFILE'}
+                </span>
                 <div class="step-explanation">
-                    <strong>Simple Explanation:</strong> Convert inches to feet by dividing by 12. Next, multiply width by depth and length to find total volume in cubic feet. Finally, divide by 27 to find how many cubic yards of soil you need to haul out or store.
+                    <strong>Analytical Breakdown:</strong> Because your gravity line runs at a ${grade}% downward grade, the trench depth increases by ${totalDrop.toFixed(2)} feet over the course of the ${length}-foot run. The calculator integrates the cross-sectional variation to derive a true average depth of ${averageDepth.toFixed(2)} feet, converting raw dimensions into precise bank volumes before scaling by your ${swell}% soil expansion load factor.
                 </div>
             `;
+
+            // Trigger dynamic profile canvas rendering
+            drawTrenchProfile(startDepth, endDepth, length, grade);
         }
+
+        function drawTrenchProfile(start, end, len, grade) {
+            const canvas = document.getElementById('trenchCanvas');
+            if(!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            // Clear baseline canvas pixels
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Layout Padding Matrices
+            const padLeft = 50;
+            const padRight = 50;
+            const drawWidth = canvas.width - (padLeft + padRight);
+            
+            // Map structural ground boundaries
+            ctx.beginPath();
+            ctx.moveTo(padLeft, 40);
+            ctx.lineTo(padLeft + drawWidth, 40);
+            ctx.strokeStyle = '#64748b';
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            
+            // Calculate pixel vertical transformation thresholds based on absolute maximum values
+            const maxDepthTracked = Math.max(end, 10.0);
+            const scaleY = 110 / maxDepthTracked; 
+            
+            const startY = 40 + (start * scaleY);
+            const endY = 40 + (end * scaleY);
+            
+            // Draw profile filling representation of excavated soil
+            ctx.beginPath();
+            ctx.moveTo(padLeft, 40);
+            ctx.lineTo(padLeft, startY);
+            ctx.lineTo(padLeft + drawWidth, endY);
+            ctx.lineTo(padLeft + drawWidth, 40);
+            ctx.closePath();
+            ctx.fillStyle = 'rgba(180, 83, 9, 0.15)';
+            ctx.fill();
+            
+            // Draw gradient cut line
+            ctx.beginPath();
+            ctx.moveTo(padLeft, startY);
+            ctx.lineTo(padLeft + drawWidth, endY);
+            ctx.strokeStyle = '#b45309';
+            ctx.lineWidth = 4;
+            ctx.stroke();
+            
+            // Structural point visualization dots
+            ctx.fillStyle = '#ef4444';
+            ctx.beginPath();
+            ctx.arc(padLeft, startY, 4, 0, 2 * Math.PI);
+            ctx.arc(padLeft + drawWidth, endY, 4, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Render textual data directly over data blocks
+            ctx.fillStyle = '#f8fafc';
+            ctx.font = 'bold 10px sans-serif';
+            ctx.fillText(`Invert Start: ${start.toFixed(1)}'`, padLeft - 45, startY + 3);
+            ctx.fillText(`Invert End: ${end.toFixed(1)}'`, padLeft + drawWidth + 8, endY + 3);
+            
+            ctx.fillStyle = '#94a3b8';
+            ctx.font = '9px sans-serif';
+            ctx.fillText(`Ground Plane`, canvas.width / 2 - 25, 25);
+            ctx.fillStyle = '#b45309';
+            ctx.fillText(`Flow Line Gradient (${grade}%)`, canvas.width / 2 - 50, ((startY + endY) / 2) + 18);
+            ctx.fillText(`Run Length: ${len} ft`, canvas.width / 2 - 40, 55);
+        }
+
+        // Initialize execution grid immediately upon script mount
+        window.onload = function() {
+            calcTrench();
+        };
     </script>
 </body>
 </html>

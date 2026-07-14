@@ -4,86 +4,244 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Civil Engineering Unit Converter Engine - Terralogic</title>
-    <meta name="description" content="Convert heavy civil construction values instantly. Swap lengths, earthwork volumes, and material densities seamlessly between metric and imperial standards.">
-    <meta name="keywords" content="unit converter, civil engineering conversions, cubic yards to cubic meters, pcf to kg/m3, construction unit calculator">
+    <title>Civil Engineering Unit Converter Engine | Terralogic Infrastructure Solutions</title>
+    <meta name="description" content="Convert heavy civil architectural values instantly. Transform lengths, volumes, and material density matrices between Imperial and Metric engineering metrics.">
+    <meta name="keywords" content="civil conversion calculator, cubic yards to cubic meters, pcf to kg/m3, engineering unit conversion, structural data transformation">
+    <meta name="robots" content="index, follow">
 
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://grimeyykea.github.io/articles/converter.html">
-    <meta property="og:title" content="Civil Unit Converter Engine - Terralogic">
-    <meta property="og:description" content="Dynamic metric-to-imperial transformation tools engineered for field production and geotechnical engineering data.">
+    <meta property="og:title" content="Civil Engineering Unit Conversion Engine | Terralogic">
+    <meta property="og:description" content="High precision conversion architecture tracking metric-to-imperial transformation metrics instantly.">
     <meta property="og:image" content="https://grimeyykea.github.io/assets/og-converter-preview.jpg">
 
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Civil Unit Converter Engine - Terralogic">
-    <meta property="twitter:description" content="Dynamic metric-to-imperial transformation tools engineered for field production and geotechnical engineering data.">
+    <meta property="twitter:title" content="Civil Engineering Unit Conversion Engine | Terralogic">
+    <meta property="twitter:description" content="High precision conversion architecture tracking metric-to-imperial transformation metrics instantly.">
     <meta property="twitter:image" content="https://grimeyykea.github.io/assets/og-converter-preview.jpg">
 
     <link rel="stylesheet" href="../css/style.css?v=1.0.1">
+    
+    <style>
+        :root {
+            --corp-blue: #1e3a8a;
+            --corp-gold: #b45309;
+            --panel-dark: #1e293b;
+            --border-light: #334155;
+        }
+        .corp-navbar {
+            background-color: #0f172a;
+            border-bottom: 2px solid var(--corp-gold);
+            padding: 15px 0;
+        }
+        .corp-nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .corp-brand {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #f8fafc;
+            text-decoration: none;
+            font-size: 1.4rem;
+        }
+        .corp-brand span {
+            color: var(--corp-gold);
+        }
+        .btn-back-home {
+            background: transparent;
+            border: 1px solid #475569;
+            color: #94a3b8;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-back-home:hover {
+            border-color: var(--corp-gold);
+            color: #ffffff;
+            background-color: rgba(180, 83, 9, 0.1);
+        }
+        .case-study-box {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-left: 4px solid var(--corp-gold);
+            padding: 20px;
+            border-radius: 4px;
+            margin: 25px 0;
+        }
+        .chart-panel {
+            background-color: #0f172a;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        #convCanvas {
+            background-color: #111827;
+            border-radius: 4px;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+        }
+        .corp-footer {
+            background-color: #0f172a;
+            border-top: 4px solid var(--corp-blue);
+            color: #94a3b8;
+            padding: 40px 0 20px 0;
+            margin-top: 60px;
+            font-size: 0.85rem;
+        }
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+            margin-bottom: 30px;
+        }
+        .footer-col h4 {
+            color: #f8fafc;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 5px;
+        }
+        .footer-col p, .footer-col a {
+            color: #94a3b8;
+            line-height: 1.6;
+            text-decoration: none;
+        }
+        .footer-col a:hover {
+            color: var(--corp-gold);
+        }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid var(--border-light);
+            padding: 20px 20px 0 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <div class="container" style="padding: 0;">
-            <h1><a href="../index.html">Terralogic</a></h1>
-            <p>Field-Hardened Data for Heavy Civil Operations</p>
-            <button class="btn-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+    <nav class="corp-navbar">
+        <div class="corp-nav-container">
+            <a href="../index.html" class="corp-brand">Terralogic<span>.</span> Infrastructure</a>
+            <a href="../index.html" class="btn-back-home">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Global Field Dashboard
+            </a>
         </div>
-    </header>
+    </nav>
 
-    <div class="container">
-        <div class="ad-space">Loading Advertising Banner...</div>
+    <div class="container" style="margin-top: 30px;">
+        <div class="ad-space">Loading Enterprise Infrastructure Banner...</div>
 
         <div class="article-layout">
             <div class="article-body">
-                <div class="badge">Global Utilities</div>
-                <h2>Standardizing Conversions Across Field Specs</h2>
-                <p>Civil blueprints often incorporate disparate geographic standards. Whether parsing international equipment specs, structural utility casting layouts, or municipal geotechnical soil metrics, conversions must be exact to prevent structural layout failures.</p>
+                <div class="badge" style="background-color: var(--corp-blue);">Global Interoperability System</div>
+                <h2>Cross-Border Data Transformations and Computational Precision</h2>
+                <p>Modern engineering blueprints frequently navigate historical geographic differences between measurement units. Whether executing structural excavation works derived from municipal design plans, integrating European equipment specifications, or evaluating geotechnical lab data, field crews must translate metrics cleanly. A minor calculation variance over an expanded linear asset infrastructure run can manifest as a severe physical installation positioning error.</p>
                 
-                <h3>Critical Precision Thresholds:</h3>
+                <div class="case-study-box">
+                    <h4 style="color: var(--corp-gold); margin-top: 0; text-transform: uppercase; letter-spacing: 0.5px;">Real-World Perspective Context</h4>
+                    <p style="margin-bottom: 0; font-style: italic;"><strong>Scenario:</strong> An American grading company secures a structural subgrade package for a major infrastructure asset designed by a global partner utilizing metric specifications. The plans mandate placing base gravel material across a footprint totaling 45,000 Cubic Meters ($m^3$) at an engineered target dry density limit of 1,850 $kg/m^3$. Ordering structural material aggregates from local quarries requires converting those metrics into standard Imperial states. Converting the material targets reveals that the operation demands 58,857 Cubic Yards (CY) of aggregate material compacted at an imperial equivalent density standard of 115.5 lbs/ft³, showing that tracking precise unit values prevents logistical planning errors.</p>
+                </div>
+
+                <h3>Critical Field Precision Vectors:</h3>
                 <ul>
-                    <li><strong>Linear Assets:</strong> Small fractional alignment errors over lengthy utility runs scale into major positioning failures.</li>
-                    <li><strong>Mass Volumetrics:</strong> Miscalculating the delta between Cubic Yards and Cubic Meters can leave you short hundreds of tons of aggregate fill material.</li>
-                    <li><strong>Soil Densities:</strong> Swapping Proctor targets between pounds per cubic foot (pcf) and kilograms per cubic meter ($kg/m^3$) requires meticulous decimal control.</li>
+                    <li><strong>Linear Dimensional Matching:</strong> Transforming coordinates between feet and meters requires continuous decimal tracking to prevent linear positioning errors across structural gridlines.</li>
+                    <li><strong>Mass Volumetrics:</strong> The volumetric delta between Cubic Yards and Cubic Meters is substantial; misallocating these scales can lead to critical aggregate supply shortages.</li>
+                    <li><strong>Geotechnical Densities:</strong> Swapping soil compaction profiles between pounds per cubic foot (pcf) and kilograms per cubic meter ($kg/m^3$) demands systematic calculations to maintain correct gauge calibration adjustments.</li>
                 </ul>
 
-                <div class="ad-space">Loading Advertising Banner...</div>
+                <div class="ad-space">Loading Enterprise Infrastructure Banner...</div>
             </div>
 
             <div>
                 <div class="calc-box">
-                    <h3>Multi-Type Converter</h3>
+                    <h3>Multi-Type Transformation Hub</h3>
                     
                     <div class="calc-group">
-                        <label>Conversion Category</label>
+                        <label>Conversion Target Category</label>
                         <select id="conv-type" onchange="updateLabels()">
-                            <option value="length">Length (Feet ⇄ Meters)</option>
-                            <option value="volume">Volume (Cubic Yards ⇄ Cubic Meters)</option>
-                            <option value="density">Density (lbs/ft³ ⇄ kg/m³)</option>
+                            <option value="length">Linear Length (Feet ⇄ Meters)</option>
+                            <option value="volume">Mass Volume (Cubic Yards ⇄ Cubic Meters)</option>
+                            <option value="density">Geotechnical Density (lbs/ft³ ⇄ kg/m³)</option>
                         </select>
                     </div>
 
                     <div class="calc-group">
-                        <label id="input-label">Imperial Value (Feet)</label>
-                        <input type="number" id="input-val" value="1.0" step="0.01" inputmode="decimal" oninput="runConversion()">
+                        <label id="input-label">Imperial Input Base (Feet)</label>
+                        <input type="number" id="input-val" value="10.00" step="0.01" inputmode="decimal" oninput="runConversion()">
                     </div>
 
                     <div class="calc-group">
-                        <label id="output-label">Metric Output (Meters)</label>
+                        <label id="output-label">Metric Evaluated Output (Meters)</label>
                         <input type="number" id="output-val" readonly style="background-color: var(--surface-bg); color: var(--text-muted);">
                     </div>
 
                     <div class="step-explanation" id="conv-exp" style="margin-top:15px; font-size:0.85rem;">
-                        <strong>Conversion Basis:</strong> 1 Foot = 0.3048 Meters exactly.
+                        <strong>Mathematical Scaling Rule:</strong> Multiply feet by 0.3048 to find meters.
                     </div>
+                </div>
+
+                <div class="chart-panel">
+                    <h4 style="color: #f8fafc; margin-top: 0; font-size: 0.9rem; text-transform: uppercase;">Proportional Scale Balance Gauge</h4>
+                    <canvas id="convCanvas" width="400" height="120"></canvas>
+                    <p style="font-size: 0.75rem; color: #64748b; margin-top: 8px; margin-bottom: 0;">Visual balance matrix. The gold bar maps the imperial quantity; the blue indicator follows the metric equivalent scale.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer>
-        <p>© 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
-        <p><a href="../legal/privacy.html">Privacy Policy</a> | <a href="../legal/terms.html">Terms of Service</a></p>
+    <footer class="corp-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Terralogic Infrastructure</h4>
+                <p>Heavy civil engineering calculation suites engineered for heavy machine operators, field supervisors, and project management personnel worldwide.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Operational Operations</h4>
+                <p>
+                    • <a href="soil-swell.html">Geotechnical Volumetrics</a><br>
+                    • <a href="density.html">Nuclear Density Quality Control</a><br>
+                    • <a href="utilities.html">Utility Gradient Yields</a><br>
+                    • <a href="operations.html">Heavy Haul Fleet Optimization</a>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Regulatory Compliance</h4>
+                <p style="font-size: 0.8rem; color: #64748b;">
+                    All analytical field systems match standardized municipal earthwork structural guidelines. Structural transformations utilize standardized international physical scale ratios.
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 TERRALOGIC INFRASTRUCTURE SOLUTIONS INC. ALL ASSETS PROTECTED.</div>
+            <div>
+                <a href="../legal/privacy.html">Privacy Matrix</a> | <a href="../legal/terms.html">Contractual Terms</a>
+            </div>
+        </div>
     </footer>
 
     <script src="../js/main.js?v=1.0.1"></script>
@@ -96,19 +254,19 @@
             const inputVal = document.getElementById('input-val');
 
             if (type === 'length') {
-                inputLabel.innerText = "Imperial Value (Feet)";
-                outputLabel.innerText = "Metric Output (Meters)";
-                exp.innerHTML = "<strong>Conversion Basis:</strong> Multiply feet by 0.3048 to find meters.";
-                inputVal.value = "10";
+                inputLabel.innerText = "Imperial Input Base (Feet)";
+                outputLabel.innerText = "Metric Evaluated Output (Meters)";
+                exp.innerHTML = "<strong>Mathematical Scaling Rule:</strong> Multiply linear feet by 0.3048 to determine the exact metric meter value.";
+                inputVal.value = "50";
             } else if (type === 'volume') {
-                inputLabel.innerText = "Imperial Value (Cubic Yards)";
-                outputLabel.innerText = "Metric Output (Cubic Meters)";
-                exp.innerHTML = "<strong>Conversion Basis:</strong> Multiply cubic yards by 0.764555 to find cubic meters.";
+                inputLabel.innerText = "Imperial Input Base (Cubic Yards)";
+                outputLabel.innerText = "Metric Evaluated Output (Cubic Meters)";
+                exp.innerHTML = "<strong>Mathematical Scaling Rule:</strong> Multiply standard cubic yards by 0.764555 to resolve the cubic meter equivalent footprint.";
                 inputVal.value = "100";
             } else if (type === 'density') {
-                inputLabel.innerText = "Imperial Value (lbs/ft³ - pcf)";
-                outputLabel.innerText = "Metric Output (kg/m³)";
-                exp.innerHTML = "<strong>Conversion Basis:</strong> Multiply pounds per cubic foot by 16.0185 to find kilograms per cubic meter.";
+                inputLabel.innerText = "Imperial Input Base (lbs/ft³ - pcf)";
+                outputLabel.innerText = "Metric Evaluated Output (kg/m³)";
+                exp.innerHTML = "<strong>Mathematical Scaling Rule:</strong> Multiply pounds per cubic foot by 16.018463 to settle the metric kilograms per cubic meter standard.";
                 inputVal.value = "115";
             }
             runConversion();
@@ -119,7 +277,7 @@
             const input = parseFloat(document.getElementById('input-val').value);
             const outField = document.getElementById('output-val');
 
-            if (isNaN(input)) {
+            if (isNaN(input) || input < 0) {
                 outField.value = "";
                 return;
             }
@@ -134,9 +292,45 @@
             }
 
             outField.value = result.toFixed(3);
+            
+            drawConversionGauge(input, result, type);
         }
 
-        // Run initial execution on load
+        function drawConversionGauge(imp, met, type) {
+            const canvas = document.getElementById('convCanvas');
+            if(!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            const padLeft = 30;
+            const padRight = 30;
+            const w = canvas.width - (padLeft + padRight);
+
+            // Establish arbitrary max limits to keep visual scales stable within the canvas area
+            let maxLimit = 100;
+            if (type === 'volume') maxLimit = 250;
+            if (type === 'density') maxLimit = 200;
+
+            const impWidth = Math.min((imp / maxLimit) * w, w);
+            const metWidth = Math.min((met / (maxLimit * (type === 'density' ? 16.01 : 0.76))) * w, w);
+
+            // Draw Imperial Bar Indicator Graph Line
+            ctx.fillStyle = '#b45309';
+            ctx.fillRect(padLeft, 30, impWidth, 20);
+            
+            // Draw Metric Bar Indicator Graph Line
+            ctx.fillStyle = '#1e3a8a';
+            ctx.fillRect(padLeft, 70, metWidth, 20);
+
+            // Annotate tracking typography values
+            ctx.fillStyle = '#f8fafc';
+            ctx.font = 'bold 10px sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText(`Imperial: ${imp.toFixed(1)}`, padLeft, 25);
+            ctx.fillText(`Metric Equivalent: ${met.toFixed(1)}`, padLeft, 65);
+        }
+
         window.onload = function() {
             runConversion();
         };

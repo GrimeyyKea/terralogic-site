@@ -4,79 +4,240 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Heavy Fleet Production Logistics & Cycle Optimizer - Terralogic</title>
-    <meta name="description" content="Measure heavy equipment haul cycle efficiency, effective bucket fill payloads, and hourly material production outputs to maximize site excavation margins.">
-    <meta name="keywords" content="fleet production logistics, earthmoving cycles, heavy equipment production, bucket fill factor, excavator cycle time">
+    <title>Heavy Fleet Production Logistics & Payload Optimizer | Terralogic Infrastructure Solutions</title>
+    <meta name="description" content="Optimize heavy equipment haul cycle production matrices. Calculate bucket fill factors, round trip times, and payload weight balances to guard mass earthwork profits.">
+    <meta name="keywords" content="heavy equipment tracking, excavator cycle time, fleet balancing logistics, bucket fill efficiency, civil earthmoving production">
+    <meta name="robots" content="index, follow">
 
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://grimeyykea.github.io/articles/operations.html">
-    <meta property="og:title" content="Fleet Production Optimization Engine - Terralogic">
-    <meta property="og:description" content="Track and clear cycle performance friction points to protect material moving margins.">
+    <meta property="og:title" content="Fleet Production Logistics Optimization Suite | Terralogic">
+    <meta property="og:description" content="Enterprise production logistics management to protect material transportation limits and payload efficiency.">
     <meta property="og:image" content="https://grimeyykea.github.io/assets/og-operations-preview.jpg">
 
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Fleet Production Optimization Engine - Terralogic">
-    <meta property="twitter:description" content="Track and clear cycle performance friction points to protect material moving margins.">
+    <meta property="twitter:title" content="Fleet Production Logistics Optimization Suite | Terralogic">
+    <meta property="twitter:description" content="Enterprise production logistics management to protect material transportation limits and payload efficiency.">
     <meta property="twitter:image" content="https://grimeyykea.github.io/assets/og-operations-preview.jpg">
 
     <link rel="stylesheet" href="../css/style.css?v=1.0.1">
+    
+    <style>
+        :root {
+            --corp-blue: #1e3a8a;
+            --corp-gold: #b45309;
+            --panel-dark: #1e293b;
+            --border-light: #334155;
+        }
+        .corp-navbar {
+            background-color: #0f172a;
+            border-bottom: 2px solid var(--corp-gold);
+            padding: 15px 0;
+        }
+        .corp-nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .corp-brand {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #f8fafc;
+            text-decoration: none;
+            font-size: 1.4rem;
+        }
+        .corp-brand span {
+            color: var(--corp-gold);
+        }
+        .btn-back-home {
+            background: transparent;
+            border: 1px solid #475569;
+            color: #94a3b8;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-back-home:hover {
+            border-color: var(--corp-gold);
+            color: #ffffff;
+            background-color: rgba(180, 83, 9, 0.1);
+        }
+        .case-study-box {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-left: 4px solid var(--corp-gold);
+            padding: 20px;
+            border-radius: 4px;
+            margin: 25px 0;
+        }
+        .chart-panel {
+            background-color: #0f172a;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        #fleetCanvas {
+            background-color: #111827;
+            border-radius: 4px;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+        }
+        .corp-footer {
+            background-color: #0f172a;
+            border-top: 4px solid var(--corp-blue);
+            color: #94a3b8;
+            padding: 40px 0 20px 0;
+            margin-top: 60px;
+            font-size: 0.85rem;
+        }
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+            margin-bottom: 30px;
+        }
+        .footer-col h4 {
+            color: #f8fafc;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 5px;
+        }
+        .footer-col p, .footer-col a {
+            color: #94a3b8;
+            line-height: 1.6;
+            text-decoration: none;
+        }
+        .footer-col a:hover {
+            color: var(--corp-gold);
+        }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid var(--border-light);
+            padding: 20px 20px 0 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <div class="container" style="padding: 0;">
-            <h1><a href="../index.html">Terralogic</a></h1>
-            <p>Field-Hardened Data for Heavy Civil Operations</p>
-            <button class="btn-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+    <nav class="corp-navbar">
+        <div class="corp-nav-container">
+            <a href="../index.html" class="corp-brand">Terralogic<span>.</span> Infrastructure</a>
+            <a href="../index.html" class="btn-back-home">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Global Field Dashboard
+            </a>
         </div>
-    </header>
+    </nav>
 
-    <div class="container">
-        <div class="ad-space">Loading Advertising Banner...</div>
+    <div class="container" style="margin-top: 30px;">
+        <div class="ad-space">Loading Enterprise Infrastructure Banner...</div>
 
         <div class="article-layout">
             <div class="article-body">
-                <div class="badge">Operations</div>
-                <h2>Maximizing Machine Cycle Production</h2>
-                <p>Keeping expensive machinery productive requires constant monitoring. If haul trucks line up waiting at an excavator, you are burning fuel and profits. Conversely, if your excavator sits idle waiting for haulers to return, your project schedule slips.</p>
+                <div class="badge" style="background-color: var(--corp-blue);">Fleet Logistics Operations</div>
+                <h2>Equipment Allocation and Load Balancing Optimization</h2>
+                <p>Maximizing profitability on major excavation programs relies on removing machine operational cycle bottlenecks. Earthmoving assets represent immense fixed capital expenses; if your primary excavation shovel spends time sitting idle waiting for trucks to back into the load zone, your operating schedule slips. Conversely, if loaded trucks line up on the haul road waiting for the dump zone to clear, fuel efficiency falls and operations lose structural margin.</p>
                 
-                <h3>Key Logistics Factors:</h3>
-                <p><strong>Bucket Fill Efficiencies:</strong> Loose soils load easily, while hard rock clumps create geometric gaps that reduce effective volume per pass.</p>
-                <p><strong>Cycle Optimization:</strong> Fleet balancing relies on aligning machine cycle profiles to maintain a smooth, continuous flow of material across the site.</p>
+                <div class="case-study-box">
+                    <h4 style="color: var(--corp-gold); margin-top: 0; text-transform: uppercase; letter-spacing: 0.5px;">Real-World Perspective Context</h4>
+                    <p style="margin-bottom: 0; font-style: italic;"><strong>Scenario:</strong> A site supervisor fields a heavy 5.0 Cubic Yard production excavator loading an active line of articulated trucks running a 12-minute round-trip cycle. The soil profile consists of wet structural sand weighing roughly 2,800 lbs per loose cubic yard. Operating with an 80% bucket fill efficiency, the machine loads 4.0 true loose yards per bucket pass, placing 5.6 tons of material onto the truck beds with every single swing. Failing to match truck counts to clear this volume leaves the heavy shovel idle for over 20 minutes out of every operating hour, creating production friction.</p>
+                </div>
 
-                <div class="ad-space">Loading Advertising Banner...</div>
+                <h3>Key Logistical Controls:</h3>
+                <ul>
+                    <li><strong>Bucket Fill Efficiencies:</strong> Loose loam flows seamlessly into bucket radiuses, whereas heavy blasted stone clumps create large internal geometry voids that drop effective volumetric targets.</li>
+                    <li><strong>Mass Weight Capacity Limits:</strong> Trucks are bounded by structural axle weight parameters. Exceeding nominal tolerances risks structural haul asset down-time or steep highway safety enforcement citations.</li>
+                    <li><strong>Total Cycle Balancing:</strong> Tracking production volume outputs per hour allows project estimators to optimize fleet sizing to match long-term project schedules.</li>
+                </ul>
+
+                <div class="ad-space">Loading Enterprise Infrastructure Banner...</div>
             </div>
 
             <div>
                 <div class="calc-box">
-                    <h3>Production Optimization</h3>
+                    <h3>Production Resource Matrix</h3>
                     <div class="calc-group">
-                        <label>Bucket Nominal Size (CY)</label>
-                        <input type="number" id="b-size" value="4.0" step="0.1" inputmode="decimal">
+                        <label>Bucket Nominal Capacity (CY)</label>
+                        <input type="number" id="b-size" value="5.0" step="0.1" inputmode="decimal" oninput="calcFleet()">
                     </div>
                     <div class="calc-group">
                         <label>Fill Factor Efficiency (%)</label>
-                        <input type="number" id="f-factor" value="85" inputmode="numeric">
+                        <input type="number" id="f-factor" value="80" inputmode="numeric" oninput="calcFleet()">
                     </div>
                     <div class="calc-group">
-                        <label>Total Cycle Time (Minutes)</label>
-                        <input type="number" id="c-time" value="15" step="0.5" inputmode="decimal">
+                        <label>Total Round Trip Time (Minutes)</label>
+                        <input type="number" id="c-time" value="12" step="0.5" inputmode="decimal" oninput="calcFleet()">
                     </div>
                     <div class="calc-group">
-                        <label>Material Unit Weight (lbs/LCY)</label>
-                        <input type="number" id="m-weight" value="2300" step="50" inputmode="numeric">
+                        <label>Soil Loose Unit Weight (lbs/LCY)</label>
+                        <input type="number" id="m-weight" value="2800" step="50" inputmode="numeric" oninput="calcFleet()">
                     </div>
-                    <button class="calc-btn" onclick="calcFleet()">Measure Output</button>
+                    <button class="calc-btn" onclick="calcFleet()">Force Resource Check</button>
                     
                     <div id="output" class="calc-result" style="display:none;"></div>
+                </div>
+
+                <div class="chart-panel">
+                    <h4 style="color: #f8fafc; margin-top: 0; font-size: 0.9rem; text-transform: uppercase;">Dynamic Output Velocity Trend</h4>
+                    <canvas id="fleetCanvas" width="400" height="200"></canvas>
+                    <p style="font-size: 0.75rem; color: #64748b; margin-top: 8px; margin-bottom: 0;">Hourly volumetric delivery capacity mapped against shifting round-trip cycle time variables.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer>
-        <p>© 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
-        <p><a href="../legal/privacy.html">Privacy Policy</a> | <a href="../legal/terms.html">Terms of Service</a></p>
+    <footer class="corp-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Terralogic Infrastructure</h4>
+                <p>Heavy civil engineering calculation suites engineered for heavy machine operators, field supervisors, and project management personnel worldwide.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Operational Operations</h4>
+                <p>
+                    • <a href="soil-swell.html">Geotechnical Volumetrics</a><br>
+                    • <a href="density.html">Nuclear Density Quality Control</a><br>
+                    • <a href="utilities.html">Utility Gradient Yields</a><br>
+                    • <a href="operations.html">Heavy Haul Fleet Optimization</a>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Regulatory Compliance</h4>
+                <p style="font-size: 0.8rem; color: #64748b;">
+                    All analytical field systems match standardized municipal earthwork structural guidelines. Production velocities represent theoretical peak efficiency capabilities.
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 TERRALOGIC INFRASTRUCTURE SOLUTIONS INC. ALL ASSETS PROTECTED.</div>
+            <div>
+                <a href="../legal/privacy.html">Privacy Matrix</a> | <a href="../legal/terms.html">Contractual Terms</a>
+            </div>
+        </div>
     </footer>
 
     <script src="../js/main.js?v=1.0.1"></script>
@@ -93,22 +254,91 @@
             const tripsPerHour = 60 / cycle;
             const productionPerHour = effectiveCap * tripsPerHour;
             
-            // Tonnage calculations: (Volume * weight per yard) / 2000 lbs per ton
             const tonsPerPass = (effectiveCap * unitWeight) / 2000;
             const tonsPerHour = productionPerHour * unitWeight / 2000;
 
             const out = document.getElementById('output');
             out.style.display = "block";
             out.innerHTML = `
-                <strong>Real Payload Size:</strong> ${effectiveCap.toFixed(2)} LCY/Pass<br>
-                <strong>Weight per Pass:</strong> ${tonsPerPass.toFixed(2)} Tons<br>
-                <strong>Hourly Volume Output:</strong> ${productionPerHour.toFixed(1)} LCY/Hour<br>
-                <strong>Hourly Mass Mass-Move:</strong> ${tonsPerHour.toFixed(1)} Tons/Hour<br>
+                <strong>True Effective Bucket Payload:</strong> ${effectiveCap.toFixed(2)} LCY/Pass<br>
+                <strong>Calculated Mass Mass-Per-Pass:</strong> ${tonsPerPass.toFixed(2)} Tons<br>
+                <strong>Hourly Volume Run Velocity:</strong> ${productionPerHour.toFixed(1)} LCY/Hour<br>
+                <strong>Total Mass Production Velocity:</strong> ${tonsPerHour.toFixed(1)} Tons/Hour<br>
                 <div class="step-explanation">
-                    <strong>Simple Explanation:</strong> A nominal ${size} CY bucket running at ${factor}% efficiency moves ${effectiveCap.toFixed(2)} loose yards per cycle. At ${unitWeight} lbs per yard, each pass drops ${tonsPerPass.toFixed(2)} tons into the haul truck. Running ${tripsPerHour.toFixed(1)} cycles an hour yields a total mass movement of ${tonsPerHour.toFixed(1)} tons.
+                    <strong>Analytical Breakdown:</strong> Given your bucket fill index of ${factor}%, the assembly handles ${effectiveCap.toFixed(2)} loose yards per cycle. Factoring in a soil unit weight of ${unitWeight} lbs/LCY, the platform scales the production limits across a 60-minute profile, yielding an output velocity of ${productionPerHour.toFixed(1)} loose cubic yards alongside ${tonsPerHour.toFixed(1)} total tons per operational hour.
                 </div>
             `;
+
+            drawFleetTrend(effectiveCap, cycle);
         }
+
+        function drawFleetTrend(payload, currentCycle) {
+            const canvas = document.getElementById('fleetCanvas');
+            if(!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            const padLeft = 50;
+            const padBottom = 30;
+            const w = canvas.width - padLeft - 20;
+            const h = canvas.height - padBottom - 20;
+
+            // Plot hourly volume outputs as cycle time varies from 4 to 25 minutes
+            ctx.strokeStyle = '#b45309';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+
+            for (let xPixel = 0; xPixel <= w; xPixel++) {
+                const pct = xPixel / w;
+                const cycleLoop = 4 + (pct * 21); // range 4 to 25 mins
+                const volPerHour = payload * (60 / cycleLoop);
+                
+                // Scale against maximum theoretical output
+                const maxTheoreticalVol = payload * (60 / 4);
+                const mappedY = (canvas.height - padBottom) - (volPerHour / maxTheoreticalVol) * h;
+                
+                if (xPixel === 0) ctx.moveTo(padLeft + xPixel, mappedY);
+                else ctx.lineTo(padLeft + xPixel, mappedY);
+            }
+            ctx.stroke();
+
+            // Highlight current performance location coordinates
+            const currentPct = (currentCycle - 4) / 21;
+            const currentVol = payload * (60 / currentCycle);
+            const maxTheoreticalVol = payload * (60 / 4);
+            
+            const pinX = padLeft + (currentPct * w);
+            const pinY = (canvas.height - padBottom) - (currentVol / maxTheoreticalVol) * h;
+
+            // Render position dot indicator
+            if(pinX >= padLeft && pinX <= canvas.width - 20) {
+                ctx.fillStyle = '#1e3a8a';
+                ctx.beginPath();
+                ctx.arc(pinX, pinY, 5, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.strokeStyle = '#ffffff';
+                ctx.stroke();
+            }
+
+            // Draw structural chart frame axes
+            ctx.beginPath();
+            ctx.moveTo(padLeft, 10);
+            ctx.lineTo(padLeft, canvas.height - padBottom);
+            ctx.lineTo(canvas.width - 20, canvas.height - padBottom);
+            ctx.strokeStyle = '#475569';
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+
+            ctx.fillStyle = '#64748b';
+            ctx.font = '9px sans-serif';
+            ctx.fillText("LCY / Hr ➔", padLeft + 5, 20);
+            ctx.fillText("Cycle Time (Mins) ➔", w - 50, canvas.height - padBottom + 18);
+        }
+
+        window.onload = function() {
+            calcFleet();
+        };
     </script>
 </body>
 </html>

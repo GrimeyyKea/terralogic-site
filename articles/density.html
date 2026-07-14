@@ -4,75 +4,238 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Nuclear Density & Proctor Compaction Pass Calculator - Terralogic</title>
-    <meta name="description" content="Verify field dry density targets and Proctor moisture limits against engineering specifications. Calculate structural fill pass/fail states in real-time.">
-    <meta name="keywords" content="nuclear density gauge, proctor test curve, optimum moisture content, dry density calculation, soil compaction testing">
+    <title>Nuclear Density & Proctor Compaction Pass Engine | Terralogic Infrastructure Solutions</title>
+    <meta name="description" content="Verify field dry soil densities against laboratory Proctor curve limitations. Real-time structural compaction pass/fail analysis.">
+    <meta name="keywords" content="nuclear density gauge, proctor curve test, optimum moisture content, dry density calculation, structural fill testing">
+    <meta name="robots" content="index, follow">
 
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://grimeyykea.github.io/articles/density.html">
-    <meta property="og:title" content="Nuclear Density Gauge Verification Tool - Terralogic">
-    <meta property="og:description" content="Field-hardened calculations to instantly check fill soil compaction margins and moisture variations.">
+    <meta property="og:title" content="Nuclear Density Compaction Analysis Engine | Terralogic">
+    <meta property="og:description" content="Field-hardened analytical checking of structural soil layer compaction and moisture deviations instantly.">
     <meta property="og:image" content="https://grimeyykea.github.io/assets/og-density-preview.jpg">
 
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Nuclear Density Gauge Verification Tool - Terralogic">
-    <meta property="twitter:description" content="Field-hardened calculations to instantly check fill soil compaction margins and moisture variations.">
+    <meta property="twitter:title" content="Nuclear Density Compaction Analysis Engine | Terralogic">
+    <meta property="twitter:description" content="Field-hardened analytical checking of structural soil layer compaction and moisture deviations instantly.">
     <meta property="twitter:image" content="https://grimeyykea.github.io/assets/og-density-preview.jpg">
 
     <link rel="stylesheet" href="../css/style.css?v=1.0.1">
+    
+    <style>
+        :root {
+            --corp-blue: #1e3a8a;
+            --corp-gold: #b45309;
+            --panel-dark: #1e293b;
+            --border-light: #334155;
+        }
+        .corp-navbar {
+            background-color: #0f172a;
+            border-bottom: 2px solid var(--corp-gold);
+            padding: 15px 0;
+        }
+        .corp-nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .corp-brand {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #f8fafc;
+            text-decoration: none;
+            font-size: 1.4rem;
+        }
+        .corp-brand span {
+            color: var(--corp-gold);
+        }
+        .btn-back-home {
+            background: transparent;
+            border: 1px solid #475569;
+            color: #94a3b8;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-back-home:hover {
+            border-color: var(--corp-gold);
+            color: #ffffff;
+            background-color: rgba(180, 83, 9, 0.1);
+        }
+        .case-study-box {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-left: 4px solid var(--corp-gold);
+            padding: 20px;
+            border-radius: 4px;
+            margin: 25px 0;
+        }
+        .chart-panel {
+            background-color: #0f172a;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        #proctorCanvas {
+            background-color: #111827;
+            border-radius: 4px;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+        }
+        .corp-footer {
+            background-color: #0f172a;
+            border-top: 4px solid var(--corp-blue);
+            color: #94a3b8;
+            padding: 40px 0 20px 0;
+            margin-top: 60px;
+            font-size: 0.85rem;
+        }
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+            margin-bottom: 30px;
+        }
+        .footer-col h4 {
+            color: #f8fafc;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 5px;
+        }
+        .footer-col p, .footer-col a {
+            color: #94a3b8;
+            line-height: 1.6;
+            text-decoration: none;
+        }
+        .footer-col a:hover {
+            color: var(--corp-gold);
+        }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid var(--border-light);
+            padding: 20px 20px 0 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <div class="container" style="padding: 0;">
-            <h1><a href="../index.html">Terralogic</a></h1>
-            <p>Field-Hardened Data for Heavy Civil Operations</p>
-            <button class="btn-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+    <nav class="corp-navbar">
+        <div class="corp-nav-container">
+            <a href="../index.html" class="corp-brand">Terralogic<span>.</span> Infrastructure</a>
+            <a href="../index.html" class="btn-back-home">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Global Field Dashboard
+            </a>
         </div>
-    </header>
+    </nav>
 
-    <div class="container">
-        <div class="ad-space">Loading Advertising Banner...</div>
+    <div class="container" style="margin-top: 30px;">
+        <div class="ad-space">Loading Enterprise Infrastructure Banner...</div>
 
         <div class="article-layout">
             <div class="article-body">
-                <div class="badge">Quality Control</div>
-                <h2>Field Moisture and Proctor Balances</h2>
-                <p>To build stable foundations, structural fills must reach engineered targets. Quality control inspectors utilize nuclear density gauges to measure structural soil parameters directly inside active work zones.</p>
+                <div class="badge" style="background-color: var(--corp-blue);">Quality Assurance Matrix</div>
+                <h2>Field Compaction Mechanics and Moisture Equilibriums</h2>
+                <p>Ensuring foundation stability requires validation of fill layer characteristics. Field quality control inspectors utilize nuclear density gauges to measure material configurations directly inside active structural zones. The primary analytical calculation requires deriving the field dry density value from measured wet densities and moisture ratios, then comparing it against a laboratory reference standard. The formula for this transformation is structured as follows:</p>
                 
-                <h3>Why Moisture Matters:</h3>
-                <p>Water acts as a mechanical lubricant during compaction. Too little moisture leaves high friction between dirt particles; too much moisture fills empty void pockets completely, preventing proper compaction because water cannot compress.</p>
-                <p>The **Proctor Curve** establishes the sweet spot, identifying the **Optimum Moisture Content** required to achieve maximum dry structural configurations.</p>
-                
-                <div class="ad-space">Loading Advertising Banner...</div>
+                $$\text{Dry Density} = \frac{\text{Wet Density}}{1 + \left(\frac{\text{Moisture Percentage}}{100}\right)}$$
+
+                <div class="case-study-box">
+                    <h4 style="color: var(--corp-gold); margin-top: 0; text-transform: uppercase; letter-spacing: 0.5px;">Real-World Perspective Context</h4>
+                    <p style="margin-bottom: 0; font-style: italic;"><strong>Scenario:</strong> A soil technician tests the second 8-inch structural fill lift under a multi-million dollar commercial concrete pad. The laboratory Proctor report lists a Maximum Dry Density of 115.0 pounds per cubic foot (pcf) with an Optimum Moisture Content of 12.0%. The nuclear gauge reads a field wet density of 124.3 pcf at a moisture level of 14.5%. Computing the true field dry density yields 108.6 pcf. Dividing this by the lab standard reveals a compaction level of 94.4%. Since the project blueprint mandates a 95.0% pass threshold, this structural lift fails, meaning the roller crew must strip or re-compact the zone.</p>
+                </div>
+
+                <h3>Why Moisture and Density Interact:</h3>
+                <p>Water acts as a physical lubricant between soil particles during field rolling operations. Insufficient moisture generates high internal friction, locking grains out of maximum density alignment. Excess moisture fills the available void framework completely, and because fluids cannot compress, it forces soil particles apart. The **Proctor Compaction Curve** maps this relationship, defining the absolute peak configuration reachable for any distinct soil type.</p>
+
+                <div class="ad-space">Loading Enterprise Infrastructure Banner...</div>
             </div>
 
             <div>
                 <div class="calc-box">
-                    <h3>Compaction Verification</h3>
+                    <h3>Nuclear Density Analysis</h3>
                     <div class="calc-group">
                         <label>Lab Max Dry Density (pcf)</label>
-                        <input type="number" id="max-dry" value="115.0" step="0.1" inputmode="decimal">
+                        <input type="number" id="max-dry" value="115.0" step="0.1" inputmode="decimal" oninput="calcDensity()">
                     </div>
                     <div class="calc-group">
                         <label>Field Wet Density Reading (pcf)</label>
-                        <input type="number" id="wet-den" value="121.5" step="0.1" inputmode="decimal">
+                        <input type="number" id="wet-den" value="124.3" step="0.1" inputmode="decimal" oninput="calcDensity()">
                     </div>
                     <div class="calc-group">
                         <label>Field Moisture Content (%)</label>
-                        <input type="number" id="moist-pct" value="10.5" step="0.1" inputmode="decimal">
+                        <input type="number" id="moist-pct" value="14.5" step="0.1" inputmode="decimal" oninput="calcDensity()">
                     </div>
-                    <button class="calc-btn" onclick="calcDensity()">Run Density Check</button>
+                    <div class="calc-group">
+                        <label>Target Spec Threshold (%)</label>
+                        <input type="number" id="target-spec" value="95.0" step="0.5" inputmode="decimal" oninput="calcDensity()">
+                    </div>
+                    <button class="calc-btn" onclick="calcDensity()">Force Verification</button>
                     
                     <div id="output" class="calc-result" style="display:none;"></div>
+                </div>
+
+                <div class="chart-panel">
+                    <h4 style="color: #f8fafc; margin-top: 0; font-size: 0.9rem; text-transform: uppercase;">Dynamic Proctor Curve Matrix</h4>
+                    <canvas id="proctorCanvas" width="400" height="200"></canvas>
+                    <p style="font-size: 0.75rem; color: #64748b; margin-top: 8px; margin-bottom: 0;">Parabolic Proctor line represents lab maximums. The red/green point represents your active field test placement.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer>
-        <p>© 2026 TERRALOGIC. INDUSTRIAL ASSETS PROTECTED.</p>
-        <p><a href="../legal/privacy.html">Privacy Policy</a> | <a href="../legal/terms.html">Terms of Service</a></p>
+    <footer class="corp-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Terralogic Infrastructure</h4>
+                <p>Heavy civil engineering calculation suites engineered for heavy machine operators, field supervisors, and project management personnel worldwide.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Operational Operations</h4>
+                <p>
+                    • <a href="soil-swell.html">Geotechnical Volumetrics</a><br>
+                    • <a href="density.html">Nuclear Density Quality Control</a><br>
+                    • <a href="utilities.html">Utility Gradient Yields</a><br>
+                    • <a href="operations.html">Heavy Haul Fleet Optimization</a>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Regulatory Compliance</h4>
+                <p style="font-size: 0.8rem; color: #64748b;">
+                    All analytical field systems match standardized municipal earthwork structural guidelines. Structural compaction targets are tied to independent laboratory Proctor verification profiles.
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 TERRALOGIC INFRASTRUCTURE SOLUTIONS INC. ALL ASSETS PROTECTED.</div>
+            <div>
+                <a href="../legal/privacy.html">Privacy Matrix</a> | <a href="../legal/terms.html">Contractual Terms</a>
+            </div>
+        </div>
     </footer>
 
     <script src="../js/main.js?v=1.0.1"></script>
@@ -81,24 +244,97 @@
             const maxDry = parseFloat(document.getElementById('max-dry').value);
             const wet = parseFloat(document.getElementById('wet-den').value);
             const moisture = parseFloat(document.getElementById('moist-pct').value);
+            const targetSpec = parseFloat(document.getElementById('target-spec').value);
 
-            if(isNaN(maxDry) || isNaN(wet) || isNaN(moisture)) return;
+            if(isNaN(maxDry) || isNaN(wet) || isNaN(moisture) || isNaN(targetSpec)) return;
 
+            // Formulate true field dry density
             const fieldDry = wet / (1 + (moisture / 100));
             const compaction = (fieldDry / maxDry) * 100;
-            const passes = compaction >= 95.0;
+            const passes = compaction >= targetSpec;
 
             const out = document.getElementById('output');
             out.style.display = "block";
             out.innerHTML = `
-                <strong>Field Dry Density:</strong> ${fieldDry.toFixed(1)} pcf<br>
-                <strong>Compaction Value:</strong> ${compaction.toFixed(1)}%<br>
-                <strong>Status:</strong> <span style="color:${passes ? '#10b981' : '#ef4444'}; font-weight:bold;">${passes ? 'PASSED' : 'FAILED'}</span><br>
+                <strong>Calculated Field Dry Density:</strong> ${fieldDry.toFixed(1)} pcf<br>
+                <strong>Current Compaction State:</strong> ${compaction.toFixed(1)}%<br>
+                <strong>Engineered Specification Status:</strong> 
+                <span style="color:${passes ? '#10b981' : '#ef4444'}; font-weight:bold;">
+                    ${passes ? 'PASSED FIELD SPECIFICATION' : 'FAILED PERFORMANCE SPECIFICATION'}
+                </span>
                 <div class="step-explanation">
-                    <strong>Simple Explanation:</strong> The gauge registers the total weight including water. To find the true dry structural value, we remove the water content mathematically. Your result shows whether your layer clears the typical 95% threshold required to build on safely.
+                    <strong>Analytical Breakdown:</strong> By parsing out the ${moisture}% moisture volume, the calculator converts the wet weight into a dry density baseline of ${fieldDry.toFixed(1)} pcf. This value reaches ${compaction.toFixed(1)}% of the laboratory max limit, indicating whether this structural layer can accept building loads based on your ${targetSpec}% threshold.
                 </div>
             `;
+
+            drawProctorCurve(maxDry, moisture, fieldDry, passes);
         }
+
+        function drawProctorCurve(maxDry, currentMoisture, fieldDry, passes) {
+            const canvas = document.getElementById('proctorCanvas');
+            if(!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            const padLeft = 40;
+            const padBottom = 30;
+            const w = canvas.width - padLeft - 20;
+            const h = canvas.height - padBottom - 20;
+
+            // Draw theoretical curve
+            ctx.beginPath();
+            ctx.moveTo(padLeft, canvas.height - padBottom);
+            
+            // Generate parabolic curve representing Proctor limits
+            ctx.strokeStyle = '#38bdf8';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            for (let xPixel = 0; xPixel <= w; xPixel++) {
+                const pct = xPixel / w;
+                // Parabolic function equation: y = -4 * (x - 0.5)^2 + 1
+                const factor = -4 * Math.pow((pct - 0.5), 2) + 1;
+                const currentY = (canvas.height - padBottom) - (factor * h * 0.8) - 10;
+                
+                if (xPixel === 0) ctx.moveTo(padLeft + xPixel, currentY);
+                else ctx.lineTo(padLeft + xPixel, currentY);
+            }
+            ctx.stroke();
+
+            // Map current real field position coordinates
+            // Constrain moisture visualization inside graph axes bounds
+            const mappedX = padLeft + (Math.min(currentMoisture, 24.0) / 24.0) * w;
+            const maxGraphDensity = maxDry * 1.2;
+            const mappedY = (canvas.height - padBottom) - (fieldDry / maxGraphDensity) * h;
+
+            // Draw current test location pin point
+            ctx.fillStyle = passes ? '#10b981' : '#ef4444';
+            ctx.beginPath();
+            ctx.arc(mappedX, mappedY, 6, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+
+            // Render chart border lines
+            ctx.beginPath();
+            ctx.moveTo(padLeft, 10);
+            ctx.lineTo(padLeft, canvas.height - padBottom);
+            ctx.lineTo(canvas.width - 20, canvas.height - padBottom);
+            ctx.strokeStyle = '#475569';
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+            
+            // Labels
+            ctx.fillStyle = '#64748b';
+            ctx.font = '9px sans-serif';
+            ctx.fillText("Density ➔", padLeft + 5, 20);
+            ctx.fillText("Moisture Content % ➔", w - 50, canvas.height - padBottom + 18);
+        }
+
+        window.onload = function() {
+            calcDensity();
+        };
     </script>
 </body>
 </html>
