@@ -3,52 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earthwork Volume Calculator</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Terralogic Infrastructure Solutions | Global Field Dashboard</title>
+    <meta name="description" content="Central execution control deck for heavy civil field operations, earthwork volumetrics, and linear site utility structural calculations.">
+    <link rel="stylesheet" href="css/style.css?v=1.0.1">
 </head>
 <body>
-    <div class="calculator-container">
-        <header>
-            <div class="header-top">
-                <h1>Volume Calculator</h1>
-                <button id="themeToggle" class="toggle-btn" aria-label="Toggle Field Mode">
-                    <span class="toggle-icon">☀</span> <span class="toggle-text">Field Mode</span>
-                </button>
-            </div>
-            <p>Calculate excavation, dirt work, or aggregate volumes accurately.</p>
-        </header>
 
-        <form id="volumeForm" onsubmit="return false;">
-            <div class="input-grid">
-                <div class="input-group">
-                    <label for="length">Length (meters):</label>
-                    <input type="number" id="length" step="any" placeholder="0.00" required>
+    <nav class="corp-navbar">
+        <div class="corp-nav-container">
+            <a href="index.html" class="corp-brand">Terralogic<span>.</span> Infrastructure</a>
+            <div class="nav-actions">
+                <button class="field-mode-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="ad-container">
+            <span class="ad-label">Advertisement Slot</span>
+            <span>Terralogic Premium Infrastructure Solutions Banner</span>
+        </div>
+
+        <div class="dashboard-header">
+            <h1 style="margin: 0 0 10px 0; color: #f8fafc; font-size: 1.75rem;">Civil Infrastructure Analytical Systems</h1>
+            <p style="margin: 0; color: #94a3b8; font-size: 1rem; line-height: 1.6;">Select an active deployment matrix module below to run dynamic physical geometric profiles, site excavation balances, fleet payload optimization rules, or laboratory material density checks.</p>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="tool-card">
+                <div>
+                    <div style="color: var(--corp-gold); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Civil Systems Operations</div>
+                    <h3>Utility Trench Gradient Matrix</h3>
+                    <p>Execute excavation volume layouts across shifting elevation lines. Track downstream grade adjustments for gravity-fed mains.</p>
                 </div>
-                
-                <div class="input-group">
-                    <label for="width">Width (meters):</label>
-                    <input type="number" id="width" step="any" placeholder="0.00" required>
-                </div>
-                
-                <div class="input-group">
-                    <label for="depth">Average Depth (meters):</label>
-                    <input type="number" id="depth" step="any" placeholder="0.00" required>
-                </div>
+                <a href="articles/utilities.html" class="btn-launch">Launch Utility Engine</a>
             </div>
 
-            <button type="button" id="calculateBtn" class="primary-btn">Calculate Volume</button>
-        </form>
-
-        <div id="resultsCard" class="results-card hidden">
-            <h3>Calculated Excavation Material</h3>
-            <div class="result-value">
-                <span id="volumeResult">0.00</span> 
-                <span class="unit">m³</span>
+            <div class="tool-card">
+                <div>
+                    <div style="color: var(--corp-gold); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Geotechnical Engineering</div>
+                    <h3>Volumetric Soil Phase Balancer</h3>
+                    <p>Convert soil capacity requirements immediately between Bank (BCY), Loose (LCY), and Compacted (CCY) material matrices.</p>
+                </div>
+                <a href="articles/soil-swell.html" class="btn-launch">Launch Volumetrics Engine</a>
             </div>
-            <p class="sub-result">Equivalent to approximately <span id="yardageResult">0.00</span> yd³ (cubic yards)</p>
+
+            <div class="tool-card">
+                <div>
+                    <div style="color: var(--corp-gold); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Quality Assurance Matrix</div>
+                    <h3>Nuclear Density Compaction Check</h3>
+                    <p>Compare real-time field dry density measurements directly against engineering Proctor curve minimums.</p>
+                </div>
+                <a href="articles/density.html" class="btn-launch">Launch Density Engine</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div style="color: var(--corp-gold); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Fleet Logistics Operations</div>
+                    <h3>Heavy Production Payload Optimizer</h3>
+                    <p>Balance machinery configurations. Factor in bucket fill indices, cycle durations, and material tonnage parameters.</p>
+                </div>
+                <a href="articles/operations.html" class="btn-launch">Launch Fleet Engine</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div style="color: var(--corp-gold); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Global Interoperability System</div>
+                    <h3>Civil Structural Unit Transformer</h3>
+                    <p>Seamlessly process engineering dimensions between Imperial and Metric standards for all site data.</p>
+                </div>
+                <a href="articles/converter.html" class="btn-launch">Launch Transformer Hub</a>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <span class="ad-label">Advertisement Slot</span>
+            <span>Programmatic Ad Delivery Grid</span>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Terralogic Infrastructure Solutions Inc. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="legal/privacy.html">Privacy Policy</a>
+                <a href="legal/terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js?v=1.0.1"></script>
 </body>
 </html>
