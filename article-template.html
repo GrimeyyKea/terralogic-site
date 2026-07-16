@@ -4,43 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Tool Name | Terralogic Infrastructure Solutions</title>
-    <link rel="stylesheet" href="../css/style.css?v=1.0.1">
-    <style>
-        /* Specific page overrides can go here */
-        .badge { background-color: var(--corp-blue); padding: 5px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; display: inline-block; margin-bottom: 10px; }
-    </style>
+    <link rel="stylesheet" href="css/style.css?v=1.0.1">
 </head>
 <body>
 
     <nav class="corp-navbar">
         <div class="corp-nav-container">
-            <a href="../index.html" class="corp-brand">Terralogic<span>.</span> Infrastructure</a>
+            <a href="index.html" class="corp-brand">Terralogic<span>.</span> Infrastructure</a>
+            <div class="nav-actions">
+                <a href="index.html" class="btn-back-home">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Dashboard
+                </a>
+                <button class="field-mode-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+            </div>
         </div>
     </nav>
 
     <div class="container">
+        <div class="ad-container">
+            <span class="ad-label">Advertisement Slot</span>
+            <span>Premium Sponsored Solution Banner</span>
+        </div>
+
         <div class="article-layout">
             <div class="article-body">
                 <div class="badge">Tool Category</div>
-                <h2>Article Title</h2>
-                <p>Insert technical documentation and engineering context here.</p>
+                <h2>Article Headline Title</h2>
+                <p>Insert engineering logic and project-specific technical documentation guidelines here.</p>
+                
+                <div class="case-study-box">
+                    <h4 style="color: var(--corp-gold); margin-top: 0; text-transform: uppercase;">Theoretical Field Context</h4>
+                    <p style="margin-bottom: 0; font-style: italic;">Insert real-world case scenarios or field examples here to ground calculation parameters.</p>
+                </div>
             </div>
 
             <div>
                 <div class="calc-box">
-                    <h3>Calculator Title</h3>
-                    <button class="calc-btn" onclick="performCalc()">Execute Calculation</button>
+                    <h3>Calculator Interface</h3>
+                    <div class="calc-group">
+                        <label>Sample Input Parameter</label>
+                        <input type="number" id="sample-input" value="100" inputmode="numeric">
+                    </div>
+                    <button class="calc-btn" onclick="runCalculation()">Run Verification</button>
                     <div id="output" class="calc-result" style="display:none;"></div>
+                </div>
+
+                <div class="chart-panel">
+                    <h4 style="color: #f8fafc; margin-top: 0; font-size: 0.9rem; text-transform: uppercase;">Visual Representation</h4>
+                    <canvas id="sampleCanvas" width="400" height="200" style="background-color: #111827; border-radius: 4px;"></canvas>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="../js/main.js?v=1.0.1"></script>
-    <script>
-        function performCalc() {
-            // Calculator logic
-        }
-    </script>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Terralogic Infrastructure Solutions Inc. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="legal/privacy.html">Privacy Policy</a>
+                <a href="legal/terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js?v=1.0.1"></script>
 </body>
 </html>

@@ -5,34 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service | Terralogic Infrastructure Solutions</title>
     <link rel="stylesheet" href="../css/style.css?v=1.0.1">
-    <style>
-        :root { --corp-blue: #1e3a8a; --corp-gold: #b45309; }
-        body { font-family: sans-serif; background-color: #0f172a; color: #94a3b8; line-height: 1.6; margin: 0; }
-        .corp-navbar { background-color: #0f172a; border-bottom: 2px solid var(--corp-gold); padding: 15px 0; }
-        .corp-nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .corp-brand { font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #f8fafc; text-decoration: none; font-size: 1.4rem; }
-        .corp-brand span { color: var(--corp-gold); }
-        .container { max-width: 800px; margin: 40px auto; padding: 20px; }
-        h1, h2 { color: #f8fafc; }
-        footer { background-color: #0f172a; border-top: 1px solid #334155; padding: 20px 0; font-size: 0.85rem; margin-top: 60px; }
-        .footer-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
-        .footer-links a { color: #94a3b8; text-decoration: none; margin-left: 20px; }
-    </style>
 </head>
 <body>
+
     <nav class="corp-navbar">
         <div class="corp-nav-container">
             <a href="../index.html" class="corp-brand">Terralogic<span>.</span> Infrastructure</a>
+            <div class="nav-actions">
+                <a href="../index.html" class="btn-back-home">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Dashboard
+                </a>
+                <button class="field-mode-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+            </div>
         </div>
     </nav>
-    <div class="container">
-        <h1>Terms of Service</h1>
-        <p>Effective Date: July 2026</p>
-        <h2>Service Usage</h2>
-        <p>The calculation tools provided on this platform are for informational purposes only. Terralogic Infrastructure Solutions is not responsible for field outcomes derived from these estimations. Users must verify all calculations with on-site engineering professionals and project blueprints.</p>
-        <h2>Liability</h2>
-        <p>By using these tools, you agree that Terralogic Infrastructure Solutions, its employees, and affiliates shall not be liable for any damages, errors, or delays in construction operations resulting from the use of this software.</p>
+
+    <div class="container" style="max-width: 800px; margin: 40px auto; padding: 20px;">
+        <h1 style="color: #f8fafc; margin-bottom: 20px;">Terms of Service</h1>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Effective Date: July 2026</p>
+
+        <h2 style="color: #f8fafc; margin-top: 30px; margin-bottom: 10px; font-size: 1.3rem;">Service Usage & Limitations</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">The calculation tools provided on this platform are for informational purposes only. Terralogic Infrastructure Solutions is not responsible for field outcomes derived from these estimations. Users must verify all calculations with on-site engineering professionals and certified project blueprints before making physical installations.</p>
+
+        <h2 style="color: #f8fafc; margin-top: 30px; margin-bottom: 10px; font-size: 1.3rem;">Liability Disclaimer</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">By using these tools, you agree that Terralogic Infrastructure Solutions, its employees, and affiliates shall not be liable for any physical, economic, or logistical damages resulting from the use of this software.</p>
     </div>
+
     <footer>
         <div class="footer-container">
             <p>&copy; 2026 Terralogic Infrastructure Solutions Inc. All rights reserved.</p>
@@ -42,5 +41,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="../js/main.js?v=1.0.1"></script>
 </body>
 </html>

@@ -7,19 +7,244 @@
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
     --border-light: #334155;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
 }
 
 body {
     background-color: var(--bg-dark);
     color: var(--text-main);
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    margin: 0;
+    transition: background-color 0.15s, color 0.15s;
     line-height: 1.6;
 }
 
-/* Layout Structures */
-.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
+/* Corporate Navigation */
+.corp-navbar {
+    background-color: #0f172a;
+    border-bottom: 2px solid var(--corp-gold);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.corp-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.corp-brand {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #f8fafc;
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+
+.corp-brand span {
+    color: var(--corp-gold);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-back-home {
+    background: transparent;
+    border: 1px solid #475569;
+    color: #94a3b8;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-back-home:hover {
+    border-color: var(--corp-gold);
+    color: #ffffff;
+    background-color: rgba(180, 83, 9, 0.1);
+}
+
+/* Field Mode Toggle */
+.field-mode-toggle {
+    background: transparent;
+    border: 1px solid var(--corp-gold);
+    color: var(--corp-gold);
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.field-mode-toggle:hover {
+    background: var(--corp-gold);
+    color: white;
+}
+
+/* High-Contrast Field Mode (Optimized for Outdoor Sunlight) */
+body.field-mode {
+    --bg-dark: #000000;
+    --panel-dark: #000000;
+    --text-main: #ffffff;
+    --text-muted: #fefefe;
+    --border-light: #ffffff;
+    --corp-blue: #0022ff;
+    --corp-gold: #ffaa00;
+}
+
+body.field-mode .corp-navbar {
+    background-color: #000000;
+    border-bottom: 3px solid #ffaa00;
+}
+
+body.field-mode .tool-card, 
+body.field-mode .calc-box, 
+body.field-mode .chart-panel,
+body.field-mode .case-study-box,
+body.field-mode .ad-container {
+    background-color: #000000 !important;
+    background: #000000 !important;
+    border: 2px solid #ffffff !important;
+}
+
+body.field-mode .calc-group input,
+body.field-mode .calc-group select {
+    background-color: #000000 !important;
+    border: 2px solid #ffffff !important;
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+body.field-mode .btn-launch, 
+body.field-mode .calc-btn {
+    background-color: #ffaa00 !important;
+    color: #000000 !important;
+    font-weight: 900 !important;
+    border: 2px solid #ffffff !important;
+}
+
+body.field-mode footer {
+    background-color: #000000 !important;
+    border-top: 2px solid #ffffff !important;
+}
+
+/* Ad Monetization Container */
+.ad-container {
+    background-color: #1e293b;
+    border: 1px dashed var(--border-light);
+    border-radius: 6px;
+    padding: 15px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 20px 0;
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ad-label {
+    font-size: 0.6rem;
+    color: var(--corp-gold);
+    margin-bottom: 5px;
+}
+
+/* Dashboard Landing Layout */
+.dashboard-header {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-left: 4px solid var(--corp-gold);
+    padding: 35px;
+    border-radius: 6px;
+    margin: 30px 0;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.tool-card {
+    background-color: #0f172a;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--corp-gold);
+}
+
+.tool-card h3 {
+    margin-top: 0;
+    color: #f8fafc;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.tool-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.btn-launch {
+    background-color: var(--corp-blue);
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.btn-launch:hover {
+    background-color: #1d4ed8;
+}
+
+/* Article Layout System */
 .article-layout {
     display: grid;
     grid-template-columns: 1fr 380px;
@@ -27,26 +252,98 @@ body {
     margin-top: 30px;
 }
 
-/* UI Components */
+.article-body h2 {
+    color: var(--text-main);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.article-body p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.article-body h3 {
+    color: var(--text-main);
+    font-size: 1.3rem;
+    margin: 25px 0 10px 0;
+}
+
+.article-body ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    color: var(--text-muted);
+}
+
+.article-body li {
+    margin-bottom: 10px;
+}
+
+.badge {
+    background-color: var(--corp-blue);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.case-study-box {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-left: 4px solid var(--corp-gold);
+    padding: 20px;
+    border-radius: 4px;
+    margin: 25px 0;
+}
+
+/* Interactive Calculators & Positioning Context */
+.article-layout > div {
+    position: relative;
+    z-index: 1;
+}
+
 .calc-box {
     background-color: var(--panel-dark);
     border: 1px solid var(--border-light);
     border-radius: 6px;
     padding: 25px;
+    margin-bottom: 25px;
     position: relative;
     z-index: 2;
 }
 
-.calc-group { margin-bottom: 15px; }
-.calc-group label { display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 5px; }
-.calc-group input {
+.calc-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+}
+
+.calc-group {
+    margin-bottom: 15px;
+}
+
+.calc-group label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.calc-group input,
+.calc-group select {
     width: 100%;
     padding: 10px;
     background: var(--bg-dark);
     border: 1px solid var(--border-light);
     color: white;
     border-radius: 4px;
-    box-sizing: border-box;
+    font-size: 1rem;
 }
 
 .calc-btn {
@@ -58,27 +355,91 @@ body {
     border-radius: 4px;
     font-weight: bold;
     cursor: pointer;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease;
+}
+
+.calc-btn:hover {
+    background-color: #92400e;
 }
 
 .calc-result {
     margin-top: 20px;
     padding: 15px;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.25);
     border-left: 3px solid var(--corp-gold);
     font-size: 0.9rem;
+    line-height: 1.5;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-    .article-layout { grid-template-columns: 1fr; }
+.step-explanation {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-light);
+    padding-top: 8px;
+    font-style: italic;
 }
 
-/* Fix for Calculator/Chart Overlap */
-.article-layout > div {
-    position: relative;
-    z-index: 1;
-}
-.calc-box, .chart-panel {
+/* Chart Canvas Area */
+.chart-panel {
+    background-color: #0f172a;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    padding: 15px;
+    text-align: center;
     position: relative;
     z-index: 2;
+}
+
+/* Footer layout standard */
+footer {
+    background-color: #0f172a;
+    color: var(--text-muted);
+    padding: 20px 0;
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-light);
+    margin-top: 60px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+/* Responsive Overrides */
+@media (max-width: 900px) {
+    .article-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .corp-nav-container,
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .footer-links a {
+        margin: 0 10px;
+    }
 }

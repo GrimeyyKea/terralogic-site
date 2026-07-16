@@ -6,132 +6,27 @@
     <title>Nuclear Density & Proctor Compaction Pass Engine | Terralogic Infrastructure Solutions</title>
     <meta name="description" content="Verify field dry soil densities against laboratory Proctor curve limitations. Real-time structural compaction pass/fail analysis.">
     <link rel="stylesheet" href="../css/style.css?v=1.0.1">
-    <style>
-        :root {
-            --corp-blue: #1e3a8a;
-            --corp-gold: #b45309;
-            --panel-dark: #1e293b;
-            --border-light: #334155;
-        }
-        .corp-navbar {
-            background-color: #0f172a;
-            border-bottom: 2px solid var(--corp-gold);
-            padding: 15px 0;
-        }
-        .corp-nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .corp-brand {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #f8fafc;
-            text-decoration: none;
-            font-size: 1.4rem;
-        }
-        .corp-brand span {
-            color: var(--corp-gold);
-        }
-        .btn-back-home {
-            background: transparent;
-            border: 1px solid #475569;
-            color: #94a3b8;
-            padding: 8px 16px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .btn-back-home:hover {
-            border-color: var(--corp-gold);
-            color: #ffffff;
-            background-color: rgba(180, 83, 9, 0.1);
-        }
-        .case-study-box {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border-left: 4px solid var(--corp-gold);
-            padding: 20px;
-            border-radius: 4px;
-            margin: 25px 0;
-        }
-        .chart-panel {
-            background-color: #0f172a;
-            border: 1px solid var(--border-light);
-            border-radius: 6px;
-            padding: 15px;
-            margin-top: 20px;
-            text-align: center;
-        }
-        #proctorCanvas {
-            background-color: #111827;
-            border-radius: 4px;
-            width: 100%;
-            height: auto;
-            max-width: 100%;
-        }
-        footer {
-            background-color: #0f172a;
-            color: #94a3b8;
-            padding: 20px 0;
-            font-size: 0.85rem;
-            border-top: 1px solid var(--border-light);
-            margin-top: 60px;
-            font-family: sans-serif;
-        }
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .footer-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            margin-left: 20px;
-        }
-        .footer-links a:hover {
-            text-decoration: underline;
-            color: #ffffff;
-        }
-        @media (max-width: 600px) {
-            .footer-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .footer-links a {
-                margin: 0 10px;
-            }
-        }
-    </style>
 </head>
 <body>
 
     <nav class="corp-navbar">
         <div class="corp-nav-container">
             <a href="../index.html" class="corp-brand">Terralogic<span>.</span> Infrastructure</a>
-            <a href="../index.html" class="btn-back-home">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-                Global Field Dashboard
-            </a>
+            <div class="nav-actions">
+                <a href="../index.html" class="btn-back-home">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Dashboard
+                </a>
+                <button class="field-mode-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+            </div>
         </div>
     </nav>
 
-    <div class="container" style="margin-top: 30px;">
-        <div class="ad-space">Loading Enterprise Infrastructure Banner...</div>
+    <div class="container">
+        <div class="ad-space ad-container">
+            <span class="ad-label">Advertisement Slot</span>
+            <span>Premium Laboratory Quality Testing Hardware Sponsorship</span>
+        </div>
 
         <div class="article-layout">
             <div class="article-body">
@@ -139,7 +34,7 @@
                 <h2>Field Compaction Mechanics and Moisture Equilibriums</h2>
                 <p>Ensuring foundation stability requires validation of fill layer characteristics. Field quality control inspectors utilize nuclear density gauges to measure material configurations directly inside active structural zones. The primary analytical calculation requires deriving the field dry density value from measured wet densities and moisture ratios, then comparing it against a laboratory reference standard. The formula for this transformation is structured as follows:</p>
                 
-                $$\text{Dry Density} = \frac{\text{Wet Density}}{1 + \left(\frac{\text{Moisture Percentage}}{100}\right)}$$
+                <p style="text-align: center; font-size: 1.1rem; color: var(--corp-gold); font-weight: bold; margin: 15px 0;">Dry Density = Wet Density / (1 + (Moisture Percentage / 100))</p>
 
                 <div class="case-study-box">
                     <h4 style="color: var(--corp-gold); margin-top: 0; text-transform: uppercase; letter-spacing: 0.5px;">Real-World Perspective Context</h4>
@@ -147,9 +42,7 @@
                 </div>
 
                 <h3>Why Moisture and Density Interact:</h3>
-                <p>Water acts as a physical lubricant between soil particles during field rolling operations. Insufficient moisture generates high internal friction, locking grains out of maximum density alignment. Excess moisture fills the available void framework completely, and because fluids cannot compress, it forces soil particles apart. The **Proctor Compaction Curve** maps this relationship, defining the absolute peak configuration reachable for any distinct soil type.</p>
-
-                <div class="ad-space">Loading Enterprise Infrastructure Banner...</div>
+                <p>Water acts as a physical lubricant between soil particles during field rolling operations. Insufficient moisture generates high internal friction, locking grains out of maximum density alignment. Excess moisture fills the available void framework completely, and because fluids cannot compress, it forces soil particles apart. The Proctor Compaction Curve maps this relationship, defining the absolute peak configuration reachable for any distinct soil type.</p>
             </div>
 
             <div>
@@ -177,7 +70,7 @@
 
                 <div class="chart-panel">
                     <h4 style="color: #f8fafc; margin-top: 0; font-size: 0.9rem; text-transform: uppercase;">Dynamic Proctor Curve Matrix</h4>
-                    <canvas id="proctorCanvas" width="400" height="200"></canvas>
+                    <canvas id="proctorCanvas" width="400" height="200" style="background-color: #111827; border-radius: 4px; width: 100%;"></canvas>
                     <p style="font-size: 0.75rem; color: #64748b; margin-top: 8px; margin-bottom: 0;">Parabolic Proctor line represents lab maximums. The red/green point represents your active field test placement.</p>
                 </div>
             </div>
@@ -272,10 +165,6 @@
             ctx.fillText("Density ➔", padLeft + 5, 20);
             ctx.fillText("Moisture Content % ➔", w - 50, canvas.height - padBottom + 18);
         }
-
-        window.onload = function() {
-            calcDensity();
-        };
     </script>
 </body>
 </html>

@@ -6,132 +6,27 @@
     <title>Heavy Fleet Production Logistics & Payload Optimizer | Terralogic Infrastructure Solutions</title>
     <meta name="description" content="Optimize heavy equipment haul cycle production matrices. Calculate bucket fill factors, round trip times, and payload weight balances to guard mass earthwork profits.">
     <link rel="stylesheet" href="../css/style.css?v=1.0.1">
-    <style>
-        :root {
-            --corp-blue: #1e3a8a;
-            --corp-gold: #b45309;
-            --panel-dark: #1e293b;
-            --border-light: #334155;
-        }
-        .corp-navbar {
-            background-color: #0f172a;
-            border-bottom: 2px solid var(--corp-gold);
-            padding: 15px 0;
-        }
-        .corp-nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .corp-brand {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #f8fafc;
-            text-decoration: none;
-            font-size: 1.4rem;
-        }
-        .corp-brand span {
-            color: var(--corp-gold);
-        }
-        .btn-back-home {
-            background: transparent;
-            border: 1px solid #475569;
-            color: #94a3b8;
-            padding: 8px 16px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .btn-back-home:hover {
-            border-color: var(--corp-gold);
-            color: #ffffff;
-            background-color: rgba(180, 83, 9, 0.1);
-        }
-        .case-study-box {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border-left: 4px solid var(--corp-gold);
-            padding: 20px;
-            border-radius: 4px;
-            margin: 25px 0;
-        }
-        .chart-panel {
-            background-color: #0f172a;
-            border: 1px solid var(--border-light);
-            border-radius: 6px;
-            padding: 15px;
-            margin-top: 20px;
-            text-align: center;
-        }
-        #fleetCanvas {
-            background-color: #111827;
-            border-radius: 4px;
-            width: 100%;
-            height: auto;
-            max-width: 100%;
-        }
-        footer {
-            background-color: #0f172a;
-            color: #94a3b8;
-            padding: 20px 0;
-            font-size: 0.85rem;
-            border-top: 1px solid var(--border-light);
-            margin-top: 60px;
-            font-family: sans-serif;
-        }
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .footer-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            margin-left: 20px;
-        }
-        .footer-links a:hover {
-            text-decoration: underline;
-            color: #ffffff;
-        }
-        @media (max-width: 600px) {
-            .footer-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .footer-links a {
-                margin: 0 10px;
-            }
-        }
-    </style>
 </head>
 <body>
 
     <nav class="corp-navbar">
         <div class="corp-nav-container">
             <a href="../index.html" class="corp-brand">Terralogic<span>.</span> Infrastructure</a>
-            <a href="../index.html" class="btn-back-home">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-                Global Field Dashboard
-            </a>
+            <div class="nav-actions">
+                <a href="../index.html" class="btn-back-home">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Dashboard
+                </a>
+                <button class="field-mode-toggle" onclick="toggleFieldMode()">Toggle Field Mode</button>
+            </div>
         </div>
     </nav>
 
-    <div class="container" style="margin-top: 30px;">
-        <div class="ad-space">Loading Enterprise Infrastructure Banner...</div>
+    <div class="container">
+        <div class="ad-space ad-container">
+            <span class="ad-label">Advertisement Slot</span>
+            <span>Premium Haulage Fleet Analytics Solutions</span>
+        </div>
 
         <div class="article-layout">
             <div class="article-body">
@@ -150,8 +45,6 @@
                     <li><strong>Mass Weight Capacity Limits:</strong> Trucks are bounded by structural axle weight parameters. Exceeding nominal tolerances risks structural haul asset down-time or steep highway safety enforcement citations.</li>
                     <li><strong>Total Cycle Balancing:</strong> Tracking production volume outputs per hour allows project estimators to optimize fleet sizing to match long-term project schedules.</li>
                 </ul>
-
-                <div class="ad-space">Loading Enterprise Infrastructure Banner...</div>
             </div>
 
             <div>
@@ -179,7 +72,7 @@
 
                 <div class="chart-panel">
                     <h4 style="color: #f8fafc; margin-top: 0; font-size: 0.9rem; text-transform: uppercase;">Dynamic Output Velocity Trend</h4>
-                    <canvas id="fleetCanvas" width="400" height="200"></canvas>
+                    <canvas id="fleetCanvas" width="400" height="200" style="background-color: #111827; border-radius: 4px; width: 100%;"></canvas>
                     <p style="font-size: 0.75rem; color: #64748b; margin-top: 8px; margin-bottom: 0;">Hourly volumetric delivery capacity mapped against shifting round-trip cycle time variables.</p>
                 </div>
             </div>
@@ -216,7 +109,7 @@
             out.style.display = "block";
             out.innerHTML = `
                 <strong>True Effective Bucket Payload:</strong> ${effectiveCap.toFixed(2)} LCY/Pass<br>
-                <strong>Calculated Mass Mass-Per-Pass:</strong> ${tonsPerPass.toFixed(2)} Tons<br>
+                <strong>Calculated Mass Per Pass:</strong> ${tonsPerPass.toFixed(2)} Tons<br>
                 <strong>Hourly Volume Run Velocity:</strong> ${productionPerHour.toFixed(1)} LCY/Hour<br>
                 <strong>Total Mass Production Velocity:</strong> ${tonsPerHour.toFixed(1)} Tons/Hour<br>
                 <div class="step-explanation">
@@ -279,10 +172,6 @@
             ctx.fillText("LCY / Hr ➔", padLeft + 5, 20);
             ctx.fillText("Cycle Time (Mins) ➔", w - 50, canvas.height - padBottom + 18);
         }
-
-        window.onload = function() {
-            calcFleet();
-        };
     </script>
 </body>
 </html>
